@@ -1,0 +1,10 @@
+{
+  "notice": "FICTITIOUS DEMONSTRATION DATA ONLY. Not official IIT or ISB information. Replace after catalogue and user schemas are validated.",
+  "records": [
+    {"id": "demo-est-iit", "kind": "establishment", "institution": "IIT", "name": "Institut International de Technologie (demo)", "provisional": true},
+    {"id": "demo-est-isb", "kind": "establishment", "institution": "ISB", "name": "International School of Business (demo)", "provisional": true},
+    {"id": "demo-program-iit-01", "kind": "program", "institution": "IIT", "name": "Programme ingénierie informatique (exemple fictif)", "level": "à valider", "duration": "à valider", "admission_conditions": "À confirmer auprès de l'équipe catalogue; aucun critère officiel fourni.", "career_opportunities": ["exemple à valider"], "provisional": true},
+    {"id": "demo-program-isb-01", "kind": "program", "institution": "ISB", "name": "Programme management (exemple fictif)", "level": "à valider", "duration": "à valider", "admission_conditions": "À confirmer auprès de l'équipe catalogue; aucun critère officiel fourni.", "career_opportunities": ["exemple à valider"], "provisional": true},
+    {"id": "demo-user-01", "kind": "user", "username": "demo_student", "display_name": "Étudiant de démonstration", "email": "demo.student@example.invalid", "provisional": true}
+  ]
+}
