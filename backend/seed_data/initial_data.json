@@ -1,0 +1,232 @@
+{
+  "_metadata": {
+    "task": "SA-18",
+    "purpose": "Données fictives de démonstration préparées selon les conceptions SA-12 et SA-13.",
+    "status": "provisional_not_ready_for_database_insert",
+    "load_order": [
+      "etablissements",
+      "formations_parcours",
+      "criteres_admission",
+      "documents_catalogue_rag",
+      "utilisateur",
+      "profil_candidat",
+      "resultat_scolaire",
+      "interet",
+      "profil_interet"
+    ],
+    "identity_resolution": {
+      "formations_parcours.etablissement_id": "Resolve etablissement_code_ref against etablissements.code after inserting establishments; do not put SERIAL IDs in this fixture.",
+      "criteres_admission.parcours_id": "Resolve parcours_code_ref against formations_parcours.code_parcours after inserting programs; do not put SERIAL IDs in this fixture.",
+      "documents_catalogue_rag.parcours_id": "Resolve parcours_code_ref against formations_parcours.code_parcours after inserting programs; do not put SERIAL IDs in this fixture.",
+      "profil_candidat.utilisateur_id": "Resolve utilisateur_id_ref against the candidate's UUID id.",
+      "resultat_scolaire.profil_id": "Resolve profil_id_ref against profil_candidat.id.",
+      "profil_interet.profil_id": "Resolve profil_id_ref against profil_candidat.id.",
+      "profil_interet.interet_id": "Resolve interet_id_ref against interet.id."
+    },
+    "notes": [
+      "Toutes les valeurs métier sont fictives ou à confirmer; elles ne représentent pas des informations officielles IIT/ISB.",
+      "La ville Sfax indiquée pour les établissements et le profil est provisoire et n'a pas été vérifiée à partir d'une source officielle.",
+      "Les deux notes du candidat sont un échantillon pédagogique fictif; à coefficient égal, leur moyenne correspond à la moyenne générale illustrative 14.25 et ne constitue pas un relevé scolaire complet.",
+      "Les clés seed_key, etablissement_code_ref et parcours_code_ref sont des références de fixture, pas des colonnes SQL.",
+      "Tous les identifiants SERIAL SA-12 (établissements, formations, critères et documents RAG) sont omis; un futur chargeur devra résoudre les références après insertion des parents.",
+      "utilisateur.mot_de_passe_hash est obligatoire dans SA-13 mais volontairement absent. Le futur chargeur devra obtenir un hash auprès du mécanisme d'authentification approuvé; aucun hash fictif ou mot de passe en clair n'est fourni.",
+      "Aucun document RAG n'est fourni: les sources officielles et les embeddings doivent être fournis par l'équipe; la collection reste vide et aucun contenu n'est inventé."
+    ],
+    "required_before_database_insert": [
+      "Fournir utilisateur.mot_de_passe_hash via le mécanisme d'authentification approuvé.",
+      "Appliquer et valider les migrations SA-17 utilisateur/profil et la migration PostgreSQL du catalogue SA-12.",
+      "Confirmer les noms officiels des établissements, lieux, formations et critères d'admission."
+    ]
+  },
+  "etablissements": [
+    {
+      "seed_key": "etablissement_iit",
+      "provisional": true,
+      "data": {
+        "code": "IIT",
+        "nom": "IIT - établissement de démonstration (nom officiel à confirmer)",
+        "ville": "Sfax",
+        "site_web": null,
+        "est_actif": true
+      }
+    },
+    {
+      "seed_key": "etablissement_isb",
+      "provisional": true,
+      "data": {
+        "code": "ISB",
+        "nom": "ISB - établissement de démonstration (nom officiel à confirmer)",
+        "ville": "Sfax",
+        "site_web": null,
+        "est_actif": true
+      }
+    }
+  ],
+  "formations_parcours": [
+    {
+      "seed_key": "formation_iit_informatique_demo",
+      "etablissement_code_ref": "IIT",
+      "provisional": true,
+      "data": {
+        "code_parcours": "DEMO-IIT-INFO-LIC",
+        "type_parcours": "LICENCE",
+        "titre": "Licence de démonstration en informatique (à confirmer)",
+        "duree_semestres": 6,
+        "resume": "Parcours fictif destiné à vérifier le catalogue et les démonstrations SA-18.",
+        "objectifs_pedagogiques": "Exemple pédagogique fictif : consolider algorithmique, programmation et bases de données; programme officiel à confirmer.",
+        "debouches": "Exemples illustratifs : développement logiciel et manipulation de bases de données; débouchés réels à confirmer.",
+        "modalite": "Présentiel (à confirmer)",
+        "langue_enseignement": "Français (à confirmer)",
+        "tags_interets": ["informatique", "programmation"],
+        "statut": "BROUILLON",
+        "source_reference": "Donnée fictive SA-18; source officielle à confirmer",
+        "source_url": null,
+        "derniere_synchro_at": null
+      }
+    },
+    {
+      "seed_key": "formation_isb_gestion_demo",
+      "etablissement_code_ref": "ISB",
+      "provisional": true,
+      "data": {
+        "code_parcours": "DEMO-ISB-GEST-LIC",
+        "type_parcours": "LICENCE",
+        "titre": "Licence de démonstration en gestion (à confirmer)",
+        "duree_semestres": 6,
+        "resume": "Parcours fictif destiné à vérifier le catalogue et les démonstrations SA-18.",
+        "objectifs_pedagogiques": "Exemple pédagogique fictif : découvrir les notions de gestion, comptabilité et marketing; programme officiel à confirmer.",
+        "debouches": "Exemples illustratifs : appui à la gestion et activités marketing; débouchés réels à confirmer.",
+        "modalite": "Présentiel (à confirmer)",
+        "langue_enseignement": "Français (à confirmer)",
+        "tags_interets": ["gestion", "management"],
+        "statut": "BROUILLON",
+        "source_reference": "Donnée fictive SA-18; source officielle à confirmer",
+        "source_url": null,
+        "derniere_synchro_at": null
+      }
+    }
+  ],
+  "criteres_admission": [
+    {
+      "seed_key": "critere_iit_informatique_demo",
+      "parcours_code_ref": "DEMO-IIT-INFO-LIC",
+      "provisional": true,
+      "data": {
+        "niveau_requis": "BAC (exemple à confirmer)",
+        "filieres_acceptees": ["Mathématiques (exemple à confirmer)", "Sciences expérimentales (exemple à confirmer)"],
+        "score_ou_moyenne_min": 12.5,
+        "prerequis_matieres": "Illustration non officielle : bases de mathématiques et initiation à l'informatique; prérequis officiels à confirmer.",
+        "modalites_admission": "Exemple fictif SA-18; modalités officielles à confirmer auprès de l'équipe catalogue.",
+        "priorite": 1
+      }
+    },
+    {
+      "seed_key": "critere_isb_gestion_demo",
+      "parcours_code_ref": "DEMO-ISB-GEST-LIC",
+      "provisional": true,
+      "data": {
+        "niveau_requis": "BAC (exemple à confirmer)",
+        "filieres_acceptees": ["Économie et gestion (exemple à confirmer)"],
+        "score_ou_moyenne_min": null,
+        "prerequis_matieres": "Illustration non officielle : notions d'économie et expression écrite; prérequis officiels à confirmer.",
+        "modalites_admission": "Exemple fictif SA-18; modalités officielles à confirmer auprès de l'équipe catalogue.",
+        "priorite": 1
+      }
+    }
+  ],
+  "documents_catalogue_rag": [],
+  "utilisateur": {
+    "provisional": true,
+    "data": {
+      "id": "7a97179e-6429-49d9-9aab-f5fc946c6801",
+      "nom": "Candidat",
+      "prenom": "Démo",
+      "email": "candidat.sa18@example.invalid",
+      "role": "candidat",
+      "langue_preferee": "fr",
+      "est_actif": true,
+      "derniere_connexion": null
+    }
+  },
+  "profil_candidat": {
+    "provisional": true,
+    "utilisateur_id_ref": "7a97179e-6429-49d9-9aab-f5fc946c6801",
+    "data": {
+      "id": "db250db8-aab3-46e1-9853-37d55f75aa8f",
+      "telephone": null,
+      "date_naissance": "2004-02-15",
+      "ville": "Sfax",
+      "gouvernorat": "Sfax",
+      "pays": "Tunisie",
+      "adresse": null,
+      "niveau_etudes": "Baccalauréat (exemple fictif)",
+      "serie_bac": "Mathématiques (exemple fictif)",
+      "etablissement_origine": "Lycée de démonstration (nom fictif)",
+      "annee_obtention": 2024,
+      "moyenne_generale": 14.25,
+      "objectifs": "Exemple fictif : poursuivre des études supérieures en informatique.",
+      "etablissement_prefere": "IIT",
+      "mode_contact_prefere": "email"
+    }
+  },
+  "resultat_scolaire": [
+    {
+      "provisional": true,
+      "profil_id_ref": "db250db8-aab3-46e1-9853-37d55f75aa8f",
+      "data": {
+        "id": "44daf5e5-7635-4d93-9e39-7560c8ceef27",
+        "matiere": "Mathématiques (exemple fictif)",
+        "periode": "Baccalauréat 2024 (exemple fictif)",
+        "note": 15.0,
+        "coefficient": 1.0
+      }
+    },
+    {
+      "provisional": true,
+      "profil_id_ref": "db250db8-aab3-46e1-9853-37d55f75aa8f",
+      "data": {
+        "id": "cdc6bfbb-32b1-4674-8dd4-f1e98f9df813",
+        "matiere": "Physique (exemple fictif)",
+        "periode": "Baccalauréat 2024 (exemple fictif)",
+        "note": 13.5,
+        "coefficient": 1.0
+      }
+    }
+  ],
+  "interet": [
+    {
+      "provisional": true,
+      "data": {
+        "id": "c6366637-4ba5-4799-a5d3-7ab67ec040cf",
+        "libelle": "informatique",
+        "categorie": "orientation"
+      }
+    },
+    {
+      "provisional": true,
+      "data": {
+        "id": "e0e3c2e2-5aad-49c5-8c0a-d5caa6f9a925",
+        "libelle": "programmation",
+        "categorie": "informatique"
+      }
+    }
+  ],
+  "profil_interet": [
+    {
+      "provisional": true,
+      "profil_id_ref": "db250db8-aab3-46e1-9853-37d55f75aa8f",
+      "interet_id_ref": "c6366637-4ba5-4799-a5d3-7ab67ec040cf",
+      "data": {
+        "ajoute_le": "2026-11-22T12:00:00Z"
+      }
+    },
+    {
+      "provisional": true,
+      "profil_id_ref": "db250db8-aab3-46e1-9853-37d55f75aa8f",
+      "interet_id_ref": "e0e3c2e2-5aad-49c5-8c0a-d5caa6f9a925",
+      "data": {
+        "ajoute_le": "2026-11-22T12:00:00Z"
+      }
+    }
+  ]
+}
