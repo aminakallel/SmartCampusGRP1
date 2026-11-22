@@ -17,6 +17,8 @@ uvicorn app.main:app --reload
 
 The health route is `GET /health`; Swagger is at `/docs`, and the OpenAPI JSON is at `/openapi.json`. API health does not depend on the database. `GET /health/db` runs `SELECT 1` and returns HTTP 503 when the database is unavailable. Configuration is loaded from `.env` or process environment. A local URL using port 5432 is rejected because that port is reserved for PostgreSQL Odoo on this workstation.
 
+API errors use the SA-5 envelope `{ "error": { "code": "...", "message": "...", "details": {} } }`. Validation responses omit submitted input values, which can contain passwords or tokens.
+
 ### CORS
 
 Set `CORS_ORIGINS` to a comma-separated list of explicit frontend origins, for example `http://localhost:3000`. CORS is disabled when the list is empty. Wildcard origins, URL paths and credentials in origins are rejected in every environment; the application never enables credentialed cross-origin requests.
@@ -34,7 +36,7 @@ Compose starts PostgreSQL and the API, waits for PostgreSQL's health check, and 
 
 ## Database
 
-SQLAlchemy engine, declarative `Base`, and request-scoped `get_db` live in `app/db/database.py`. The URL uses `postgresql+psycopg://`. No shared feature tables or migrations are declared. Verify connectivity at `http://localhost:8000/health/db` after starting services.
+SQLAlchemy engine, declarative `Base`, and request-scoped `get_db` live in `app/db/database.py`. The URL uses `postgresql+psycopg://`. Shared feature tables and ORM models are not declared because the attached user/catalogue/management schemas have unresolved key/table-name differences. `migrations/0000_enable_extensions.sql` is a technical prerequisite only; it creates `pgcrypto` and `vector`, no application tables. Do not apply it until the target PostgreSQL installation supplies both extensions. The current Compose image is PostgreSQL 16 Alpine without pgvector; changing it requires checking the compatibility of any existing persistent `postgres_data` volume. Verify connectivity at `http://localhost:8000/health/db` after starting services.
 
 On the current Windows workstation, the existing SmartCampus-only test cluster is in `.smartcampus_pgdata` and listens on `127.0.0.1:55432`. Start or verify it from `backend` with `.\scripts\start_smartcampus_postgres.ps1`. The script checks that the initialized cluster exists and that the PostgreSQL major version matches; it does not initialize, delete, or target the Odoo cluster. It uses the installed PostgreSQL bin directory or `SMARTCAMPUS_PG_BIN` when set. The cluster data directory and credentials are local-only and ignored by Git. Do not run `initdb` against an existing cluster.
 
@@ -73,6 +75,10 @@ The restore commands above are documentation only; no backup or restore was run 
 ## Tests and QA
 
 From `backend` with `.venv` active, run `python -m pip check` and `python -m pytest -v`. Unit tests use FastAPI `TestClient` and mocks; no seed is executed and no database rows are changed. See [tests/README.md](tests/README.md), [QA_REPORT.md](QA_REPORT.md) and [SPRINT1_AUDIT_REPORT.md](SPRINT1_AUDIT_REPORT.md).
+
+## Team schema integration status
+
+See [SCHEMA_MAPPING_PROPOSAL.md](SCHEMA_MAPPING_PROPOSAL.md) for the column/key comparison and decisions awaiting Manar, Tasnime and Amina. See [tests/CONTRACT_TEST_PLAN.md](tests/CONTRACT_TEST_PLAN.md) for business API scenarios that are planned but not implemented or executed. Do not run the existing staging seed as if it were a production/team-schema seed.
 
 ## Integration points
 

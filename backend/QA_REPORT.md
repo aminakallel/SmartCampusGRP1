@@ -92,3 +92,19 @@ Cause exacte du blocage précédent : **restriction des sockets locales dans le 
 Résultats hors sandbox : test isolé santé **1 passed**; `test_health.py` **11 passed**; `test_config.py` **11 passed**; `test_seed_demo.py` **6 passed**; `test_database.py` **1 passed**; suite `python -m pytest -v -o faulthandler_timeout=10` **29 passed, 0 failed, 1 avertissement de dépréciation Starlette/AnyIO** en 2.77 s. `python -m pip check` : aucune dépendance cassée.
 
 Contrôle sécurité en lecture seule : port 5432 toujours à l'écoute via PID 8972 (service existant non arrêté ni modifié); port 55432 PID 7316 lié à `127.0.0.1`, `pg_ctl` confirme que le cluster utilise exclusivement `.smartcampus_pgdata`; FastAPI reste actif sur 127.0.0.1:8000. Les tests API utilisent TestClient et mockent l'accès SQL; le test seed emploie une connexion mémoire d'enregistrement; aucun test ne cible/modifie la base SmartCampus réelle. Les cas de fuite de secrets dans réponse et logs passent.
+## Integration follow-up — 22 November 2026
+
+- Read and cross-checked all five supplied PDFs and the SA-14 Markdown design against the delivered backend. The ER/workflow/architecture/API diagram pages were rendered and visually reviewed.
+- Added SA-5 error-envelope handlers for HTTP errors, request validation and unexpected exceptions. Validation errors omit submitted input values. Added tests for 400/401/403/404/405/422/500/503 behavior and sensitive-input redaction.
+- Latest `python -m pip check`: no broken requirements. Latest full suite on branch `yasmin`: **34 passed, 0 failed, 1 Starlette/AnyIO deprecation warning** (4.41 s). Tests were run outside the Codex sandbox because its Windows socket restriction blocks TestClient.
+- Added `SCHEMA_MAPPING_PROPOSAL.md`, `tests/CONTRACT_TEST_PLAN.md` and a technical-only extension migration. These are proposals/plans; the team has not validated canonical table names, ID types or profile aliases. No business tables or foreign keys were created; the extension SQL was not run.
+- The Docker CLI is unavailable. Compose still uses `postgres:16-alpine`, which does not bundle pgvector; changing the image while a persistent volume may exist was deferred. Compose build/start, PG16 integration and pgvector runtime remain unverified.
+- No business seed was run. No PostgreSQL data, `.env`, branch, commit or remote was changed. Current branch remains `yasmin`; modifications are uncommitted.
+
+## Vérification du code Formation Tasnime — 22 novembre 2026
+
+- Inspection du checkout `yasmin`, des fichiers suivis et de la branche locale `origin/tasnime` : les sept fichiers Python mentionnés sont absents. La branche `origin/tasnime` disponible localement ne contient que `README.md`. Aucun « dernier tableau » séparé n'a été trouvé parmi les pièces jointes disponibles; le PDF de conception du catalogue reste la référence de schéma disponible.
+- Le backend Yasmin contient `Base`, `engine`, `SessionLocal` et `get_db()` mais aucune route Formation, modèle ORM Formation, repository, service métier ni dépendance Admin. Le comportement du dictionnaire annoncé ne peut donc pas être confirmé dans le code. Aucun fichier de Tasnime n'a été remplacé.
+- La proposition de mapping documente le branchement futur du repository à la session SQLAlchemy, le choix `PUT`/`PATCH`, l'alignement des FK UUID/SERIAL et les validations requises. Le plan de test décrit les cas Formation et Admin en attente; aucun endpoint artificiel n'a été ajouté.
+- Vérification fraîche : `pip check` propre; suite complète hors environnement restreint **34 réussis, 0 échec, 1 avertissement Starlette/AnyIO en 1,59 s**. Dans l'exécution restreinte, `test_health_returns_200` bloque au `socketpair` asyncio Windows, avant l'exécution de la route.
+- Aucun seed ou migration métier lancé; aucune donnée, `.env`, branche, commit, push ou PostgreSQL Odoo modifié.

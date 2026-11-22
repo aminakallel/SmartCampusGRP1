@@ -111,3 +111,29 @@ Commands run from `backend` unless stated otherwise:
 | SA-16 | **PASS** | Dedicated local PostgreSQL connection and health endpoint verified; Compose PostgreSQL 16 remains outside this task's verified scope. |
 | SA-18 | **PARTIAL** | Validation/idempotence tests pass and prior real seed evidence exists; final-audit seed was not rerun and shared-schema mapping awaits owners. |
 | SA-22 | **PARTIAL** | All 29 available tests pass; business and authorization contracts are pending from teammates. |
+
+## Follow-up after team documents — 22 November 2026
+
+The attached team documents were reviewed in full and key diagram/table pages were visually checked. See `SCHEMA_MAPPING_PROPOSAL.md` for the detailed proposed schema comparison and owner decisions still required. The schema mapping has **not** been approved; the files remain a proposal.
+
+Independent SA-7 work now applies the SA-5 `{error: {code, message, details}}` envelope to HTTP, validation and generic failures. The latest suite is **34 passed, 0 failed, 1 upstream warning**; `pip check` is clean. `tests/CONTRACT_TEST_PLAN.md` records business tests that are pending final contracts.
+
+Added `migrations/0000_enable_extensions.sql` for `pgcrypto` and pgvector only. It has not been applied, creates no tables and must not be run against a server without both extensions. The Compose image remains `postgres:16-alpine`; Docker CLI is unavailable and changing the image was deferred because the compatibility of a persistent volume cannot be checked here.
+
+No schema-dependent models/FKs, migrations, production seed or business endpoints were added. No seed, backup, database mutation, commit or push was performed in this follow-up. The working branch remains `yasmin`.
+
+| Task | Updated status | Current evidence / outstanding |
+|---|---|---|
+| SA-7 | **PARTIAL** | Error envelope now matches SA-5 and tests pass; versioned business routers/auth remain unimplemented and owned contracts are incomplete. |
+| SA-9 | **PARTIAL** | Static Compose config remains reviewed; Docker runtime unavailable and pgvector image/volume plan is unresolved. |
+| SA-16 | **PARTIAL** | SQLAlchemy/local PostgreSQL verification was previously successful; only independent extension SQL is prepared. Tables/FKs/migrations await schema approval. |
+| SA-18 | **PARTIAL** | Existing staging seed remains isolated; no relational seed until canonical IDs, tables and FKs are approved. |
+| SA-22 | **PARTIAL** | 34 available tests pass; pending API test matrix is documented but no missing business routes are simulated. |
+
+## Présence réelle du code Formation — 22 novembre 2026
+
+Les sept fichiers attribués à Tasnime (`schemas/formation.py`, `api/v1/formations.py`, `core/security.py`, `services/formation_service.py`, `repositories/formation_repository.py`, `core/errors.py`, `api/responses.py`) ne sont pas présents dans le checkout ni dans la branche `origin/tasnime` disponible localement, dont l'arbre contient uniquement `README.md`. Aucun tableau séparé plus récent n'était disponible dans les pièces jointes accessibles. Le code annoncé comme stockant les formations dans un dictionnaire n'a donc pas pu être vérifié.
+
+Le backend possède déjà la session SQLAlchemy request-scoped. La proposition décrit l'adaptation future sans modifier les fichiers de Tasnime ni inventer ses modèles : repository injecté avec `get_db()`, contraintes de doublons en base à définir, transactions et erreurs alignées sur l'enveloppe SA-5. Les tests Formation/Admin sont planifiés mais restent en attente de l'intégration réelle des routes et des validations de schéma.
+
+Vérification du 22 novembre 2026 : `python -m pip check` réussi; suite complète **34 réussis, 0 échec, 1 avertissement amont en 1,59 s** hors restriction socket Windows. Aucun seed relationnel ni migration métier exécuté. Aucun commit ni push effectué; branche `yasmin` conservée.
