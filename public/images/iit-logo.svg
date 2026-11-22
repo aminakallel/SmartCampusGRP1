@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" role="img" aria-label="Logo IIT — Institut International Technologie">
+  <defs>
+    <clipPath id="globeClip">
+      <circle cx="110" cy="150" r="68" />
+    </clipPath>
+  </defs>
+
+  <!-- Globe -->
+  <circle cx="110" cy="150" r="68" fill="#F5B700" />
+  <g clip-path="url(#globeClip)" fill="#FFFFFF" fill-opacity="0.92">
+    <path d="M70 108 C78 100, 92 96, 102 100 C112 104, 120 112, 118 124 C116 134, 104 140, 92 138 C80 136, 72 128, 68 120 C66 115, 67 111, 70 108 Z" />
+    <path d="M118 112 C128 108, 140 112, 146 122 C150 130, 148 140, 140 146 C132 152, 120 150, 116 142 C113 136, 113 128, 118 112 Z" />
+    <path d="M86 148 C100 144, 116 150, 124 160 C130 168, 128 180, 118 188 C106 197, 88 196, 78 186 C70 178, 70 164, 76 156 C79 152, 82 150, 86 148 Z" />
+    <path d="M130 160 C142 156, 156 162, 162 174 C166 183, 162 194, 152 200 C142 206, 130 202, 126 192 C123 184, 124 174, 130 160 Z" />
+    <path d="M62 172 C72 168, 82 172, 86 182 C89 189, 86 198, 78 202 C70 206, 60 202, 56 194 C53 187, 56 177, 62 172 Z" />
+  </g>
+
+  <!-- Swoosh -->
+  <path d="M48 200 C90 245, 150 245, 175 198 L188 210 C160 260, 75 262, 38 210 Z" fill="#1B3A6B" />
+
+  <!-- Graduation cap -->
+  <g transform="translate(70, 72)">
+    <path d="M0 24 L40 8 L80 24 L40 40 Z" fill="#1B3A6B" />
+    <path d="M14 24 L14 44 Q40 52 66 44 L66 24" fill="none" stroke="#1B3A6B" stroke-width="7" stroke-linejoin="round" />
+    <path d="M80 24 L80 52 Q86 56 90 50" fill="none" stroke="#1B3A6B" stroke-width="3.5" stroke-linecap="round" />
+    <circle cx="92" cy="53" r="5" fill="#1B3A6B" />
+  </g>
+
+  <!-- Vertical divider -->
+  <line x1="200" y1="40" x2="200" y2="250" stroke="#F5B700" stroke-width="4" />
+
+  <!-- Text block -->
+  <g fill="#1B3A6B" font-family="Georgia, 'Times New Roman', serif">
+    <text x="224" y="118" font-size="72" font-weight="700" letter-spacing="-1">IIT</text>
+    <text x="226" y="162" font-size="26" font-weight="600" letter-spacing="2">INSTITUT</text>
+    <text x="226" y="198" font-size="26" font-weight="600" letter-spacing="2">INTERNATIONAL</text>
+    <text x="226" y="234" font-size="26" font-weight="600" letter-spacing="2">TECHNOLOGIE</text>
+  </g>
+
+  <!-- Tagline -->
+  <line x1="40" y1="272" x2="480" y2="272" stroke="#F5B700" stroke-width="2.5" />
+  <text x="260" y="302" font-size="22" fill="#1B3A6B" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" letter-spacing="1">Université Nord Américaine Privée</text>
+  <line x1="40" y1="312" x2="480" y2="312" stroke="#F5B700" stroke-width="2.5" />
+</svg>

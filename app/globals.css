@@ -1,26 +1,188 @@
 @import "tailwindcss";
 
+/*
+ * Variante dark pour Tailwind v4 : appliquée quand <html data-theme="dark">.
+ * Le thème est piloté côté client (provider + localStorage), sans cookies()
+ * ni headers() dans le layout (cacheComponents activé).
+ */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+ * Design system SmartCampus AI — voir DESIGN.md.
+ * Deux niveaux de tokens :
+ *   1. les noms du design system (ink, iit, isb, surface, paper, line, muted) ;
+ *   2. des alias hérités (background, foreground, border, primary, accent…)
+ *      conservés pour les pages et composants déjà en place.
+ *
+ * Stratégie de thème :
+ *   - :root contient les valeurs claires.
+ *   - @media (prefers-color-scheme: dark) applique le sombre par défaut
+ *     (sans choix mémorisé, on suit la préférence système).
+ *   - [data-theme="light"] / [data-theme="dark"] surchargent en fonction du
+ *     choix explicite de l’utilisateur (défini par le provider React).
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Couleurs de marque : bleu = IIT, vert = ISB */
+  --ink: #0f2447;
+  --iit: #1f5fbf;
+  --isb: #1e8a5a;
+
+  /* Surfaces et séparateurs */
+  --surface: #ffffff;
+  --paper: #f6f8fb;
+  --line: #d9e0ea;
+  --muted-foreground: #51607a;
+
+  /* États (assombris pour atteindre le contraste AA sur fond clair) */
+  --success: #15784a;
+  --warning: #9a5b06;
+  --danger: #b42318;
+
+  /* Alias hérités */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --surface-muted: #f1f4fa;
+  --surface-2: #e9eef8;
+  --border: var(--line);
+  --border-strong: #c3cedd;
+  --primary: var(--iit);
+  --primary-foreground: #ffffff;
+  --accent: var(--isb);
+  --accent-foreground: #ffffff;
+  --ring: var(--iit);
+
+  /* Ombres : réservées aux éléments cliquables */
+  --elev-card: 0 1px 2px rgb(16 24 40 / 0.04);
+  --elev-brand: 0 10px 28px -12px rgb(31 95 191 / 0.45);
+  --elev-float: 0 28px 70px -28px rgb(16 24 40 / 0.32);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Thème sombre : préférence système (sans choix explicite) OU choix sombre. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --ink: #e6ecf7;
+    --iit: #5b9bff;
+    --isb: #3dbe8b;
+
+    --surface: #111a2e;
+    --paper: #0b1220;
+    --line: #22304a;
+    --muted-foreground: #93a1bc;
+
+    --success: #3dbe8b;
+    --warning: #e0a53a;
+    --danger: #ff7b72;
+
+    --surface-muted: #16213a;
+    --surface-2: #1b2740;
+    --border-strong: #2e3d5c;
+    --primary-foreground: #0b1220;
+    --accent-foreground: #06251a;
+
+    --elev-card: 0 1px 2px rgb(0 0 0 / 0.5);
+    --elev-brand: 0 12px 34px -14px rgb(91 155 255 / 0.45);
+    --elev-float: 0 32px 80px -30px rgb(0 0 0 / 0.8);
   }
 }
 
+[data-theme="dark"] {
+  --ink: #e6ecf7;
+  --iit: #5b9bff;
+  --isb: #3dbe8b;
+
+  --surface: #111a2e;
+  --paper: #0b1220;
+  --line: #22304a;
+  --muted-foreground: #93a1bc;
+
+  --success: #3dbe8b;
+  --warning: #e0a53a;
+  --danger: #ff7b72;
+
+  --surface-muted: #16213a;
+  --surface-2: #1b2740;
+  --border-strong: #2e3d5c;
+  --primary-foreground: #0b1220;
+  --accent-foreground: #06251a;
+
+  --elev-card: 0 1px 2px rgb(0 0 0 / 0.5);
+  --elev-brand: 0 12px 34px -14px rgb(91 155 255 / 0.45);
+  --elev-float: 0 32px 80px -30px rgb(0 0 0 / 0.8);
+}
+
+@theme inline {
+  /* Design system */
+  --color-ink: var(--ink);
+  --color-iit: var(--iit);
+  --color-isb: var(--isb);
+  --color-surface: var(--surface);
+  --color-paper: var(--paper);
+  --color-line: var(--line);
+  --color-muted: var(--muted-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  /* Alias hérités */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+
+  --shadow-card: var(--elev-card);
+  --shadow-brand: var(--elev-brand);
+  --shadow-float: var(--elev-float);
+
+  --font-sans: var(--font-plex);
+  --font-arabic: var(--font-plex-ar);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
+  background: var(--surface);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-plex), system-ui, -apple-system, sans-serif;
+}
+
+/* Focus visible unique : 2 px, couleur IIT (voir DESIGN.md). */
+:focus-visible {
+  outline: 2px solid var(--iit);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--iit) 24%, transparent);
+}
+
+/*
+ * Ancien dégradé de marque : remplacé par un aplat IIT.
+ * La classe est conservée car plusieurs écrans l'utilisent encore.
+ * DESIGN.md interdit les dégradés décoratifs.
+ */
+.brand-gradient {
+  background-color: var(--iit);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

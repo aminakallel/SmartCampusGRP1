@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img">
+  <rect width="1200" height="800" fill="#F6F8FB"/>
+  <g stroke="#15784A" stroke-width="2" fill="none" stroke-opacity="0.3">
+    <path d="M100 400 Q 300 200 500 400 T 900 400 T 1300 400"/>
+    <path d="M100 500 Q 300 300 500 500 T 900 500 T 1300 500"/>
+  </g>
+  <g fill="#15784A">
+    <circle cx="350" cy="350" r="70" fill-opacity="0.85"/>
+    <circle cx="350" cy="350" r="35" fill="#F6F8FB"/>
+    <circle cx="620" cy="280" r="55" fill-opacity="0.75"/>
+    <circle cx="620" cy="280" r="28" fill="#F6F8FB"/>
+    <circle cx="850" cy="380" r="62" fill-opacity="0.8"/>
+    <circle cx="850" cy="380" r="30" fill="#F6F8FB"/>
+  </g>
+  <g stroke="#15784A" stroke-width="3" fill="none" stroke-linecap="round" stroke-opacity="0.55">
+    <path d="M420 380 Q 520 440 565 320"/>
+    <path d="M675 310 Q 740 360 790 360"/>
+  </g>
+  <g fill="#15784A" fill-opacity="0.45">
+    <ellipse cx="300" cy="580" rx="120" ry="40"/>
+    <ellipse cx="700" cy="620" rx="160" ry="50" fill-opacity="0.35"/>
+    <ellipse cx="1000" cy="570" rx="100" ry="35" fill-opacity="0.5"/>
+  </g>
+</svg>

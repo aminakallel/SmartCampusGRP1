@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" role="img" aria-label="Logo ISB — International School of Business">
+  <!-- Shield -->
+  <path d="M30 20 L200 20 L200 150 Q200 220 115 270 Q30 220 30 150 Z" fill="#1B3A6B" />
+
+  <!-- Graduation cap inside shield -->
+  <g transform="translate(72, 55)">
+    <path d="M0 18 L36 4 L72 18 L36 32 Z" fill="#F5B700" />
+    <path d="M12 18 L12 36 Q36 43 60 36 L60 18" fill="none" stroke="#F5B700" stroke-width="4.5" stroke-linejoin="round" />
+    <path d="M72 18 L72 40 Q77 43 81 38" fill="none" stroke="#F5B700" stroke-width="3" stroke-linecap="round" />
+    <circle cx="83" cy="41" r="3.5" fill="#F5B700" />
+  </g>
+
+  <!-- Open book inside shield -->
+  <g transform="translate(55, 105)">
+    <path d="M0 4 L55 16 L55 68 L0 56 Z" fill="#FFFFFF" />
+    <path d="M115 4 L60 16 L60 68 L115 56 Z" fill="#FFFFFF" />
+    <path d="M0 4 L55 16 L60 68 L55 68 Z" fill="none" stroke="#F5B700" stroke-width="2.5" />
+    <path d="M115 4 L60 16 L55 68 L60 68 Z" fill="none" stroke="#F5B700" stroke-width="2.5" />
+    <line x1="16" y1="32" x2="46" y2="38" stroke="#F5B700" stroke-width="3" stroke-linecap="round" />
+    <line x1="16" y1="46" x2="46" y2="52" stroke="#F5B700" stroke-width="3" stroke-linecap="round" />
+    <line x1="99" y1="32" x2="69" y2="38" stroke="#F5B700" stroke-width="3" stroke-linecap="round" />
+    <line x1="99" y1="46" x2="69" y2="52" stroke="#F5B700" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Text block -->
+  <g fill="#1B3A6B" font-family="Arial, Helvetica, sans-serif">
+    <text x="230" y="120" font-size="88" font-weight="800" letter-spacing="-2">ISB</text>
+    <text x="232" y="162" font-size="22" font-weight="700" letter-spacing="1.5">INTERNATIONAL</text>
+    <text x="232" y="196" font-size="22" font-weight="700" letter-spacing="1.5">SCHOOL OF</text>
+    <text x="232" y="230" font-size="22" font-weight="700" letter-spacing="1.5">BUSINESS</text>
+  </g>
+</svg>
