@@ -1,3 +1,4 @@
+HEAD
 # SmartCampus AI — Frontend
 
 Interface de la plateforme agentique d'orientation universitaire **SmartCampus AI**.
@@ -110,3 +111,6 @@ externe de la faculté via `NEXT_PUBLIC_PREINSCRIPTION_URL`.
 - Le chat remplace le catalogue : il répond avec les formations issues de
   `lib/mock-data.ts` et affiche des cartes dépliables dans le fil.
 - L'interface est **responsive** et prend en charge le thème clair et sombre.
+=======
+"# SmartCampusGRP1" 
+origin/roua
