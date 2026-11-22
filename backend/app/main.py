@@ -8,7 +8,7 @@ from starlette.middleware.cors import CORSMiddleware
 
 from app.api.routes.health import router as health_router
 from app.core.config import Settings, get_settings
-
+from app.catalogue_consultation.router import router as catalogue_consultation_router
 
 def create_app(settings: Settings | None = None) -> FastAPI:
     """Build the API using explicit settings, including a restrictive CORS policy."""
@@ -21,7 +21,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         docs_url="/docs",
         redoc_url="/redoc",
     )
+    
     application.include_router(health_router)
+    application.include_router(catalogue_consultation_router)
 
     if app_settings.allowed_origins:
         application.add_middleware(

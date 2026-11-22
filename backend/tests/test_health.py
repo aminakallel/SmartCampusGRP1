@@ -28,7 +28,12 @@ def test_docs_are_available() -> None:
 def test_openapi_json_is_available_and_lists_only_implemented_routes() -> None:
     response = client.get("/openapi.json")
     assert response.status_code == 200
-    assert set(response.json()["paths"]) == {"/health", "/health/db"}
+    assert set(response.json()["paths"]) == {
+        "/health",
+        "/health/db",
+        "/api/catalogue/programmes",
+        "/api/catalogue/programmes/{slug}",
+    }
 
 
 def test_health_rejects_wrong_method() -> None:
