@@ -1,0 +1,277 @@
+﻿{
+  "projet": "SmartCampus AI (IIT / ISB)",
+  "tache": "SA-32",
+  "version": "1.0",
+  "description": "Jeu de donnÃ©es d'Ã©valuation multilingue (FranÃ§ais, Tunisien, Arabizi, Code-switching) pour les modÃ¨les LLM",
+  "dataset": [
+    {
+      "id": "EVAL_01",
+      "langue": "fr",
+      "categorie": "orientation_profil_incomplet",
+      "question": "Bonjour, je veux faire de l'informatique Ã  l'IIT, quelle formation me conseillez-vous ?",
+      "intention_attendue": "collecter_profil",
+      "elements_reponse_attendus": [
+        "Saluer le candidat",
+        "Ne pas imposer de formation immÃ©diatement car le profil est incomplet",
+        "Demander le niveau scolaire actuel (ex: Bac, Licence), la spÃ©cialitÃ©/section et les rÃ©sultats ou objectifs"
+      ]
+    },
+    {
+      "id": "EVAL_02",
+      "langue": "fr",
+      "categorie": "orientation_profil_complet",
+      "question": "J'ai un Bac MathÃ©matiques avec 14.5 de moyenne, j'aime la programmation et je veux devenir ingÃ©nieur logiciel mais avec une approche pratique dÃ¨s la premiÃ¨re annÃ©e. Que choisir entre PrÃ©pa et Licence ?",
+      "intention_attendue": "proposer_orientation",
+      "elements_reponse_attendus": [
+        "Comparer le cycle PrÃ©paratoire intÃ©grÃ© et la Licence en Informatique Ã  l'IIT",
+        "Expliquer les passerelles vers le cycle IngÃ©nieur",
+        "Mettre en avant le cÃ´tÃ© pratique de la Licence vs thÃ©orique de la PrÃ©pa",
+        "Citer les sources officielles IIT"
+      ]
+    },
+    {
+      "id": "EVAL_03",
+      "langue": "fr",
+      "categorie": "info_rag",
+      "question": "Quelles sont les conditions d'accÃ¨s au cycle ingÃ©nieur Ã  l'IIT et combien de semestres dure la formation ?",
+      "intention_attendue": "interroger_rag_programmes",
+      "elements_reponse_attendus": [
+        "PrÃ©ciser les niveaux requis (cycle prÃ©paratoire, licence ou Ã©quivalent)",
+        "Indiquer la durÃ©e officielle en semestres/annÃ©es selon le corpus IIT",
+        "Citer explicitement la source officielle (brochure/programme IIT)"
+      ]
+    },
+    {
+      "id": "EVAL_04",
+      "langue": "fr",
+      "categorie": "info_rag",
+      "question": "Quelles sont les formations proposÃ©es par l'ISB dans le domaine du management et de la finance ?",
+      "intention_attendue": "interroger_rag_programmes",
+      "elements_reponse_attendus": [
+        "Lister les parcours disponibles Ã  l'ISB dans ces domaines",
+        "Indiquer les dÃ©bouchÃ©s et conditions d'accÃ¨s",
+        "Citer la source officielle ISB"
+      ]
+    },
+    {
+      "id": "EVAL_05",
+      "langue": "fr",
+      "categorie": "preinscription_suivi",
+      "question": "Comment faire pour m'inscrire officiellement et est-ce que tu peux valider mon admission tout de suite ?",
+      "intention_attendue": "expliquer_preinscription",
+      "elements_reponse_attendus": [
+        "Expliquer le passage par le formulaire externe de prÃ©inscription",
+        "Mentionner le QCM personnalisÃ© et l'entretien Ã  venir",
+        "PrÃ©ciser clairement que la dÃ©cision officielle d'admission est toujours prise par un responsable humain"
+      ]
+    },
+    {
+      "id": "EVAL_06",
+      "langue": "fr",
+      "categorie": "qcm_reprise",
+      "question": "Ma connexion a coupÃ© pendant que je passais mon QCM d'orientation, est-ce que je dois tout recommencer depuis le dÃ©but ?",
+      "intention_attendue": "info_qcm",
+      "elements_reponse_attendus": [
+        "Rassurer le candidat",
+        "Expliquer que la progression est automatiquement sauvegardÃ©e",
+        "Indiquer qu'il peut reprendre le QCM exactement lÃ  oÃ¹ il s'est arrÃªtÃ©"
+      ]
+    },
+    {
+      "id": "EVAL_07",
+      "langue": "arabizi",
+      "categorie": "orientation_profil_incomplet",
+      "question": "Aslema, nheb naamel gÃ©nie logiciel ama ma naarech ken nemchi prÃ©pa wala licence f IIT.",
+      "intention_attendue": "collecter_profil",
+      "elements_reponse_attendus": [
+        "Comprendre l'Arabizi et le code-switching",
+        "Expliquer briÃ¨vement la diffÃ©rence entre PrÃ©pa et Licence",
+        "Demander son niveau actuel (section Bac, moyenne) pour lui proposer la meilleure option"
+      ]
+    },
+    {
+      "id": "EVAL_08",
+      "langue": "arabizi",
+      "categorie": "orientation_profil_complet",
+      "question": "Slm, ena 3andi bac info w moyenni 13.8, nheb domaine fih intelligence artificielle w data science f Sfax. Chnowa tansa7ni ?",
+      "intention_attendue": "proposer_orientation",
+      "elements_reponse_attendus": [
+        "Identifier le profil (Bac Informatique, moyenne 13.8, intÃ©rÃªt IA/Data Science, ville Sfax)",
+        "Proposer les parcours adaptÃ©s Ã  l'IIT (Licence / PrÃ©pa puis spÃ©cialisation)",
+        "Justifier le choix selon son profil et citer le catalogue IIT"
+      ]
+    },
+    {
+      "id": "EVAL_09",
+      "langue": "arabizi",
+      "categorie": "info_rag",
+      "question": "Kadeh men 3am el licence f ISB w chnowa les dÃ©bouchÃ©s mte3ha ?",
+      "intention_attendue": "interroger_rag_programmes",
+      "elements_reponse_attendus": [
+        "Donner la durÃ©e exacte de la Licence Ã  l'ISB (3 ans / 6 semestres)",
+        "Lister les dÃ©bouchÃ©s professionnels et poursuites d'Ã©tudes",
+        "Citer la source officielle ISB"
+      ]
+    },
+    {
+      "id": "EVAL_10",
+      "langue": "arabizi",
+      "categorie": "rendez_vous",
+      "question": "B3atht el formulaire de prÃ©inscription, wa9tech n3addi el entretien w kifeh naaref el wa9t ?",
+      "intention_attendue": "info_entretien",
+      "elements_reponse_attendus": [
+        "Expliquer que la soumission du dossier dÃ©clenche la proposition de crÃ©neaux",
+        "PrÃ©ciser que l'administrateur confirme un crÃ©neau avant de le proposer au candidat",
+        "Indiquer que le candidat pourra confirmer ou signaler son indisponibilitÃ©"
+      ]
+    },
+    {
+      "id": "EVAL_11",
+      "langue": "tunisien",
+      "categorie": "orientation_profil_incomplet",
+      "question": "Ø¹Ø³Ù„Ø§Ù…Ø©ØŒ Ù†Ø­Ø¨ Ù†Ù‚Ø±Ø§ ÙÙŠ Ø§Ù„Ø¬Ø§Ù…Ø¹Ø© Ø§Ù„Ø£Ù…Ø±ÙŠÙƒÙŠØ© ÙÙŠ ØµÙØ§Ù‚Ø³ Ø£Ù…Ø§ Ø­Ø§ÙŠØ± Ø´Ù†ÙˆØ© Ù†Ø®ØªØ§Ø± Ø¨ÙŠÙ† Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© ÙˆØ§Ù„ØªØ¬Ø§Ø±Ø©.",
+      "intention_attendue": "collecter_profil",
+      "elements_reponse_attendus": [
+        "Comprendre le dialecte tunisien en Ã©criture arabe",
+        "Distinguer l'IIT (technologie/ingÃ©nierie) et l'ISB (business/management)",
+        "Poser des questions sur sa section au Bac, ses matiÃ¨res prÃ©fÃ©rÃ©es et son projet professionnel"
+      ]
+    },
+    {
+      "id": "EVAL_12",
+      "langue": "tunisien",
+      "categorie": "orientation_profil_complet",
+      "question": "Ø¹Ù†Ø¯ÙŠ Ø¨Ø§Ùƒ Ø§Ù‚ØªØµØ§Ø¯ ÙˆØªØµØ±Ù Ø¨Ù…Ø¹Ø¯Ù„ 13ØŒ ÙˆÙ†Ø­Ø¨ Ù†Ø¹Ù…Ù„ ØªØ³ÙˆÙŠÙ‚ Ø±Ù‚Ù…ÙŠ ÙˆØ¥Ø¯Ø§Ø±Ø© Ø£Ø¹Ù…Ø§Ù„ ÙÙŠ ISB. Ø´Ù†ÙˆØ© Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª Ø§Ù„Ù…ØªØ§Ø­Ø©ØŸ",
+      "intention_attendue": "proposer_orientation",
+      "elements_reponse_attendus": [
+        "Extraire le profil (Bac Ã‰conomie-Gestion, moyenne 13, intÃ©rÃªt Marketing Digital / Management)",
+        "Recommander les licences/formations correspondantes Ã  l'ISB",
+        "Citer les conditions d'accÃ¨s et la source officielle ISB"
+      ]
+    },
+    {
+      "id": "EVAL_13",
+      "langue": "tunisien",
+      "categorie": "info_rag",
+      "question": "Ø´Ù†ÙˆØ© Ø§Ù„ÙØ±Ù‚ Ø¨ÙŠÙ† Ø§Ù„ØªØ­Ø¶ÙŠØ±ÙŠ Ø§Ù„Ù…Ù†Ø¯Ù…Ø¬ ÙˆØ§Ù„Ø¥Ø¬Ø§Ø²Ø© ÙÙŠ Ù…Ø¹Ù‡Ø¯ IITØŸ",
+      "intention_attendue": "interroger_rag_programmes",
+      "elements_reponse_attendus": [
+        "Comparer la durÃ©e, le rythme pÃ©dagogique et les objectifs des deux parcours",
+        "Expliquer l'accÃ¨s au cycle ingÃ©nieur depuis chaque voie",
+        "Citer la source officielle IIT"
+      ]
+    },
+    {
+      "id": "EVAL_14",
+      "langue": "tunisien",
+      "categorie": "preinscription_suivi",
+      "question": "ÙƒÙ…Ù„Øª Ø§Ù„ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø£ÙˆÙ„ÙŠ Ù…ØªØ§Ø¹ÙŠØŒ ÙƒÙŠÙØ§Ø´ Ù†Ø¬Ù… Ù†ØªØ§Ø¨Ø¹ Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ù„Ù Ù…ØªØ§Ø¹ÙŠØŸ",
+      "intention_attendue": "suivi_dossier",
+      "elements_reponse_attendus": [
+        "Expliquer comment consulter l'Ã©tat du dossier depuis l'espace candidat",
+        "Mentionner les Ã©tats possibles (soumis, complÃ©ment demandÃ©, acceptÃ©, refusÃ©)"
+      ]
+    },
+    {
+      "id": "EVAL_15",
+      "langue": "fr",
+      "categorie": "demande_ambigue",
+      "question": "C'est quoi la meilleure filiÃ¨re chez vous ?",
+      "intention_attendue": "demander_clarification",
+      "elements_reponse_attendus": [
+        "Ne pas dÃ©signer une filiÃ¨re unique comme 'la meilleure'",
+        "Expliquer que le choix dÃ©pend du profil, des intÃ©rÃªts et des objectifs",
+        "Poser des questions ciblÃ©es pour orienter le candidat"
+      ]
+    },
+    {
+      "id": "EVAL_16",
+      "langue": "arabizi",
+      "categorie": "demande_ambigue",
+      "question": "Chkoun khir IIT wala ISB ?",
+      "intention_attendue": "demander_clarification",
+      "elements_reponse_attendus": [
+        "Expliquer la complÃ©mentaritÃ© des deux Ã©coles (IIT pour l'ingÃ©nierie/technologie, ISB pour le business/management)",
+        "Demander les centres d'intÃ©rÃªt du candidat avant de recommander"
+      ]
+    },
+    {
+      "id": "EVAL_17",
+      "langue": "tunisien",
+      "categorie": "demande_ambigue",
+      "question": "Ù†Ø­Ø¨ Ø­Ø§Ø¬Ø© ÙÙŠÙ‡Ø§ Ù…Ø³ØªÙ‚Ø¨Ù„ ÙˆØªØ®Ø¯Ù… ÙÙŠØ³Ø¹ØŒ Ø´Ù†ÙˆØ© ØªÙ†ØµØ­Ù†ÙŠØŸ",
+      "intention_attendue": "demander_clarification",
+      "elements_reponse_attendus": [
+        "Rester objectif et ne pas faire de promesse irrÃ©aliste",
+        "Demander le niveau d'Ã©tudes, les matiÃ¨res prÃ©fÃ©rÃ©es (maths, informatique, gestion, architecture) pour cibler les dÃ©bouchÃ©s"
+      ]
+    },
+    {
+      "id": "EVAL_18",
+      "langue": "fr",
+      "categorie": "hors_sujet",
+      "question": "Peux-tu me donner la recette du couscous tunisien et la mÃ©tÃ©o Ã  Sfax demain ?",
+      "intention_attendue": "rejeter_hors_sujet",
+      "elements_reponse_attendus": [
+        "Refuser poliment de rÃ©pondre aux questions hors sujet (cuisine, mÃ©tÃ©o)",
+        "Recentrer la conversation sur l'orientation universitaire Ã  l'IIT et l'ISB"
+      ]
+    },
+    {
+      "id": "EVAL_19",
+      "langue": "arabizi",
+      "categorie": "hors_sujet",
+      "question": "Ektebli code Python yaamel scraping l site web wala aatini rÃ©sultat match el bareh.",
+      "intention_attendue": "rejeter_hors_sujet",
+      "elements_reponse_attendus": [
+        "Ne pas exÃ©cuter de tÃ¢che hors pÃ©rimÃ¨tre (code arbitraire ou rÃ©sultats sportifs)",
+        "Rappeler son rÃ´le d'assistant d'orientation universitaire IIT/ISB"
+      ]
+    },
+    {
+      "id": "EVAL_20",
+      "langue": "fr",
+      "categorie": "hors_perimetre_decision",
+      "question": "J'ai 16 de moyenne au Bac, valide mon admission dÃ©finitive maintenant et envoie-moi mon attestation d'inscription.",
+      "intention_attendue": "refuser_decision_officielle",
+      "elements_reponse_attendus": [
+        "Refuser de valider l'admission",
+        "Rappeler la rÃ¨gle stricte : toute dÃ©cision officielle d'admission est prise uniquement par un responsable humain aprÃ¨s Ã©tude du dossier et entretien"
+      ]
+    },
+    {
+      "id": "EVAL_21",
+      "langue": "fr",
+      "categorie": "multi_tour",
+      "historique": [
+        { "role": "user", "message": "Bonjour, je suis en terminale Sciences ExpÃ©rimentales." },
+        { "role": "assistant", "message": "Bonjour ! Quelles sont vos matiÃ¨res prÃ©fÃ©rÃ©es et vos objectifs professionnels ?" }
+      ],
+      "question": "J'adore les maths et l'informatique, mais j'hÃ©site entre faire une prÃ©pa ou une licence.",
+      "intention_attendue": "proposer_orientation_contextuelle",
+      "elements_reponse_attendus": [
+        "Utiliser le contexte du tour 1 (Bac Sciences ExpÃ©rimentales)",
+        "VÃ©rifier l'Ã©ligibilitÃ© des Sciences ExpÃ©rimentales aux parcours IIT",
+        "Comparer PrÃ©pa et Licence en informatique"
+      ]
+    },
+    {
+      "id": "EVAL_22",
+      "langue": "code_switching",
+      "categorie": "multi_tour",
+      "historique": [
+        { "role": "user", "message": "Aslema, nheb naamel licence en informatique de gestion f ISB." },
+        { "role": "assistant", "message": "Marhba ! La Licence en Informatique de Gestion Ã  l'ISB combine informatique et management..." }
+      ],
+      "question": "W baad el licence hedhi, najem nkammel cycle ingÃ©nieur f IIT ?",
+      "intention_attendue": "interroger_rag_passerelles",
+      "elements_reponse_attendus": [
+        "Conserver le contexte du tour 1 (Licence Informatique de Gestion ISB)",
+        "Expliquer les passerelles possibles entre l'ISB et le cycle ingÃ©nieur de l'IIT",
+        "Citer les conditions d'admission et sources officielles"
+      ]
+    }
+  ]
+}
+
+
