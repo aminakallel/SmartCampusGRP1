@@ -26,6 +26,7 @@ def test_docs_are_available() -> None:
 
 
 
+
 def test_openapi_json_is_available_and_lists_only_implemented_routes() -> None:
     response = client.get("/openapi.json")
     assert response.status_code == 200
@@ -39,7 +40,11 @@ def test_openapi_json_is_available_and_lists_only_implemented_routes() -> None:
         "/api/v1/formations/{formation_id}",
         "/api/v1/formations/{formation_id}/criteres",
         "/api/v1/criteres/{critere_id}",
+        "/api/v1/memory/sessions/{session_id}/messages",
+        "/api/v1/memory/sessions/{session_id}",
+        "/api/v1/memory/sessions/{session_id}/information",
     }
+
 
 
 

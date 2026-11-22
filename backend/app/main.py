@@ -13,6 +13,7 @@ from app.api.v1.etablissements import router as etablissements_router
 from app.core.errors import register_error_handlers
 from app.core.config import Settings, get_settings
 from app.catalogue_consultation.router import router as catalogue_consultation_router
+from app.conversation_memory.router import router as memory_router
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
@@ -30,7 +31,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     application.include_router(health_router)
     application.include_router(catalogue_consultation_router)
-
+    application.include_router(memory_router, prefix="/api/v1")
     application.include_router(etablissements_router, prefix="/api/v1")
     application.include_router(formations_router, prefix="/api/v1")
     application.include_router(criteria_router, prefix="/api/v1")
