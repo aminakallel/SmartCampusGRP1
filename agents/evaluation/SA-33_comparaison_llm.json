@@ -1,0 +1,926 @@
+{
+  "Qwen/Qwen2.5-7B-Instruct": {
+    "latence_moyenne_sec": 15.18,
+    "evaluations": [
+      {
+        "id": "EVAL_01",
+        "langue": "fr",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Bonjour, je veux faire de l'informatique Ã  l'IIT, quelle formation me conseillez-vous ?",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Saluer le candidat",
+          "Ne pas imposer de formation immÃ©diatement car le profil est incomplet",
+          "Demander le niveau scolaire actuel (ex: Bac, Licence), la spÃ©cialitÃ©/section et les rÃ©sultats ou objectifs"
+        ],
+        "reponse_modele": "Bonjour ! Je suis ravi de vous aider dans votre choix d'études. Pour faire de l'informatique à l'IIT, il existe plusieurs options que je peux vous recommander. Toutefois, pour vous donner des conseils plus précis, j'ai besoin de quelques informations supplémentaires :\n\n1. **Niveau scolaire actuel** : Avez-vous déjà terminé vos études secondaires (baccalauréat) ?\n2. **Section** : Avez-vous obtenu votre baccalauréat en section scientifique (S) ou technologique (T) ?\n3. **Notes** : Avez-vous des notes spécifiques qui pourraient influencer votre admission ?\n\nSi vous avez ces informations, je pourrai vous recommander la formation la plus adaptée. Sinon, voici les principales options disponibles :\n\n### 1. **Cycle Ingénieur en Informatique**\n- **Description** : Ce cycle est conçu pour former des ingénieurs en informatique avec une approche pratique et théorique.\n- **Durée** : 5 ans après le baccalauréat.\n- **Sources** : [Site officiel IIT](https://www.iit-sfax.tn/)\n\n### 2. **Licence en Informatique**\n- **Description** : Cette licence est une formation générale en informatique qui peut être suivie par des étudiants ayant",
+        "latence_sec": 23.15
+      },
+      {
+        "id": "EVAL_02",
+        "langue": "fr",
+        "categorie": "orientation_profil_complet",
+        "question": "J'ai un Bac MathÃ©matiques avec 14.5 de moyenne, j'aime la programmation et je veux devenir ingÃ©nieur logiciel mais avec une approche pratique dÃ¨s la premiÃ¨re annÃ©e. Que choisir entre PrÃ©pa et Licence ?",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Comparer le cycle PrÃ©paratoire intÃ©grÃ© et la Licence en Informatique Ã  l'IIT",
+          "Expliquer les passerelles vers le cycle IngÃ©nieur",
+          "Mettre en avant le cÃ´tÃ© pratique de la Licence vs thÃ©orique de la PrÃ©pa",
+          "Citer les sources officielles IIT"
+        ],
+        "reponse_modele": "Bonjour ! Je comprends que tu as un intérêt marqué pour la programmation et que tu souhaites devenir ingénieur logiciel tout en ayant une approche pratique dès ta première année. \n\nPour répondre à ta question, il faut prendre en compte plusieurs facteurs :\n\n1. **Prépa Intégrée** : Cette option te permettrait d'intégrer directement l'Université après ton bac, sans passer par une année préparatoire. C'est une voie qui te permettrait de commencer ta formation d'ingénieur dès la première année. Cependant, elle est généralement plus compétitive et exigeante.\n\n2. **Licence** : Cette option te permettrait de suivre une année de licence générale avant de pouvoir intégrer une filière d'ingénieur. Cela peut être une bonne option si tu souhaites avoir une base solide dans divers domaines avant de te spécialiser en informatique.\n\n### Questions de Clarification\n\n- **Niveau de Compétences en Programmation** : As-tu déjà une expérience en programmation ou es-tu plutôt à la recherche de formations qui t'aident à développer ces compétences ?\n- **Objectif Spécifique** : Veux-tu intégrer directement une filière d'ingénierie logicielle ou préfères-tu avoir une formation plus générale avant",
+        "latence_sec": 20.84
+      },
+      {
+        "id": "EVAL_03",
+        "langue": "fr",
+        "categorie": "info_rag",
+        "question": "Quelles sont les conditions d'accÃ¨s au cycle ingÃ©nieur Ã  l'IIT et combien de semestres dure la formation ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "PrÃ©ciser les niveaux requis (cycle prÃ©paratoire, licence ou Ã©quivalent)",
+          "Indiquer la durÃ©e officielle en semestres/annÃ©es selon le corpus IIT",
+          "Citer explicitement la source officielle (brochure/programme IIT)"
+        ],
+        "reponse_modele": "Pour accéder au cycle ingénieur à l'IIT, il faut passer par la préparation intégrée qui dure 3 ans. Voici les étapes et les conditions d'accès :\n\n### Conditions d'Accès à la Préparation Intégrée (P.I.) :\n1. **Baccalauréat** : Vous devez avoir obtenu votre Baccalauréat avec une moyenne générale supérieure ou égale à 10/20.\n2. **Section** : Vous devez être inscrit dans une section scientifique (Mathématiques, Physique, Chimie, Informatique, ou Sciences de la Terre).\n3. **Concours de Sélection** : Après avoir validé votre Baccalauréat, vous devez passer un concours de sélection organisé par l'IIT. Ce concours évalue vos connaissances et capacités en mathématiques et en sciences.\n\n### Détails du Cycle Ingénieur :\n- **Durée** : Le cycle ingénieur dure 5 ans après la préparation intégrée. Cela signifie que si vous entrez en P.I. à 18 ans, vous sortirez ingénieur à environ 23 ans.\n- **Structure** : La formation se divise en deux parties principales :\n  - **Préparation Intégrée (3 ans)** : Cette phase",
+        "latence_sec": 21.0
+      },
+      {
+        "id": "EVAL_04",
+        "langue": "fr",
+        "categorie": "info_rag",
+        "question": "Quelles sont les formations proposÃ©es par l'ISB dans le domaine du management et de la finance ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Lister les parcours disponibles Ã  l'ISB dans ces domaines",
+          "Indiquer les dÃ©bouchÃ©s et conditions d'accÃ¨s",
+          "Citer la source officielle ISB"
+        ],
+        "reponse_modele": "Bonjour ! L'International School of Business (ISB) à Sfax propose plusieurs formations en management et en finance. Voici les principaux programmes :\n\n1. **Licence Professionnelle en Gestion** :\n   - Cette formation vise à former des professionnels capables de gérer efficacement les ressources humaines, financières et opérationnelles dans divers secteurs d'activité.\n\n2. **Master en Gestion des Entreprises (MBA)** :\n   - Ce programme offre une formation approfondie en gestion des entreprises, couvrant des domaines tels que la stratégie d'entreprise, la gestion de projet, la finance d'entreprise, etc.\n\n3. **Master en Finance** :\n   - Ce master se concentre sur les aspects financiers des entreprises et des marchés financiers. Il prépare les étudiants aux métiers de la banque, de l'assurance, de la gestion d'actifs, etc.\n\n4. **Master en Marketing** :\n   - Ce programme forme les étudiants aux techniques et outils modernes de marketing, leur permettant de devenir des experts en communication et en stratégie de marché.\n\nPour plus de détails sur chaque programme, notamment les exigences d'admission, les cours offerts, et les opportunités de stage ou de travail, je vous recommande de consulter le site web officiel de l'ISB ou de contacter direct",
+        "latence_sec": 20.87
+      },
+      {
+        "id": "EVAL_05",
+        "langue": "fr",
+        "categorie": "preinscription_suivi",
+        "question": "Comment faire pour m'inscrire officiellement et est-ce que tu peux valider mon admission tout de suite ?",
+        "intention_attendue": "expliquer_preinscription",
+        "elements_attendus": [
+          "Expliquer le passage par le formulaire externe de prÃ©inscription",
+          "Mentionner le QCM personnalisÃ© et l'entretien Ã  venir",
+          "PrÃ©ciser clairement que la dÃ©cision officielle d'admission est toujours prise par un responsable humain"
+        ],
+        "reponse_modele": "Je comprends votre intérêt pour l'inscription mais je ne peux pas valider directement votre admission car cela nécessite un processus officiel qui implique plusieurs étapes. Pour vous aider dans ce processus, j'ai besoin de quelques informations supplémentaires.\n\nPour commencer, pourriez-vous me dire quel niveau d'études vous souhaitez poursuivre ? Par exemple, êtes-vous intéressé par la licence, le cycle ingénieur, ou un master à l'ISB ? \n\nEnsuite, pourriez-vous me donner votre niveau scolaire actuel et vos notes si possible ? Ces informations m'aideront à vous orienter vers la filière la plus adaptée.\n\nN'hésitez pas à me donner plus de détails sur vos objectifs académiques et professionnels, cela m'aidera également à vous conseiller de manière plus précise.\n\nUne fois que j'aurai ces informations, je pourrai vous guider sur les étapes à suivre pour vous inscrire et vous orienter vers les filières qui correspondent le mieux à vos besoins.",
+        "latence_sec": 16.06
+      },
+      {
+        "id": "EVAL_06",
+        "langue": "fr",
+        "categorie": "qcm_reprise",
+        "question": "Ma connexion a coupÃ© pendant que je passais mon QCM d'orientation, est-ce que je dois tout recommencer depuis le dÃ©but ?",
+        "intention_attendue": "info_qcm",
+        "elements_attendus": [
+          "Rassurer le candidat",
+          "Expliquer que la progression est automatiquement sauvegardÃ©e",
+          "Indiquer qu'il peut reprendre le QCM exactement lÃ  oÃ¹ il s'est arrÃªtÃ©"
+        ],
+        "reponse_modele": "Non, vous n'avez pas besoin de tout recommencer. Continuez où vous étiez ! Si votre connexion s'est coupée, revenez simplement à la question où vous étiez et continuez votre questionnaire. N'hésitez pas si vous avez des questions sur les réponses que vous avez données précédemment. Je suis là pour vous aider !",
+        "latence_sec": 5.51
+      },
+      {
+        "id": "EVAL_07",
+        "langue": "arabizi",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Aslema, nheb naamel gÃ©nie logiciel ama ma naarech ken nemchi prÃ©pa wala licence f IIT.",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Comprendre l'Arabizi et le code-switching",
+          "Expliquer briÃ¨vement la diffÃ©rence entre PrÃ©pa et Licence",
+          "Demander son niveau actuel (section Bac, moyenne) pour lui proposer la meilleure option"
+        ],
+        "reponse_modele": "Bonjour Aslema,\n\nJe comprends que tu te poses des questions sur ton avenir académique et que tu hésites entre la préparation pour intégrer une prêpa ou directement la licence en génie logiciel à l'IIT. Pour mieux t'aider, j'ai besoin de quelques informations supplémentaires :\n\n1. Quel est ton niveau actuel scolaire ?\n2. As-tu déjà eu des cours de programmation ou de mathématiques avancées ?\n3. Quelles sont tes motivations et tes objectifs professionnels à long terme ?\n\nCes informations me permettront de te conseiller plus précisément. Par exemple, si tu as déjà une solide base en mathématiques et en programmation, la licence pourrait être une option intéressante. Si tu prépares à une prêpa, cela pourrait renforcer tes chances d'intégrer une grande école d'ingénieurs.\n\nN'hésite pas à me donner plus de détails pour que je puisse t'aider au mieux !",
+        "latence_sec": 15.53
+      },
+      {
+        "id": "EVAL_08",
+        "langue": "arabizi",
+        "categorie": "orientation_profil_complet",
+        "question": "Slm, ena 3andi bac info w moyenni 13.8, nheb domaine fih intelligence artificielle w data science f Sfax. Chnowa tansa7ni ?",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Identifier le profil (Bac Informatique, moyenne 13.8, intÃ©rÃªt IA/Data Science, ville Sfax)",
+          "Proposer les parcours adaptÃ©s Ã  l'IIT (Licence / PrÃ©pa puis spÃ©cialisation)",
+          "Justifier le choix selon son profil et citer le catalogue IIT"
+        ],
+        "reponse_modele": "Slam, welch 3andi ta bac info w moyenni 13.8. Ana 3awd chakalou chawech 3la domaine fih intelligence artificielle w data science f Sfax. Ana 3awd chawech 3li ana 7omr 7awleth 3la filières liha 3ml intelligence artificielle w data science.\n\nAna 3awd 7awleth 3li ana filière \"Cycle Ingénieur\" f IIT, 7awleth 3li ana 5 filières 3la 7omr 7awleth 3la filière \"Ingénierie Informatique\". Ana 3awd 7awleth 3li ana filière \"Prépa Intégrée\" f IIT, 7awleth 3li ana 5 filières 3la 7omr 7awleth 3la filière \"Informatique\".\n\nAna 3awd 7awleth 3li ana filière \"Licence\" f IIT, 7awleth 3li ana 5 filières 3la 7omr 7awleth 3la filière \"Informatique\".\n\nAna 3awd 7awleth 3li ana filière \"Master en Gestion",
+        "latence_sec": 20.6
+      },
+      {
+        "id": "EVAL_09",
+        "langue": "arabizi",
+        "categorie": "info_rag",
+        "question": "Kadeh men 3am el licence f ISB w chnowa les dÃ©bouchÃ©s mte3ha ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Donner la durÃ©e exacte de la Licence Ã  l'ISB (3 ans / 6 semestres)",
+          "Lister les dÃ©bouchÃ©s professionnels et poursuites d'Ã©tudes",
+          "Citer la source officielle ISB"
+        ],
+        "reponse_modele": "Salām 3aleikoum ! Wa7ed ma3doule, 3omrane keda men 3am el licence f ISB w chnowa les dëbouchés mte3ha. ISB (International School of Business) mte3ha 3alwiya 3la tawjihiya w tafawouliya f les dëbouchés. \n\nLes dëbouchés mte3ha men licence f ISB 3awra:\n- Tawjih mta9awil w tajribiyen f les 3alwiya w les 3abtibya\n- Tafawouliya f les 3abtibya w les 3alwiya\n- Tawjih mta9awil w tajribiyen f les 3abtibya\n- Tafawouliya f les 3abtibya w les 3alwiya\n- Tawjih mta9awil w tajribiyen f les 3alwiya\n\nLes dëbouchés 3la tawjihiya w tafawouliya 3awra:\n- Tawjih mta9awil w tajribiyen f les 3alwiya w les 3abtibya\n- Tafaw",
+        "latence_sec": 20.74
+      },
+      {
+        "id": "EVAL_10",
+        "langue": "arabizi",
+        "categorie": "rendez_vous",
+        "question": "B3atht el formulaire de prÃ©inscription, wa9tech n3addi el entretien w kifeh naaref el wa9t ?",
+        "intention_attendue": "info_entretien",
+        "elements_attendus": [
+          "Expliquer que la soumission du dossier dÃ©clenche la proposition de crÃ©neaux",
+          "PrÃ©ciser que l'administrateur confirme un crÃ©neau avant de le proposer au candidat",
+          "Indiquer que le candidat pourra confirmer ou signaler son indisponibilitÃ©"
+        ],
+        "reponse_modele": "Cher étudiant, merci de votre intérêt pour l'ISB à Sfax. Pour répondre à votre question, voici les informations générales :\n\n1. **Entretien** : Après la soumission du formulaire de pré-inscription, vous serez contacté par l'école pour un entretien. Cet entretien a pour but de mieux connaître vos motivations et vos projets futurs.\n\n2. **Horaires de l'entretien** : Les dates et horaires exacts de l'entretien seront communiqués par e-mail après que votre dossier de pré-inscription soit complet. Il est important de vérifier régulièrement votre boîte mail.\n\nPour plus de détails, veuillez consulter le site web officiel de l'ISB ou contacter directement leur service d'orientation via le formulaire de contact disponible sur leur site.",
+        "latence_sec": 13.5
+      },
+      {
+        "id": "EVAL_11",
+        "langue": "tunisien",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Ø¹Ø³Ù„Ø§Ù…Ø©ØŒ Ù†Ø­Ø¨ Ù†Ù‚Ø±Ø§ ÙÙŠ Ø§Ù„Ø¬Ø§Ù…Ø¹Ø© Ø§Ù„Ø£Ù…Ø±ÙŠÙƒÙŠØ© ÙÙŠ ØµÙØ§Ù‚Ø³ Ø£Ù…Ø§ Ø­Ø§ÙŠØ± Ø´Ù†ÙˆØ© Ù†Ø®ØªØ§Ø± Ø¨ÙŠÙ† Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© ÙˆØ§Ù„ØªØ¬Ø§Ø±Ø©.",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Comprendre le dialecte tunisien en Ã©criture arabe",
+          "Distinguer l'IIT (technologie/ingÃ©nierie) et l'ISB (business/management)",
+          "Poser des questions sur sa section au Bac, ses matiÃ¨res prÃ©fÃ©rÃ©es et son projet professionnel"
+        ],
+        "reponse_modele": "Je suis désolé, mais votre message semble être en arabe avec des caractères encodés de manière incorrecte. Pourriez-vous reformuler votre question en français standard ou en arabe standard ? Je serai ravi de vous aider une fois que je comprendrai mieux ce que vous recherchez.",
+        "latence_sec": 4.97
+      },
+      {
+        "id": "EVAL_12",
+        "langue": "tunisien",
+        "categorie": "orientation_profil_complet",
+        "question": "Ø¹Ù†Ø¯ÙŠ Ø¨Ø§Ùƒ Ø§Ù‚ØªØµØ§Ø¯ ÙˆØªØµØ±Ù Ø¨Ù…Ø¹Ø¯Ù„ 13ØŒ ÙˆÙ†Ø­Ø¨ Ù†Ø¹Ù…Ù„ ØªØ³ÙˆÙŠÙ‚ Ø±Ù‚Ù…ÙŠ ÙˆØ¥Ø¯Ø§Ø±Ø© Ø£Ø¹Ù…Ø§Ù„ ÙÙŠ ISB. Ø´Ù†ÙˆØ© Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª Ø§Ù„Ù…ØªØ§Ø­Ø©ØŸ",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Extraire le profil (Bac Ã‰conomie-Gestion, moyenne 13, intÃ©rÃªt Marketing Digital / Management)",
+          "Recommander les licences/formations correspondantes Ã  l'ISB",
+          "Citer les conditions d'accÃ¨s et la source officielle ISB"
+        ],
+        "reponse_modele": "Bonjour ! Je comprends que vous souhaitez orienter votre parcours vers l'ISB (International School of Business) à Sfax, Tunisie. Pour mieux vous conseiller, j'ai besoin de quelques informations supplémentaires :\n\n1. Quel est votre niveau scolaire actuel ?\n2. Avez-vous déjà suivi des cours dans une section spécifique (si applicable) ?\n3. Avez-vous des notes de vos dernières années d'études ?\n4. Quels sont vos objectifs professionnels futurs ?\n\nCes informations m'aideront à vous orienter plus précisément vers les filières appropriées au sein de l'ISB.",
+        "latence_sec": 9.84
+      },
+      {
+        "id": "EVAL_13",
+        "langue": "tunisien",
+        "categorie": "info_rag",
+        "question": "Ø´Ù†ÙˆØ© Ø§Ù„ÙØ±Ù‚ Ø¨ÙŠÙ† Ø§Ù„ØªØ­Ø¶ÙŠØ±ÙŠ Ø§Ù„Ù…Ù†Ø¯Ù…Ø¬ ÙˆØ§Ù„Ø¥Ø¬Ø§Ø²Ø© ÙÙŠ Ù…Ø¹Ù‡Ø¯ IITØŸ",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Comparer la durÃ©e, le rythme pÃ©dagogique et les objectifs des deux parcours",
+          "Expliquer l'accÃ¨s au cycle ingÃ©nieur depuis chaque voie",
+          "Citer la source officielle IIT"
+        ],
+        "reponse_modele": "Bonjour ! Je suis ravi de vous aider dans votre orientation universitaire vers l'IIT à Sfax. Pour commencer, pourriez-vous me donner plus de détails sur votre profil ? Par exemple :\n\n- Quel est votre niveau scolaire actuel ?\n- Avez-vous déjà fait des études supérieures ?\n- Quelle section vous intéresse-t-elle (Informatique, Mathématiques, Physique, etc.) ?\n- Avez-vous des notes de vos dernières années d'études ?\n- Quels sont vos objectifs professionnels futurs ?\n\nCes informations m'aideront à vous orienter vers la filière la plus adaptée.",
+        "latence_sec": 10.09
+      },
+      {
+        "id": "EVAL_14",
+        "langue": "tunisien",
+        "categorie": "preinscription_suivi",
+        "question": "ÙƒÙ…Ù„Øª Ø§Ù„ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø£ÙˆÙ„ÙŠ Ù…ØªØ§Ø¹ÙŠØŒ ÙƒÙŠÙØ§Ø´ Ù†Ø¬Ù… Ù†ØªØ§Ø¨Ø¹ Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ù„Ù Ù…ØªØ§Ø¹ÙŠØŸ",
+        "intention_attendue": "suivi_dossier",
+        "elements_attendus": [
+          "Expliquer comment consulter l'Ã©tat du dossier depuis l'espace candidat",
+          "Mentionner les Ã©tats possibles (soumis, complÃ©ment demandÃ©, acceptÃ©, refusÃ©)"
+        ],
+        "reponse_modele": "Bonjour ! Je vois que vous utilisez un code qui ne correspond pas clairement à votre question. Pourriez-vous reformuler votre demande en français standard ou en arabe standard ? Par exemple, vous pouvez me dire si vous souhaitez savoir plus sur les filières d'études à l'IIT ou à l'ISB, ou si vous avez besoin d'aide pour choisir une filière en fonction de vos objectifs personnels.",
+        "latence_sec": 6.62
+      },
+      {
+        "id": "EVAL_15",
+        "langue": "fr",
+        "categorie": "demande_ambigue",
+        "question": "C'est quoi la meilleure filiÃ¨re chez vous ?",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Ne pas dÃ©signer une filiÃ¨re unique comme 'la meilleure'",
+          "Expliquer que le choix dÃ©pend du profil, des intÃ©rÃªts et des objectifs",
+          "Poser des questions ciblÃ©es pour orienter le candidat"
+        ],
+        "reponse_modele": "La meilleure filière dépend vraiment de vos intérêts, de vos objectifs professionnels et de votre niveau scolaire actuel. Pour vous aider à faire un choix éclairé, j'ai besoin de quelques informations supplémentaires :\n\n1. **Quel est votre niveau scolaire actuel** (Bac, Baccalauréat, etc.) ?\n2. **Quelle est votre section** (Scientifique, Littéraire, Économique, etc.) ?\n3. **Quelles sont vos intérêts et objectifs professionnels** ?\n4. **Avez-vous déjà une idée de la filière que vous voulez poursuivre après l'université** ?\n\nUne fois que j'ai ces informations, je pourrai vous recommander la filière la plus adaptée.",
+        "latence_sec": 11.89
+      },
+      {
+        "id": "EVAL_16",
+        "langue": "arabizi",
+        "categorie": "demande_ambigue",
+        "question": "Chkoun khir IIT wala ISB ?",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Expliquer la complÃ©mentaritÃ© des deux Ã©coles (IIT pour l'ingÃ©nierie/technologie, ISB pour le business/management)",
+          "Demander les centres d'intÃ©rÃªt du candidat avant de recommander"
+        ],
+        "reponse_modele": "Bonjour ! Je suis ravi de vous aider dans votre choix entre IIT et ISB. Pour me permettre de vous orienter correctement, pourriez-vous me donner quelques informations sur vous ?\n\n1. Quel est votre niveau actuel d'études ?\n2. Avez-vous déjà choisi une section spécifique (si oui, laquelle) ?\n3. Avez-vous des notes de vos dernières évaluations ?\n4. Quels sont vos objectifs futurs ? Souhaitez-vous poursuivre des études supérieures, vous diriger vers le monde professionnel, etc. ?\n\nCes informations m'aideront à vous orienter vers la meilleure option.",
+        "latence_sec": 9.9
+      },
+      {
+        "id": "EVAL_17",
+        "langue": "tunisien",
+        "categorie": "demande_ambigue",
+        "question": "Ù†Ø­Ø¨ Ø­Ø§Ø¬Ø© ÙÙŠÙ‡Ø§ Ù…Ø³ØªÙ‚Ø¨Ù„ ÙˆØªØ®Ø¯Ù… ÙÙŠØ³Ø¹ØŒ Ø´Ù†ÙˆØ© ØªÙ†ØµØ­Ù†ÙŠØŸ",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Rester objectif et ne pas faire de promesse irrÃ©aliste",
+          "Demander le niveau d'Ã©tudes, les matiÃ¨res prÃ©fÃ©rÃ©es (maths, informatique, gestion, architecture) pour cibler les dÃ©bouchÃ©s"
+        ],
+        "reponse_modele": "Je suis désolé, mais votre message semble être en arabe avec une écriture qui n'est pas claire. Pourriez-vous reformuler votre question en français standard ou en arabe standard ? Je serai ravi de vous aider avec vos questions concernant l'orientation universitaire à l'IIT ou à l'ISB.",
+        "latence_sec": 5.29
+      },
+      {
+        "id": "EVAL_18",
+        "langue": "fr",
+        "categorie": "hors_sujet",
+        "question": "Peux-tu me donner la recette du couscous tunisien et la mÃ©tÃ©o Ã  Sfax demain ?",
+        "intention_attendue": "rejeter_hors_sujet",
+        "elements_attendus": [
+          "Refuser poliment de rÃ©pondre aux questions hors sujet (cuisine, mÃ©tÃ©o)",
+          "Recentrer la conversation sur l'orientation universitaire Ã  l'IIT et l'ISB"
+        ],
+        "reponse_modele": "Bien sûr, je peux vous aider avec cela ! Pour commencer, voici la recette du couscous tunisien :\n\n### Recette du Couscous Tunisien\n\n**Ingrédients :**\n- 1 kg de couscous\n- 1 oignon\n- 500 g de viande (agneau, poulet ou mouton)\n- 2 carottes\n- 2 courgettes\n- 2 poivrons\n- 1 bouquet de coriandre fraîche\n- 2 cuillères à soupe d'huile d'olive\n- 1 litre de bouillon de viande\n- Sel et poivre au goût\n- 1 cuillère à café de cumin\n- 1 cuillère à café de paprika\n- 1 cuillère à café de thym séché\n- 1 cuillère à café de romarin séché\n\n**Instructions :**\n\n1. **Préparation des légumes :** Émincez finement l'oignon, les carottes, les courgettes et les poivrons.\n\n2. **Cuisson de la viande :** Faites revenir la viande dans l'huile d'olive jusqu'à ce qu'elle soit dorée. Ajoutez l'oignon et faites-le revenir jusqu'à ce qu'il soit translucide. Aj",
+        "latence_sec": 20.81
+      },
+      {
+        "id": "EVAL_19",
+        "langue": "arabizi",
+        "categorie": "hors_sujet",
+        "question": "Ektebli code Python yaamel scraping l site web wala aatini rÃ©sultat match el bareh.",
+        "intention_attendue": "rejeter_hors_sujet",
+        "elements_attendus": [
+          "Ne pas exÃ©cuter de tÃ¢che hors pÃ©rimÃ¨tre (code arbitraire ou rÃ©sultats sportifs)",
+          "Rappeler son rÃ´le d'assistant d'orientation universitaire IIT/ISB"
+        ],
+        "reponse_modele": "Pour réaliser du scraping sur un site web avec Python, tu peux utiliser plusieurs bibliothèques comme `requests` pour récupérer le contenu de la page et `BeautifulSoup` pour analyser le HTML. Voici un exemple de base pour commencer :\n\n1. Installe les bibliothèques nécessaires si ce n'est pas déjà fait :\n```bash\npip install requests beautifulsoup4\n```\n\n2. Voici un exemple de script Python pour scraper un site web et extraire des informations :\n\n```python\nimport requests\nfrom bs4 import BeautifulSoup\n\n# URL du site web que tu veux scraper\nurl = \"http://exemple.com\"\n\n# Envoie une requête GET à l'URL\nresponse = requests.get(url)\n\n# Vérifie si la requête a réussi\nif response.status_code == 200:\n    # Parse le contenu HTML avec BeautifulSoup\n    soup = BeautifulSoup(response.content, 'html.parser')\n    \n    # Exemple : extrait tous les titres <h1>\n    titles = soup.find_all('h1')\n    for title in titles:\n        print(title.text)\nelse:\n    print(f\"La requête a échoué avec le statut {response.status_code}\")\n\n# Pour éviter les problèmes de captchas et de rate limiting, \n# il peut être nécessaire d'utiliser des headers et parfois un proxy\nheaders = {\n    'User-Agent': 'Mozilla/5.",
+        "latence_sec": 20.87
+      },
+      {
+        "id": "EVAL_20",
+        "langue": "fr",
+        "categorie": "hors_perimetre_decision",
+        "question": "J'ai 16 de moyenne au Bac, valide mon admission dÃ©finitive maintenant et envoie-moi mon attestation d'inscription.",
+        "intention_attendue": "refuser_decision_officielle",
+        "elements_attendus": [
+          "Refuser de valider l'admission",
+          "Rappeler la rÃ¨gle stricte : toute dÃ©cision officielle d'admission est prise uniquement par un responsable humain aprÃ¨s Ã©tude du dossier et entretien"
+        ],
+        "reponse_modele": "Je comprends votre enthousiasme, mais je ne peux pas valider directement votre admission définitive car cela dépasse mes capacités. Je suis conçu pour vous aider à orienter votre choix universitaire et à comprendre les parcours disponibles, mais je ne peux pas effectuer de démarches administratives.\n\nPour valider votre admission définitive, vous devrez suivre les procédures spécifiques de l'IIT ou de l'ISB. Voici ce que vous devez faire :\n\n1. **Vérifiez vos résultats** : Assurez-vous que vos notes sont correctement enregistrées et que vous avez atteint les critères d'admission requis par l'établissement.\n\n2. **Contactez l'établissement** : Communiquez avec l'administration de l'IIT ou de l'ISB pour savoir comment valider votre admission définitive. Ils vous fourniront les documents nécessaires et les étapes à suivre.\n\n3. **Remplissez les formulaires** : Vous devrez peut-être remplir des formulaires spécifiques pour valider votre admission.\n\n4. **Payez les frais** : Si nécessaire, payez les frais d'inscription ou les frais de dossier.\n\n5. **Obtenez votre attestation** : Une fois ces étapes terminées, vous recevrez votre attestation d'inscription.\n\nSi vous avez besoin de plus",
+        "latence_sec": 20.86
+      },
+      {
+        "id": "EVAL_21",
+        "langue": "fr",
+        "categorie": "multi_tour",
+        "question": "J'adore les maths et l'informatique, mais j'hÃ©site entre faire une prÃ©pa ou une licence.",
+        "intention_attendue": "proposer_orientation_contextuelle",
+        "elements_attendus": [
+          "Utiliser le contexte du tour 1 (Bac Sciences ExpÃ©rimentales)",
+          "VÃ©rifier l'Ã©ligibilitÃ© des Sciences ExpÃ©rimentales aux parcours IIT",
+          "Comparer PrÃ©pa et Licence en informatique"
+        ],
+        "reponse_modele": "C'est une excellente question ! Voici quelques informations qui pourraient vous aider à prendre une décision :\n\n### Préparation aux Écoles d'Ingénieurs (Prépa)\n- **Avantages** : \n  - **Formation intensive** : Vous bénéficiez d'une formation très rigoureuse en mathématiques et en sciences.\n  - **Admission selective** : Les écoles d'ingénieurs en Tunisie sont très sélectives et offrent souvent des bourses.\n  - **Flexibilité** : Après la prépa, vous pouvez choisir parmi plusieurs filières ingénierie.\n\n- **Institut International de Technologie (IIT)** :\n  - **Cycle Ingénieur** : Offre une formation en ingénierie généralisée avec une spécialisation possible en informatique, mathématiques, etc.\n  - **Lien direct avec le monde professionnel** : Vous avez la possibilité de vous intégrer directement dans le monde professionnel après le cycle ingénieur.\n\n### Licence\n- **Avantages** :\n  - **Flexibilité** : Vous pouvez choisir entre différentes filières comme mathématiques appliquées, informatique, etc.\n  - **Temps de transition** : Si vous n'êtes pas sûr de votre choix, la licence vous donne plus de temps pour vous orienter.\n  - **Possibilité de poursuite** : Vous pouvez poursuivre vos",
+        "latence_sec": 20.82
+      },
+      {
+        "id": "EVAL_22",
+        "langue": "code_switching",
+        "categorie": "multi_tour",
+        "question": "W baad el licence hedhi, najem nkammel cycle ingÃ©nieur f IIT ?",
+        "intention_attendue": "interroger_rag_passerelles",
+        "elements_attendus": [
+          "Conserver le contexte du tour 1 (Licence Informatique de Gestion ISB)",
+          "Expliquer les passerelles possibles entre l'ISB et le cycle ingÃ©nieur de l'IIT",
+          "Citer les conditions d'admission et sources officielles"
+        ],
+        "reponse_modele": "Oui, c'est possible ! Après avoir obtenu votre Licence en Informatique de Gestion à l'ISB, vous pouvez poursuivre vos études en Cycle Ingénieur au sein de l'IIT (Institut International de Technologie).\n\nPour cela, vous devrez passer par une épreuve d'entrée spécifique organisée par l'IIT. Cette épreuve peut inclure des tests de mathématiques, de physique, de chimie et de français, ainsi que des épreuves spécifiques à l'informatique.\n\nIl est important de noter que chaque année, les exigences peuvent varier, donc il serait utile de vérifier les conditions exactes sur le site web de l'IIT ou en contactant directement leur service d'orientation.\n\nSi vous avez besoin de plus d'informations sur les matières à préparer ou sur le processus d'inscription, je peux vous aider avec ça.",
+        "latence_sec": 14.12
+      }
+    ]
+  },
+  "mistralai/Mistral-7B-Instruct-v0.3": {
+    "latence_moyenne_sec": 21.78,
+    "evaluations": [
+      {
+        "id": "EVAL_01",
+        "langue": "fr",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Bonjour, je veux faire de l'informatique Ã  l'IIT, quelle formation me conseillez-vous ?",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Saluer le candidat",
+          "Ne pas imposer de formation immÃ©diatement car le profil est incomplet",
+          "Demander le niveau scolaire actuel (ex: Bac, Licence), la spÃ©cialitÃ©/section et les rÃ©sultats ou objectifs"
+        ],
+        "reponse_modele": "Bonjour ! Il est très intéressant de voir que tu as envie d'apprendre l'informatique à l'IIT. Pour commencer, il est important de connaître ton niveau scolaire actuel et tes notes pour pouvoir te recommander la formation la plus adaptée.\n\nSi tu es actuellement en collège, je te conseille de faire la préparation au baccalauréat puis de suivre la préparation intégrée à l'IIT en informatique. Cette préparation intégrée est une formation de deux ans qui prépare les étudiants au baccalauréat et les prépare à intégrer directement le cycle ingénieur à l'IIT.\n\nSi tu es déjà titulaire du baccalauréat, tu peux choisir entre la licence en informatique ou le cycle ingénieur en informatique. La licence est une formation de trois ans qui te permettra de maîtriser les bases de l'informatique et de pouvoir travailler dans différents domaines de l'informatique. Le cycle ingénieur est une formation de cinq ans qui te permettra de maîtriser les différents aspects de l'informatique et de pouvoir travailler dans des domaines plus sp",
+        "latence_sec": 22.4
+      },
+      {
+        "id": "EVAL_02",
+        "langue": "fr",
+        "categorie": "orientation_profil_complet",
+        "question": "J'ai un Bac MathÃ©matiques avec 14.5 de moyenne, j'aime la programmation et je veux devenir ingÃ©nieur logiciel mais avec une approche pratique dÃ¨s la premiÃ¨re annÃ©e. Que choisir entre PrÃ©pa et Licence ?",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Comparer le cycle PrÃ©paratoire intÃ©grÃ© et la Licence en Informatique Ã  l'IIT",
+          "Expliquer les passerelles vers le cycle IngÃ©nieur",
+          "Mettre en avant le cÃ´tÃ© pratique de la Licence vs thÃ©orique de la PrÃ©pa",
+          "Citer les sources officielles IIT"
+        ],
+        "reponse_modele": "Bonjour! Je suis heureux de vous aider dans votre choix d'études. En tant qu'étudiant ayant obtenu le Bac Mathématiques avec une moyenne de 14.5, vous avez des chances élevées d'être admis dans les filières d'ingénieur logiciel à l'IIT.\n\nIl y a deux options principales à l'IIT qui pourraient vous intéresser :\n\n1. Prépa intégrée : Cette option est destinée aux étudiants qui ont obtenu le Baccalauréat avec une moyenne élevée. Elle dure deux ans et prépare les étudiants à la suite de cycles ingénieur. Vous pourrez suivre des cours de mathématiques, physique, informatique et anglais pendant ces deux années.\n2. Cycle Ingénieur : Cette option est destinée aux étudiants qui ont déjà suivi une préparation préalable en mathématiques, physique et informatique. Elle dure trois ans et couvre des sujets tels que les mathématiques, les sciences de l'ingénieur, les sciences informatiques, les sciences économiques et les sciences sociales.\n\nEn fonction de votre intérêt pour la programm",
+        "latence_sec": 22.49
+      },
+      {
+        "id": "EVAL_03",
+        "langue": "fr",
+        "categorie": "info_rag",
+        "question": "Quelles sont les conditions d'accÃ¨s au cycle ingÃ©nieur Ã  l'IIT et combien de semestres dure la formation ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "PrÃ©ciser les niveaux requis (cycle prÃ©paratoire, licence ou Ã©quivalent)",
+          "Indiquer la durÃ©e officielle en semestres/annÃ©es selon le corpus IIT",
+          "Citer explicitement la source officielle (brochure/programme IIT)"
+        ],
+        "reponse_modele": "Bonjour, je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie.\n\nPour accéder au cycle ingénieur à l'IIT, il est nécessaire de répondre à certaines conditions :\n\n1. Obtenir un baccalauréat scientifique (Bac S) ou un baccalauréat technologique (Bac T) avec une note moyenne de 12/20 ou plus.\n2. Réussir l'examen d'entrée à l'IIT.\n3. Répondre à l'appel à candidature en respectant les délais impartis.\n\nLe cycle ingénieur à l'IIT dure 5 ans et est divisé en 10 semestres.\n\nPour plus d'informations, je vous invite à consulter le site web de l'IIT : https://iit.tn/fr/\n\nSi vous avez des questions supplémentaires ou si certaines informations manquent dans votre profil, n'hésitez pas à me poser des questions. Je suis là pour vous aider.",
+        "latence_sec": 22.44
+      },
+      {
+        "id": "EVAL_04",
+        "langue": "fr",
+        "categorie": "info_rag",
+        "question": "Quelles sont les formations proposÃ©es par l'ISB dans le domaine du management et de la finance ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Lister les parcours disponibles Ã  l'ISB dans ces domaines",
+          "Indiquer les dÃ©bouchÃ©s et conditions d'accÃ¨s",
+          "Citer la source officielle ISB"
+        ],
+        "reponse_modele": "Bien sûr, l'International School of Business (ISB) à Sfax, Tunisie, propose plusieurs formations dans les domaines du management et de la finance. Voici quelques-unes :\n\n1. Licence en Management : Cette formation est proposée pour les étudiants qui souhaitent acquérir une solide base en management, y compris les principes de gestion, la planification, l'organisation, le contrôle et l'analyse des données.\n\n2. Licence en Finance : Cette formation est proposée pour les étudiants qui souhaitent acquérir une solide compréhension des principes de finance, y compris les principes de comptabilité, d'analyse financière, de gestion des risques et de gestion des investissements.\n\n3. Licence en Marketing : Cette formation est proposée pour les étudiants qui souhaitent acquérir une solide compréhension des principes de marketing, y compris les principes de marketing mix, de stratégie de marketing, de marketing numérique et de marketing international.\n\n4. Master en Management : Cette formation est proposée pour les étudiants qui souhaitent poursuivre leurs études après leur licence en management, et acquérir une compréhension plus approfond",
+        "latence_sec": 22.35
+      },
+      {
+        "id": "EVAL_05",
+        "langue": "fr",
+        "categorie": "preinscription_suivi",
+        "question": "Comment faire pour m'inscrire officiellement et est-ce que tu peux valider mon admission tout de suite ?",
+        "intention_attendue": "expliquer_preinscription",
+        "elements_attendus": [
+          "Expliquer le passage par le formulaire externe de prÃ©inscription",
+          "Mentionner le QCM personnalisÃ© et l'entretien Ã  venir",
+          "PrÃ©ciser clairement que la dÃ©cision officielle d'admission est toujours prise par un responsable humain"
+        ],
+        "reponse_modele": "Je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie. Je suis là pour vous aider dans votre processus d'inscription et de choix de filière.\n\nPour vous inscrire officiellement, il faut suivre les étapes suivantes :\n\n1. Vérifiez que vous avez un niveau scolaire suffisant pour vous inscrire à l'IIT ou l'ISB.\n2. Accédez au site web de l'IIT ou l'ISB pour trouver les informations nécessaires sur les filières proposées et les exigences d'admission.\n3. Téléchargez et complétez l'application d'inscription en ligne.\n4. Prenez rendez-vous pour une entrevue d'admission.\n5. Soumettez votre dossier complet, y compris votre CV, lettre de motivation, notes scolaires et certificats de compétences.\n6. Attendez la décision de l'université sur votre admission.\n\nJe ne peux pas valider votre admission officiellement, mais je su",
+        "latence_sec": 22.23
+      },
+      {
+        "id": "EVAL_06",
+        "langue": "fr",
+        "categorie": "qcm_reprise",
+        "question": "Ma connexion a coupÃ© pendant que je passais mon QCM d'orientation, est-ce que je dois tout recommencer depuis le dÃ©but ?",
+        "intention_attendue": "info_qcm",
+        "elements_attendus": [
+          "Rassurer le candidat",
+          "Expliquer que la progression est automatiquement sauvegardÃ©e",
+          "Indiquer qu'il peut reprendre le QCM exactement lÃ  oÃ¹ il s'est arrÃªtÃ©"
+        ],
+        "reponse_modele": "Bien sûr, il n'y a pas de problème. Tu peux recommencer ton QCM d'orientation depuis le début. Si tu as des difficultés à le terminer, n'hesite pas à me poser des questions pour clarifier les points qui t'étonnent.\n\nPour répondre à tes questions, je me baserai sur les informations disponibles. Si certaines données sont manquantes, je te poserai des questions pour mieux te conseiller.\n\nPour plus d'informations sur les filières proposées à l'IIT (Licence, Prépa intégrée, Cycle Ingénieur) et à l'ISB (Licences et Masters en gestion/finance/marketing), je te recommande de consulter le site web de l'IIT et de l'ISB :\n\n- IIT : <https://iit.tn/>\n- ISB : <https://isb.tn/>\n\nJe suis là pour te fournir des informations et des conseils sur les filières proposées à l'IIT et à l'ISB. Je ne peux pas valider une admission officielle, mais je peux te donner des conseils sur les filières qui pourraient être adaptées à",
+        "latence_sec": 22.39
+      },
+      {
+        "id": "EVAL_07",
+        "langue": "arabizi",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Aslema, nheb naamel gÃ©nie logiciel ama ma naarech ken nemchi prÃ©pa wala licence f IIT.",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Comprendre l'Arabizi et le code-switching",
+          "Expliquer briÃ¨vement la diffÃ©rence entre PrÃ©pa et Licence",
+          "Demander son niveau actuel (section Bac, moyenne) pour lui proposer la meilleure option"
+        ],
+        "reponse_modele": "Bonjour Aslema,\n\nJe suis l'assistant d'orientation universitaire de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie.\n\nVous avez indiqué que vous souhaitez étudier le génie logiciel. Il existe plusieurs possibilités pour vous à l'IIT.\n\nPour commencer, il y a la préparatoire intégrée (Prépa) en génie informatique qui dure 2 ans. Cette préparatoire vous préparera à la licence en génie informatique.\n\nEnsuite, il y a la licence en génie logiciel et systèmes informatiques qui dure 4 ans. Cette licence est un bon choix pour vous si vous souhaitez devenir un ingénieur en génie logiciel.\n\nEnfin, il y a le cycle Ingénieur en génie logiciel qui dure 5 ans. Ce cycle est un choix plus avancé qui vous permettra de devenir un ingénieur spécialisé en génie logiciel.\n\nJe vous recommande de consulter le site web de l'IIT pour plus d'informations sur ces filières et pour vous",
+        "latence_sec": 22.24
+      },
+      {
+        "id": "EVAL_08",
+        "langue": "arabizi",
+        "categorie": "orientation_profil_complet",
+        "question": "Slm, ena 3andi bac info w moyenni 13.8, nheb domaine fih intelligence artificielle w data science f Sfax. Chnowa tansa7ni ?",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Identifier le profil (Bac Informatique, moyenne 13.8, intÃ©rÃªt IA/Data Science, ville Sfax)",
+          "Proposer les parcours adaptÃ©s Ã  l'IIT (Licence / PrÃ©pa puis spÃ©cialisation)",
+          "Justifier le choix selon son profil et citer le catalogue IIT"
+        ],
+        "reponse_modele": "Salut ! Bienvenue sur SmartCampus AI à Sfax, Institut International de Technologie et International School of Business. Je suis heureux de te rencontrer.\n\nEn tant qu'étudiant ayant obtenu un baccalauréat scientifique avec une moyenne de 13.8, tu as des chances de suivre des études dans le domaine de l'intelligence artificielle et des sciences des données à Sfax.\n\nPour commencer, il est important de savoir que les filières proposées à l'IIT sont la Licence, la Préparatoire intégrée et le Cycle Ingénieur. Pour l'ISB, nous proposons des licences et des masters en gestion, finance et marketing.\n\nEn fonction de ton objectif de suivre des études dans le domaine de l'IA et des sciences des données, je te recommande la filière Cycle Ingénieur à l'IIT, qui est un programme de 5 ans qui te permettra de développer tes compétences en ingénierie logicielle et en sciences des données.\n\nCependant, pour une décision plus précise, il serait utile de connaître ton niveau scolaire et ton niveau de compétence en mathématiques et informat",
+        "latence_sec": 22.45
+      },
+      {
+        "id": "EVAL_09",
+        "langue": "arabizi",
+        "categorie": "info_rag",
+        "question": "Kadeh men 3am el licence f ISB w chnowa les dÃ©bouchÃ©s mte3ha ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Donner la durÃ©e exacte de la Licence Ã  l'ISB (3 ans / 6 semestres)",
+          "Lister les dÃ©bouchÃ©s professionnels et poursuites d'Ã©tudes",
+          "Citer la source officielle ISB"
+        ],
+        "reponse_modele": "Bonjour Kadeh, je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie.\n\nJe suis heureux de vous aider dans votre choix d'études. La Licence en ISB offre plusieurs options de spécialisations telles que la gestion, la finance et le marketing. Les diplômés de ces licences peuvent trouver des emplois dans des domaines tels que la gestion de projets, la finance d'entreprise, la gestion de la distribution, la gestion de la communication, la gestion des ressources humaines, la gestion financière, la gestion de la production, la gestion des investissements, la gestion de la qualité, la gestion des opérations, la gestion des risques, la gestion des ressources, la gestion des ventes, la gestion des marchés, la gestion des technologies de l'information et de la communication, la gestion des systèmes d'information, la gestion des ressources humaines, la gestion des ressources naturelles, la gestion des ressources financières, la gestion des ressources humaines, la",
+        "latence_sec": 22.27
+      },
+      {
+        "id": "EVAL_10",
+        "langue": "arabizi",
+        "categorie": "rendez_vous",
+        "question": "B3atht el formulaire de prÃ©inscription, wa9tech n3addi el entretien w kifeh naaref el wa9t ?",
+        "intention_attendue": "info_entretien",
+        "elements_attendus": [
+          "Expliquer que la soumission du dossier dÃ©clenche la proposition de crÃ©neaux",
+          "PrÃ©ciser que l'administrateur confirme un crÃ©neau avant de le proposer au candidat",
+          "Indiquer que le candidat pourra confirmer ou signaler son indisponibilitÃ©"
+        ],
+        "reponse_modele": "Bonjour, merci de remplir le formulaire de préinscription avec les informations demandées. Une fois que nous aurons toutes les informations nécessaires, nous pourrons vous aider à déterminer la filière qui correspond le mieux à vos objectifs et à vos compétences.\n\nL'entretien est une étape importante de la procédure d'admission. Il vous permettra de présenter vos compétences et de discuter de vos objectifs avec les membres de la commission d'admission. Il est important de préparer l'entretien en réfléchissant à vos objectifs, à vos compétences et à vos intérêts.\n\nPour plus d'informations sur les filières proposées à l'IIT (Licence, Prépa intégrée, Cycle Ingénieur) et à l'ISB (Licences et Masters en gestion/finance/marketing), veuillez consulter le site web de l'IIT et de l'ISB.\n\nN'hésitez pas à me contacter si vous avez des questions supplémentaires.",
+        "latence_sec": 20.29
+      },
+      {
+        "id": "EVAL_11",
+        "langue": "tunisien",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Ø¹Ø³Ù„Ø§Ù…Ø©ØŒ Ù†Ø­Ø¨ Ù†Ù‚Ø±Ø§ ÙÙŠ Ø§Ù„Ø¬Ø§Ù…Ø¹Ø© Ø§Ù„Ø£Ù…Ø±ÙŠÙƒÙŠØ© ÙÙŠ ØµÙØ§Ù‚Ø³ Ø£Ù…Ø§ Ø­Ø§ÙŠØ± Ø´Ù†ÙˆØ© Ù†Ø®ØªØ§Ø± Ø¨ÙŠÙ† Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© ÙˆØ§Ù„ØªØ¬Ø§Ø±Ø©.",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Comprendre le dialecte tunisien en Ã©criture arabe",
+          "Distinguer l'IIT (technologie/ingÃ©nierie) et l'ISB (business/management)",
+          "Poser des questions sur sa section au Bac, ses matiÃ¨res prÃ©fÃ©rÃ©es et son projet professionnel"
+        ],
+        "reponse_modele": "Bonjour! Je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie. Je suis là pour vous aider dans votre processus d'orientation universitaire.\n\nPour commencer, pouvez-vous me dire quel est votre niveau scolaire actuel, votre section, vos notes et vos objectifs pour l'avenir? Cela me permettra de vous recommander la filière la plus adaptée.\n\nJe suis disponible pour vous aider uniquement sur les parcours officiels IIT (Licence, Prépa intégrée, Cycle Ingénieur) et ISB (Licences et Masters en gestion/finance/marketing). Je vous recommanderai des filières en fonction de vos résultats scolaires et de vos objectifs.\n\nJe ne suis pas un décideur humain et ne peux pas valider une admission officielle. Je suis ici pour vous aider à prendre des décisions informées. Si vous avez des questions sur les sujets hors orientation universitaire, je suis désolé mais je ne peux pas vous répondre.",
+        "latence_sec": 22.41
+      },
+      {
+        "id": "EVAL_12",
+        "langue": "tunisien",
+        "categorie": "orientation_profil_complet",
+        "question": "Ø¹Ù†Ø¯ÙŠ Ø¨Ø§Ùƒ Ø§Ù‚ØªØµØ§Ø¯ ÙˆØªØµØ±Ù Ø¨Ù…Ø¹Ø¯Ù„ 13ØŒ ÙˆÙ†Ø­Ø¨ Ù†Ø¹Ù…Ù„ ØªØ³ÙˆÙŠÙ‚ Ø±Ù‚Ù…ÙŠ ÙˆØ¥Ø¯Ø§Ø±Ø© Ø£Ø¹Ù…Ø§Ù„ ÙÙŠ ISB. Ø´Ù†ÙˆØ© Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª Ø§Ù„Ù…ØªØ§Ø­Ø©ØŸ",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Extraire le profil (Bac Ã‰conomie-Gestion, moyenne 13, intÃ©rÃªt Marketing Digital / Management)",
+          "Recommander les licences/formations correspondantes Ã  l'ISB",
+          "Citer les conditions d'accÃ¨s et la source officielle ISB"
+        ],
+        "reponse_modele": "Bonjour! Je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie. Je suis heureux de vous aider dans votre processus d'orientation universitaire.\n\nPour commencer, pouvez-vous me donner plus d'informations sur votre profil scolaire, votre niveau actuel, vos notes et vos objectifs? Cela me permettra de vous donner des recommandations plus précises pour les filières IIT et ISB.\n\nLes filières disponibles à l'IIT sont la Licence, la Prépa intégrée et le Cycle Ingénieur. Les filières disponibles à l'ISB sont les Licences en gestion, finance et marketing, ainsi que les Masters en gestion et finance.\n\nJe suis désolé, mais je ne suis pas un décideur humain et je ne peux pas valider une admission officielle ou répondre à des sujets hors orientation universitaire. Je suis là pour vous aider dans votre processus d'orientation et vous fournir des informations sur les filières disponibles à l'I",
+        "latence_sec": 22.57
+      },
+      {
+        "id": "EVAL_13",
+        "langue": "tunisien",
+        "categorie": "info_rag",
+        "question": "Ø´Ù†ÙˆØ© Ø§Ù„ÙØ±Ù‚ Ø¨ÙŠÙ† Ø§Ù„ØªØ­Ø¶ÙŠØ±ÙŠ Ø§Ù„Ù…Ù†Ø¯Ù…Ø¬ ÙˆØ§Ù„Ø¥Ø¬Ø§Ø²Ø© ÙÙŠ Ù…Ø¹Ù‡Ø¯ IITØŸ",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Comparer la durÃ©e, le rythme pÃ©dagogique et les objectifs des deux parcours",
+          "Expliquer l'accÃ¨s au cycle ingÃ©nieur depuis chaque voie",
+          "Citer la source officielle IIT"
+        ],
+        "reponse_modele": "Bonjour! Je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie. Je suis heureux de vous aider dans votre processus d'orientation universitaire.\n\nPour commencer, pouvez-vous me donner plus d'informations sur votre profil scolaire, tels que votre niveau scolaire actuel, votre section, vos notes et vos objectifs à long terme? Cela m'aidera à vous recommander la filière la plus adaptée.\n\nJe suis disponible pour vous aider uniquement sur les parcours officiels IIT (Licence, Prépa intégrée, Cycle Ingénieur) et ISB (Licences et Masters en gestion/finance/marketing). Je cite toujours mes sources pour vous assurer de la fiabilité de mes informations.\n\nJe ne suis pas un décideur humain et ne peux pas valider une admission officielle ou répondre à des sujets hors orientation universitaire. Je suis là pour vous aider à explorer vos options et à vous fournir des informations utiles pour vot",
+        "latence_sec": 22.37
+      },
+      {
+        "id": "EVAL_14",
+        "langue": "tunisien",
+        "categorie": "preinscription_suivi",
+        "question": "ÙƒÙ…Ù„Øª Ø§Ù„ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø£ÙˆÙ„ÙŠ Ù…ØªØ§Ø¹ÙŠØŒ ÙƒÙŠÙØ§Ø´ Ù†Ø¬Ù… Ù†ØªØ§Ø¨Ø¹ Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ù„Ù Ù…ØªØ§Ø¹ÙŠØŸ",
+        "intention_attendue": "suivi_dossier",
+        "elements_attendus": [
+          "Expliquer comment consulter l'Ã©tat du dossier depuis l'espace candidat",
+          "Mentionner les Ã©tats possibles (soumis, complÃ©ment demandÃ©, acceptÃ©, refusÃ©)"
+        ],
+        "reponse_modele": "Bonjour! Je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie. Je suis heureux de vous aider dans votre processus d'orientation universitaire.\n\nPour commencer, pouvez-vous me donner quelques informations sur votre profil scolaire actuel, votre section, vos notes et vos objectifs pour l'avenir? Cela me permettra de vous recommander la filière la plus appropriée.\n\nJe suis disponible pour vous aider uniquement sur les parcours officiels IIT (Licence, Prépa intégrée, Cycle Ingénieur) et ISB (Licences et Masters en gestion/finance/marketing). Je cite toujours mes sources pour vous garantir de l'information la plus précise et la plus fiable.\n\nJe ne suis pas un décideur humain, donc je ne peux pas valider une admission officielle ou répondre à des sujets hors orientation universitaire.\n\nJe suis programmé pour comprendre et répondre naturellement en français, dialecte tunisien ou arabizi selon la langue de",
+        "latence_sec": 22.18
+      },
+      {
+        "id": "EVAL_15",
+        "langue": "fr",
+        "categorie": "demande_ambigue",
+        "question": "C'est quoi la meilleure filiÃ¨re chez vous ?",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Ne pas dÃ©signer une filiÃ¨re unique comme 'la meilleure'",
+          "Expliquer que le choix dÃ©pend du profil, des intÃ©rÃªts et des objectifs",
+          "Poser des questions ciblÃ©es pour orienter le candidat"
+        ],
+        "reponse_modele": "Bienvenue sur le site de l'Assistant d'Orientation Universitaire de SmartCampus AI à Sfax, Tunisie. Je suis heureux de vous aider dans votre choix de filière. Pour commencer, pourriez-vous me donner quelques informations sur votre niveau scolaire actuel, votre section, vos notes et vos objectifs professionnels ? Cela me permettra de vous donner des conseils plus précis.\n\nPour l'IIT, nous proposons des filières de Licence, de Prépa intégrée et de Cycle Ingénieur. Les filières de Licence sont : Informatique, Mathématiques, Physique, Chimie, Génie Electrique, Génie Mécanique, Génie Civil, Génie des Matériaux et Génie des Procédés. Les filières de Prépa intégrée sont : Mathématiques, Physique, Chimie et Génie Electrique. Le Cycle Ingénieur est proposé pour les filières de Génie Electrique, Génie Mécanique, Génie des Procédés et Génie des Matériaux.\n\nPour l'ISB, nous proposons des licences en Gestion, Finance",
+        "latence_sec": 22.37
+      },
+      {
+        "id": "EVAL_16",
+        "langue": "arabizi",
+        "categorie": "demande_ambigue",
+        "question": "Chkoun khir IIT wala ISB ?",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Expliquer la complÃ©mentaritÃ© des deux Ã©coles (IIT pour l'ingÃ©nierie/technologie, ISB pour le business/management)",
+          "Demander les centres d'intÃ©rÃªt du candidat avant de recommander"
+        ],
+        "reponse_modele": "Bonjour! Je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie. Je suis heureux de vous aider dans votre processus d'orientation universitaire.\n\nPour commencer, pouvez-vous me donner plus d'informations sur votre profil scolaire actuel, votre niveau et vos objectifs? Cela me permettra de vous recommander la filière la plus adaptée à vos besoins.\n\nJe suis disponible pour vous aider en français, dialecte tunisien ou arabizi selon votre préférence.\n\nJe suis basé sur les parcours officiels IIT (Licence, Prépa intégrée, Cycle Ingénieur) et ISB (Licences et Masters en gestion/finance/marketing) et je cite toujours mes sources.\n\nJe ne suis pas un décideur humain et je ne peux pas valider une admission officielle ou répondre à des sujets hors orientation universitaire.",
+        "latence_sec": 20.32
+      },
+      {
+        "id": "EVAL_17",
+        "langue": "tunisien",
+        "categorie": "demande_ambigue",
+        "question": "Ù†Ø­Ø¨ Ø­Ø§Ø¬Ø© ÙÙŠÙ‡Ø§ Ù…Ø³ØªÙ‚Ø¨Ù„ ÙˆØªØ®Ø¯Ù… ÙÙŠØ³Ø¹ØŒ Ø´Ù†ÙˆØ© ØªÙ†ØµØ­Ù†ÙŠØŸ",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Rester objectif et ne pas faire de promesse irrÃ©aliste",
+          "Demander le niveau d'Ã©tudes, les matiÃ¨res prÃ©fÃ©rÃ©es (maths, informatique, gestion, architecture) pour cibler les dÃ©bouchÃ©s"
+        ],
+        "reponse_modele": "Bonjour! Je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie. Je suis heureux de vous aider dans votre processus d'orientation universitaire.\n\nPour commencer, pouvez-vous me donner plus d'informations sur votre profil scolaire, votre section, vos notes et vos objectifs? Cela me permettra de vous recommander la filière la plus adaptée.\n\nJe suis disponible pour vous aider uniquement sur les parcours officiels IIT (Licence, Prépa intégrée, Cycle Ingénieur) et ISB (Licences et Masters en gestion/finance/marketing). Je cite toujours mes sources.\n\nJe ne suis pas un décideur humain, donc je ne peux pas valider une admission officielle ou répondre à des sujets hors orientation universitaire.\n\nBienvenue à SmartCampus AI!",
+        "latence_sec": 19.13
+      },
+      {
+        "id": "EVAL_18",
+        "langue": "fr",
+        "categorie": "hors_sujet",
+        "question": "Peux-tu me donner la recette du couscous tunisien et la mÃ©tÃ©o Ã  Sfax demain ?",
+        "intention_attendue": "rejeter_hors_sujet",
+        "elements_attendus": [
+          "Refuser poliment de rÃ©pondre aux questions hors sujet (cuisine, mÃ©tÃ©o)",
+          "Recentrer la conversation sur l'orientation universitaire Ã  l'IIT et l'ISB"
+        ],
+        "reponse_modele": "Bien sûr, je suis heureux de vous aider!\n\nVoici la recette traditionnelle de couscous tunisien :\n\nIngrédients :\n- 1 kg de couscous\n- 1 kg de viande (bœuf, agneau ou poulet)\n- 1 kg de légumes (poireaux, carottes, courgettes, aubergines, poivrons)\n- 1 oignon\n- 2 gousses d'ail\n- 1 cuillère à café de safran\n- Sel, poivre, oignons, huile d'olive, eau\n\nPréparation :\n1. Préparer les légumes en les coupant en petits morceaux.\n2. Faire revenir l'oignon et l'ail haché dans l'huile d'olive.\n3. Ajouter les légumes et la viande coupée en petits morceaux.\n4. Faire cuire à feu doux jusqu'à ce que la viande soit bien cuite.\n5. Ajouter le safran, sel et poivre.\n6. Préparer le couscous selon les instructions sur le paquet.\n7. Verser la pré",
+        "latence_sec": 22.22
+      },
+      {
+        "id": "EVAL_19",
+        "langue": "arabizi",
+        "categorie": "hors_sujet",
+        "question": "Ektebli code Python yaamel scraping l site web wala aatini rÃ©sultat match el bareh.",
+        "intention_attendue": "rejeter_hors_sujet",
+        "elements_attendus": [
+          "Ne pas exÃ©cuter de tÃ¢che hors pÃ©rimÃ¨tre (code arbitraire ou rÃ©sultats sportifs)",
+          "Rappeler son rÃ´le d'assistant d'orientation universitaire IIT/ISB"
+        ],
+        "reponse_modele": "Bien sûr, je suis heureux de vous aider pour votre orientation universitaire à l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie.\n\nPour commencer, je vais vous poser quelques questions pour mieux comprendre votre profil scolaire et vos objectifs :\n\n1. Quel est votre niveau scolaire actuel ?\n2. Quelle section (sciences, mathématiques, informatique, etc.) êtes-vous actuellement dans ?\n3. Quels sont vos résultats scolaires récents ?\n4. Quels domaines d'études vous intéressent le plus (ingénierie, gestion, finance, marketing, etc.) ?\n5. Quels objectifs poursuiviez-vous à long terme ?\n\nEn fonction de vos réponses, je pourrai vous recommander les filières les plus appropriées à l'IIT et l'ISB.\n\nPour l'instant, je ne peux pas écrire du code Python pour vous fournir des résultats de scraping de sites web, mais je peux vous fournir des informations sur les filières disponibles",
+        "latence_sec": 22.46
+      },
+      {
+        "id": "EVAL_20",
+        "langue": "fr",
+        "categorie": "hors_perimetre_decision",
+        "question": "J'ai 16 de moyenne au Bac, valide mon admission dÃ©finitive maintenant et envoie-moi mon attestation d'inscription.",
+        "intention_attendue": "refuser_decision_officielle",
+        "elements_attendus": [
+          "Refuser de valider l'admission",
+          "Rappeler la rÃ¨gle stricte : toute dÃ©cision officielle d'admission est prise uniquement par un responsable humain aprÃ¨s Ã©tude du dossier et entretien"
+        ],
+        "reponse_modele": "Je suis l'assistant d'orientation universitaire intelligent de SmartCampus AI pour l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, Tunisie. Je suis heureux de vous aider dans votre processus d'orientation universitaire.\n\nPour commencer, je voudrais savoir quel niveau scolaire vous avez suivi et quel est votre objectif dans votre carrière. Cela me permettra de vous recommander la filière la plus adaptée.\n\nPour l'IIT, les options disponibles sont la Licence, la Prépa intégrée et le Cycle Ingénieur. Pour l'ISB, nous offrons des Licences et des Masters en gestion, finance et marketing.\n\nJe vous invite à consulter les sites web de l'IIT et de l'ISB pour plus d'informations sur les programmes académiques et les exigences d'admission.\n\nJe suis désolé, mais je ne peux pas valider votre admission définitive ou vous envoyer votre attestation d'inscription. Cela doit être fait par le bureau d'admission de l'IIT ou de l'ISB. Je suis là pour vous",
+        "latence_sec": 22.31
+      },
+      {
+        "id": "EVAL_21",
+        "langue": "fr",
+        "categorie": "multi_tour",
+        "question": "J'adore les maths et l'informatique, mais j'hÃ©site entre faire une prÃ©pa ou une licence.",
+        "intention_attendue": "proposer_orientation_contextuelle",
+        "elements_attendus": [
+          "Utiliser le contexte du tour 1 (Bac Sciences ExpÃ©rimentales)",
+          "VÃ©rifier l'Ã©ligibilitÃ© des Sciences ExpÃ©rimentales aux parcours IIT",
+          "Comparer PrÃ©pa et Licence en informatique"
+        ],
+        "reponse_modele": "Bonjour ! Il semble que tu aies un intérêt pour les mathématiques et l'informatique. Cela peut être un bon point de départ pour te guider vers une filière appropriée à l'IIT ou à l'ISB.\n\nPour commencer, il est important de savoir quel niveau scolaire tu as terminé et quel est ton niveau académique actuel. Cela nous permettra de te proposer des filières qui correspondent à ton niveau et à ton intérêt.\n\nEn général, si tu as terminé ton baccalauréat et que tu veux poursuivre des études supérieures en mathématiques ou en informatique, tu pourrais envisager la filière de préparation à l'ingénieur (Prépa intégrée) à l'IIT. Cette filière est conçue pour préparer les étudiants à des études supérieures en mathématiques, physique, chimie, informatique ou ingénierie.\n\nSi tu veux poursuivre des études supérieures en mathématiques ou en informatique sans passer par la préparation à l'ingénieur, tu pourrais envisager la licence en mathématiques ou en informatique à",
+        "latence_sec": 22.36
+      },
+      {
+        "id": "EVAL_22",
+        "langue": "code_switching",
+        "categorie": "multi_tour",
+        "question": "W baad el licence hedhi, najem nkammel cycle ingÃ©nieur f IIT ?",
+        "intention_attendue": "interroger_rag_passerelles",
+        "elements_attendus": [
+          "Conserver le contexte du tour 1 (Licence Informatique de Gestion ISB)",
+          "Expliquer les passerelles possibles entre l'ISB et le cycle ingÃ©nieur de l'IIT",
+          "Citer les conditions d'admission et sources officielles"
+        ],
+        "reponse_modele": "Salam ! Pour pouvoir vous orienter correctement, il est nécessaire de connaître votre niveau scolaire et vos notes. Si vous avez terminé votre baccalauréat, vous pouvez vous inscrire au cycle ingénieur à l'IIT. Les filières proposées sont :\n\n* Génie Informatique\n* Génie Electrique et Electronique\n* Génie Mécanique\n* Génie Civil\n* Génie Chimique\n* Génie des Matériaux\n* Génie des Systèmes d'Information et de Communication\n\nVous pouvez trouver plus d'informations sur les filières proposées sur le site de l'IIT : <https://iit.tn/>.\n\nSi vous avez des questions supplémentaires ou si vous souhaitez savoir si votre profil est adapté à un cycle ingénieur, n'hésitez pas à me contacter.",
+        "latence_sec": 16.97
+      }
+    ]
+  },
+  "NousResearch/Meta-Llama-3.1-8B-Instruct": {
+    "latence_moyenne_sec": 18.28,
+    "evaluations": [
+      {
+        "id": "EVAL_01",
+        "langue": "fr",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Bonjour, je veux faire de l'informatique Ã  l'IIT, quelle formation me conseillez-vous ?",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Saluer le candidat",
+          "Ne pas imposer de formation immÃ©diatement car le profil est incomplet",
+          "Demander le niveau scolaire actuel (ex: Bac, Licence), la spÃ©cialitÃ©/section et les rÃ©sultats ou objectifs"
+        ],
+        "reponse_modele": "Bonjour!\n\nPour l'IIT (Institut International de Technologie), il existe plusieurs options en informatique. Puisque vous n'avez pas mentionné votre niveau scolaire ou vos notes, je vais vous donner quelques suggestions générales.\n\nL'IIT propose plusieurs formations en informatique :\n\n1. **Licence en Informatique** : Cette formation vous permettra d'acquérir les connaissances fondamentales en informatique, notamment en programmation, bases de données, réseaux, systèmes d'exploitation, etc.\n2. **Licence en Génie Informatique** : Cette formation est plus axée sur les aspects techniques de l'informatique, comme la conception et la mise en œuvre de systèmes informatiques, la programmation, les réseaux, etc.\n3. **Licence en Cybersecurity** : Si vous êtes intéressé par la sécurité informatique, cette formation vous permettra d'apprendre à protéger les systèmes informatiques contre les menaces et les attaques.\n4. **Licence en Intelligence Artificielle et Machine Learning** : Cette formation vous permettra d'apprendre les bases de l'intelligence artificielle et du machine learning, qui sont des domaines en pleine expansion.\n\nPour choisir la bonne formation, je vous pose quelques questions :\n\n* Quel est votre niveau scolaire actuel (lycée,",
+        "latence_sec": 24.36
+      },
+      {
+        "id": "EVAL_02",
+        "langue": "fr",
+        "categorie": "orientation_profil_complet",
+        "question": "J'ai un Bac MathÃ©matiques avec 14.5 de moyenne, j'aime la programmation et je veux devenir ingÃ©nieur logiciel mais avec une approche pratique dÃ¨s la premiÃ¨re annÃ©e. Que choisir entre PrÃ©pa et Licence ?",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Comparer le cycle PrÃ©paratoire intÃ©grÃ© et la Licence en Informatique Ã  l'IIT",
+          "Expliquer les passerelles vers le cycle IngÃ©nieur",
+          "Mettre en avant le cÃ´tÃ© pratique de la Licence vs thÃ©orique de la PrÃ©pa",
+          "Citer les sources officielles IIT"
+        ],
+        "reponse_modele": "Salut!\n\nFélicitations pour tes résultats au bac! Avec une moyenne de 14.5, tu as de nombreuses options pour poursuivre tes études.\n\nPour devenir ingénieur logiciel avec une approche pratique dès la première année, je te recommande fortement de choisir la Prépa intégrée à l'IIT. Voici pourquoi :\n\n1. **Prépa intégrée :** Cette option te permet d'acquérir une formation théorique et pratique en parallèle. Tu pourras apprendre les fondamentaux de la programmation, des mathématiques et des sciences informatiques tout en développant des compétences pratiques à travers des projets et des travaux dirigés.\n2. **Approche pratique dès la première année :** Dans la Prépa intégrée, tu pourras commencer à travailler sur des projets concrets dès la première année, ce qui te permettra de mettre en pratique tes connaissances et de développer tes compétences en résolution de problèmes.\n3. **Avance dans ton parcours :** La Prépa intégrée te permettra de suivre un parcours accéléré, ce qui te permettra de terminer ton cycle ingénieur en 4 ans au lieu de 5 ans, comme pour les étudiants qui suivent la licence.\n4. **Sélection et admission",
+        "latence_sec": 24.6
+      },
+      {
+        "id": "EVAL_03",
+        "langue": "fr",
+        "categorie": "info_rag",
+        "question": "Quelles sont les conditions d'accÃ¨s au cycle ingÃ©nieur Ã  l'IIT et combien de semestres dure la formation ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "PrÃ©ciser les niveaux requis (cycle prÃ©paratoire, licence ou Ã©quivalent)",
+          "Indiquer la durÃ©e officielle en semestres/annÃ©es selon le corpus IIT",
+          "Citer explicitement la source officielle (brochure/programme IIT)"
+        ],
+        "reponse_modele": "Bonjour!\n\nSelon les informations disponibles, le cycle ingénieur à l'IIT (Institut International de Technologie) est ouvert aux étudiants qui ont terminé leur baccalauréat (bac) avec un certain niveau de réussite. Voici les conditions d'accès :\n\n1. **Baccalauréat (bac)** : Les étudiants doivent avoir obtenu leur baccalauréat avec un minimum de 12 ans d'études secondaires.\n2. **Niveau de réussite** : Les étudiants doivent avoir obtenu un minimum de 12/20 en mathématiques et en sciences physiques, et un minimum de 10/20 en langues (arabe, français ou anglais).\n3. **Tests d'admission** : Les étudiants doivent passer les tests d'admission organisés par l'IIT, qui évaluent leurs connaissances en mathématiques, en sciences physiques et en langues.\n\nLa formation de cycle ingénieur à l'IIT dure généralement 5 ans, divisés en 10 semestres. Elle est conçue pour former des ingénieurs compétents dans divers domaines tels que les sciences, la technologie, l'ingénierie et les mathématiques (STIM).\n\nVoici les étapes de la formation :\n\n1. **Semestres 1",
+        "latence_sec": 24.43
+      },
+      {
+        "id": "EVAL_04",
+        "langue": "fr",
+        "categorie": "info_rag",
+        "question": "Quelles sont les formations proposÃ©es par l'ISB dans le domaine du management et de la finance ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Lister les parcours disponibles Ã  l'ISB dans ces domaines",
+          "Indiquer les dÃ©bouchÃ©s et conditions d'accÃ¨s",
+          "Citer la source officielle ISB"
+        ],
+        "reponse_modele": "L'International School of Business (ISB) de l'IIT (Institut International de Technologie) propose plusieurs formations dans le domaine du management et de la finance. Voici quelques-unes des options disponibles :\n\n1. **Licence en Gestion** : Cette formation de 3 ans offre une formation théorique et pratique en gestion, avec des cours en marketing, finance, comptabilité, gestion des ressources humaines, etc.\n2. **Licence en Finance** : Cette formation de 3 ans se concentre sur les aspects financiers, tels que la gestion des portefeuille, la gestion des risques, la finance d'entreprise, etc.\n3. **Licence en Marketing** : Cette formation de 3 ans se concentre sur les aspects marketing, tels que la stratégie marketing, la gestion de la chaîne d'approvisionnement, la communication, etc.\n4. **Master en Gestion des Ressources Humaines** : Cette formation de 2 ans se concentre sur la gestion des ressources humaines, la motivation, la formation, la communication, etc.\n5. **Master en Finance** : Cette formation de 2 ans se concentre sur les aspects financiers avancés, tels que la finance d'entreprise, la gestion des portefeuille, la gestion des risques, etc.\n6. **Master en Marketing Stratégique** : Cette formation de",
+        "latence_sec": 24.22
+      },
+      {
+        "id": "EVAL_05",
+        "langue": "fr",
+        "categorie": "preinscription_suivi",
+        "question": "Comment faire pour m'inscrire officiellement et est-ce que tu peux valider mon admission tout de suite ?",
+        "intention_attendue": "expliquer_preinscription",
+        "elements_attendus": [
+          "Expliquer le passage par le formulaire externe de prÃ©inscription",
+          "Mentionner le QCM personnalisÃ© et l'entretien Ã  venir",
+          "PrÃ©ciser clairement que la dÃ©cision officielle d'admission est toujours prise par un responsable humain"
+        ],
+        "reponse_modele": "Bonjour! Je suis ravi de vous aider dans votre processus d'orientation universitaire!\n\nMalheureusement, je ne peux pas valider votre admission officiellement, car je suis un assistant d'orientation universitaire intelligent et non un décideur humain. Les décisions d'admission sont prises par les équipes administratives de l'IIT et de l'ISB.\n\nCependant, je peux vous aider à comprendre les étapes à suivre pour vous inscrire officiellement et vous fournir des informations précieuses sur les filières et les programmes proposés par l'IIT et l'ISB.\n\nPour vous inscrire officiellement, vous devez suivre les étapes suivantes :\n\n1. **Sélectionnez votre filière** : Choisissez la filière qui vous intéresse (Licence, Prépa intégrée, Cycle Ingénieur, Licence ou Master en gestion/finance/marketing).\n2. **Vérifiez les exigences d'admission** : Consultez le site web de l'IIT ou de l'ISB pour vérifier les exigences d'admission pour votre filière choisie (niveau scolaire, notes, tests d'admission, etc.).\n3. **Préparez vos documents** : Assurez-vous d'avoir tous les documents nécessaires, tels que vos notes scolaires, vos",
+        "latence_sec": 24.33
+      },
+      {
+        "id": "EVAL_06",
+        "langue": "fr",
+        "categorie": "qcm_reprise",
+        "question": "Ma connexion a coupÃ© pendant que je passais mon QCM d'orientation, est-ce que je dois tout recommencer depuis le dÃ©but ?",
+        "intention_attendue": "info_qcm",
+        "elements_attendus": [
+          "Rassurer le candidat",
+          "Expliquer que la progression est automatiquement sauvegardÃ©e",
+          "Indiquer qu'il peut reprendre le QCM exactement lÃ  oÃ¹ il s'est arrÃªtÃ©"
+        ],
+        "reponse_modele": "Désolé pour le problème! Heureusement que tu es en contact avec moi maintenant.\n\nPour savoir si tu dois recommencer le QCM d'orientation, il est préférable de contacter le service d'orientation ou le support technique de l'IIT/ISB pour obtenir des instructions spécifiques. Cependant, je peux t'aider à comprendre la procédure générale.\n\nSi tu as perdu ta session de connexion, il est possible que tu aies perdu les réponses que tu as saisies. Dans ce cas, il est probable que tu doives recommencer le QCM depuis le début. Mais, si tu as pu sauvegarder ton progrès ou si tu as un système de sauvegarde, tu pourrais peut-être récupérer tes réponses et continuer là où tu en étais.\n\nJe te recommande de contacter le service d'orientation ou le support technique pour obtenir des instructions précises sur la procédure à suivre. Ils pourront également vérifier si il est possible de récupérer tes réponses ou de trouver une solution pour que tu puisses continuer le QCM où tu en étais.",
+        "latence_sec": 20.54
+      },
+      {
+        "id": "EVAL_07",
+        "langue": "arabizi",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Aslema, nheb naamel gÃ©nie logiciel ama ma naarech ken nemchi prÃ©pa wala licence f IIT.",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Comprendre l'Arabizi et le code-switching",
+          "Expliquer briÃ¨vement la diffÃ©rence entre PrÃ©pa et Licence",
+          "Demander son niveau actuel (section Bac, moyenne) pour lui proposer la meilleure option"
+        ],
+        "reponse_modele": "As-salamu alaykum! Je suis ravi de vous aider!\n\nSi vous n'avez pas encore décidé de votre parcours, je peux vous aider à explorer les options disponibles à l'IIT. La prépa (préparation à l'entrée en licence) et la licence en génie logiciel sont des options intéressantes.\n\nPouvez-vous me dire quel est votre niveau actuel (lycée, baccalauréat, etc.) et vos intérêts académiques? Cela me permettra de vous donner des conseils plus ciblés.",
+        "latence_sec": 10.64
+      },
+      {
+        "id": "EVAL_08",
+        "langue": "arabizi",
+        "categorie": "orientation_profil_complet",
+        "question": "Slm, ena 3andi bac info w moyenni 13.8, nheb domaine fih intelligence artificielle w data science f Sfax. Chnowa tansa7ni ?",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Identifier le profil (Bac Informatique, moyenne 13.8, intÃ©rÃªt IA/Data Science, ville Sfax)",
+          "Proposer les parcours adaptÃ©s Ã  l'IIT (Licence / PrÃ©pa puis spÃ©cialisation)",
+          "Justifier le choix selon son profil et citer le catalogue IIT"
+        ],
+        "reponse_modele": "As-salamu alaykum!\n\nFélicitations pour tes résultats au bac! Avec une moyenne de 13,8, tu as de belles perspectives pour tes études supérieures.\n\nPour répondre à ta question, l'IIT (Institut International de Technologie) et l'ISB (International School of Business) de Sfax offrent des formations qui peuvent te permettre de développer tes compétences en intelligence artificielle et data science.\n\nVoici quelques suggestions :\n\n1. **Licence en Informatique** à l'IIT : Cette formation te permettra de développer tes compétences en programmation, en algorithmique, en bases de données et en intelligence artificielle. Tu pourras choisir des spécialités comme l'intelligence artificielle, le machine learning ou la science des données.\n2. **Licence en Mathématiques-Informatique** à l'IIT : Cette formation te donnera une solide base en mathématiques et en informatique, ce qui te permettra de développer des compétences en intelligence artificielle, en statistiques et en analyse de données.\n3. **Licence en Gestion des Systèmes d'Information** à l'ISB : Cette formation te permettra de développer tes compétences en gestion des systèmes d'information, en intelligence artificielle, en data science et en analyse de données.",
+        "latence_sec": 24.27
+      },
+      {
+        "id": "EVAL_09",
+        "langue": "arabizi",
+        "categorie": "info_rag",
+        "question": "Kadeh men 3am el licence f ISB w chnowa les dÃ©bouchÃ©s mte3ha ?",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Donner la durÃ©e exacte de la Licence Ã  l'ISB (3 ans / 6 semestres)",
+          "Lister les dÃ©bouchÃ©s professionnels et poursuites d'Ã©tudes",
+          "Citer la source officielle ISB"
+        ],
+        "reponse_modele": "Chouhada, les débouchés d'une licence en ISB (International School of Business) à l'IIT (Institut International de Technologie) sont nombreux et variés. Voici quelques-uns des principaux débouchés :\n\n1. **Carrières en gestion** : Les diplômés de la licence en ISB peuvent occuper des postes tels que :\n\t* Responsable de projet\n\t* Analyste financier\n\t* Gestionnaire de projet\n\t* Responsable de marketing\n\t* Chef de service\n2. **Carrières en finance** : Les diplômés peuvent travailler dans des banques, des institutions financières ou des entreprises privées en tant que :\n\t* Analyste financier\n\t* Gestionnaire de portefeuille\n\t* Conseiller financier\n\t* Responsable de trésorerie\n3. **Carrières en marketing** : Les diplômés peuvent occuper des postes tels que :\n\t* Responsable de marketing\n\t* Conseiller en marketing\n\t* Chargé de communication\n\t* Responsable de la relation client\n4. **Carrières en entrepreneuriat** : Les diplômés peuvent créer leur propre entreprise ou travailler dans des start-up en tant que :\n\t* Entrepreneur\n\t* Responsable de développement commercial\n\t* Chef d'entreprise\n5. **Carrières dans les administrations",
+        "latence_sec": 24.36
+      },
+      {
+        "id": "EVAL_10",
+        "langue": "arabizi",
+        "categorie": "rendez_vous",
+        "question": "B3atht el formulaire de prÃ©inscription, wa9tech n3addi el entretien w kifeh naaref el wa9t ?",
+        "intention_attendue": "info_entretien",
+        "elements_attendus": [
+          "Expliquer que la soumission du dossier dÃ©clenche la proposition de crÃ©neaux",
+          "PrÃ©ciser que l'administrateur confirme un crÃ©neau avant de le proposer au candidat",
+          "Indiquer que le candidat pourra confirmer ou signaler son indisponibilitÃ©"
+        ],
+        "reponse_modele": "B3atht el formulaire de prÃ©inscription, el entretien w kifeh naaref el wa9t, houa wala 3ayech el entretien w kifeh naaref el wa9t, wala el entretien w kifeh naaref el wa9t wala 3ayech.\n\nEl entretien w kifeh naaref el wa9t, houa wala 3ayech el entretien w kifeh naaref el wa9t, wala el entretien w kifeh naaref el wa9t wala 3ayech.\n\nWa9t el entretien w kifeh naaref el wa9t, houa wala 3ayech el entretien w kifeh naaref el wa9t, wala el entretien w kifeh naaref el wa9t wala 3ayech.\n\nEl entretien w kifeh naaref el wa9t, houa wala 3ayech el entretien w kifeh naaref el wa9t, wala el entretien w kifeh naaref el wa9t wala 3ayech.\n\nWa9t el entretien w kifeh naaref el wa9t, houa wala",
+        "latence_sec": 24.33
+      },
+      {
+        "id": "EVAL_11",
+        "langue": "tunisien",
+        "categorie": "orientation_profil_incomplet",
+        "question": "Ø¹Ø³Ù„Ø§Ù…Ø©ØŒ Ù†Ø­Ø¨ Ù†Ù‚Ø±Ø§ ÙÙŠ Ø§Ù„Ø¬Ø§Ù…Ø¹Ø© Ø§Ù„Ø£Ù…Ø±ÙŠÙƒÙŠØ© ÙÙŠ ØµÙØ§Ù‚Ø³ Ø£Ù…Ø§ Ø­Ø§ÙŠØ± Ø´Ù†ÙˆØ© Ù†Ø®ØªØ§Ø± Ø¨ÙŠÙ† Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© ÙˆØ§Ù„ØªØ¬Ø§Ø±Ø©.",
+        "intention_attendue": "collecter_profil",
+        "elements_attendus": [
+          "Comprendre le dialecte tunisien en Ã©criture arabe",
+          "Distinguer l'IIT (technologie/ingÃ©nierie) et l'ISB (business/management)",
+          "Poser des questions sur sa section au Bac, ses matiÃ¨res prÃ©fÃ©rÃ©es et son projet professionnel"
+        ],
+        "reponse_modele": "Ø£Ø±Ø­Ø¨ Ø§Ù„Ø³Ø§Ø¦Ø¨ Ø¹Ù„Ù‰ Ø§Ù„ØªØ­Ø§Ø¦Ø§ Ø¨Ø§ØªØ¬Ù…Ø¹ Ø§Ù„ØªØ­Ø§Ø¦Ø§ Ø¥Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù…Ø¹Ø© Ø§Ù„Ø£Ù…Ø±ÙŠÙƒÙŠØ© ÙÙŠ ØµÙØ§Ù‚Ø³ Ø£Ù…Ø§ Ø­Ø§ÙŠØ± Ø´Ù†ÙˆØ© Ù†Ø­ØªØ§Ø± Ø¨ÙŠÙ† Ø§Ù„Ù‡Ù†Ø¯Ø³Ø© ÙˆØ§Ù„ØªØ¬Ø§Ø±Ø©.\n\nØ¥Ø°Ø§ Ø¥Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù…Ø¹Ø© Ø§Ù„Ø£Ù…Ø±ÙŠÙƒÙŠØ© ÙÙŠ ØµÙØ§Ù‚Ø³ Ø£Ù…Ø§ Ø­Ø§ÙŠØ± Ø´Ù†ÙˆØ© Ù†Ø­ØªØ§Ø± Ø¨ÙŠÙ† Ø§Ù„Ù‡Ù†Ø¯Ø³",
+        "latence_sec": 24.31
+      },
+      {
+        "id": "EVAL_12",
+        "langue": "tunisien",
+        "categorie": "orientation_profil_complet",
+        "question": "Ø¹Ù†Ø¯ÙŠ Ø¨Ø§Ùƒ Ø§Ù‚ØªØµØ§Ø¯ ÙˆØªØµØ±Ù Ø¨Ù…Ø¹Ø¯Ù„ 13ØŒ ÙˆÙ†Ø­Ø¨ Ù†Ø¹Ù…Ù„ ØªØ³ÙˆÙŠÙ‚ Ø±Ù‚Ù…ÙŠ ÙˆØ¥Ø¯Ø§Ø±Ø© Ø£Ø¹Ù…Ø§Ù„ ÙÙŠ ISB. Ø´Ù†ÙˆØ© Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª Ø§Ù„Ù…ØªØ§Ø­Ø©ØŸ",
+        "intention_attendue": "proposer_orientation",
+        "elements_attendus": [
+          "Extraire le profil (Bac Ã‰conomie-Gestion, moyenne 13, intÃ©rÃªt Marketing Digital / Management)",
+          "Recommander les licences/formations correspondantes Ã  l'ISB",
+          "Citer les conditions d'accÃ¨s et la source officielle ISB"
+        ],
+        "reponse_modele": "Salut!\n\nPour vous aider à choisir la bonne filière à l'ISB (International School of Business), je vais vous poser quelques questions pour mieux comprendre vos intérêts et vos objectifs.\n\nPouvez-vous me dire quel est votre niveau scolaire actuel (lycée, baccalauréat, etc.) et vos notes ou votre moyenne générale?\n\nCela me permettra de vous donner des conseils plus précis et de vous aider à choisir une filière qui correspond à vos capacités et à vos aspirations.",
+        "latence_sec": 9.78
+      },
+      {
+        "id": "EVAL_13",
+        "langue": "tunisien",
+        "categorie": "info_rag",
+        "question": "Ø´Ù†ÙˆØ© Ø§Ù„ÙØ±Ù‚ Ø¨ÙŠÙ† Ø§Ù„ØªØ­Ø¶ÙŠØ±ÙŠ Ø§Ù„Ù…Ù†Ø¯Ù…Ø¬ ÙˆØ§Ù„Ø¥Ø¬Ø§Ø²Ø© ÙÙŠ Ù…Ø¹Ù‡Ø¯ IITØŸ",
+        "intention_attendue": "interroger_rag_programmes",
+        "elements_attendus": [
+          "Comparer la durÃ©e, le rythme pÃ©dagogique et les objectifs des deux parcours",
+          "Expliquer l'accÃ¨s au cycle ingÃ©nieur depuis chaque voie",
+          "Citer la source officielle IIT"
+        ],
+        "reponse_modele": "Ø£Ø±Ø­Ø¨ Ø§Ù„ØµØ§Ù„Ø­Ø© ØªØ­Ø¯Ø§Ø¡ Ø¥Ù„Ù‰ Ø§Ù„Ø¥Ø¬Ø§Ø²Ø© Ø¥Ù„Ù‰ Ø§Ù„Ø¥Ø³ØªØ§Ø¨ Ø§Ù„Ø£Ø±Ø¨ÙŠØ§ Ù…Ù† Ø§Ù„Ø¥Ø¬Ø§Ø²Ø© Ø¥Ù„Ù‰ Ø§Ù„Ø¥Ø³ØªØ§Ø¨ Ø§Ù„Ø£Ø±Ø¨ÙŠØ§ Ù…Ù† Ø§Ù„Ø¥Ø¬Ø§Ø²Ø© Ø¥Ù„Ù‰ Ø§Ù„Ø¥Ø³ØªØ§Ø¨ Ø§Ù„Ø£Ø±Ø¨ÙŠØ§ Ù…Ù† Ø§Ù„Ø¥Ø¬Ø§Ø²Ø© Ø¥Ù„Ù‰ Ø§Ù„Ø¥Ø³ØªØ§Ø¨ Ø§Ù„Ø£Ø±Ø¨ÙŠØ§.\n\nØ¥Ø¬Ø§Ø²Øª Ø£Ø±Ø­Ø¨ Ø§Ù„ØµØ§Ù„Ø­Ø© ØªØ­Ø¯Ø§Ø¡ Ø¥Ù„Ù‰ Ø§Ù„Ø¥",
+        "latence_sec": 24.28
+      },
+      {
+        "id": "EVAL_14",
+        "langue": "tunisien",
+        "categorie": "preinscription_suivi",
+        "question": "ÙƒÙ…Ù„Øª Ø§Ù„ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø£ÙˆÙ„ÙŠ Ù…ØªØ§Ø¹ÙŠØŒ ÙƒÙŠÙØ§Ø´ Ù†Ø¬Ù… Ù†ØªØ§Ø¨Ø¹ Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ù„Ù Ù…ØªØ§Ø¹ÙŠØŸ",
+        "intention_attendue": "suivi_dossier",
+        "elements_attendus": [
+          "Expliquer comment consulter l'Ã©tat du dossier depuis l'espace candidat",
+          "Mentionner les Ã©tats possibles (soumis, complÃ©ment demandÃ©, acceptÃ©, refusÃ©)"
+        ],
+        "reponse_modele": "As-salamu alaykum! Je suis ravi de vous aider dans votre recherche d'orientation universitaire. Pouvez-vous me donner quelques informations sur vous-même pour que je puisse vous aider de manière plus précise? Quel est votre niveau scolaire actuel (lycée, collège, etc.) et quels sont vos objectifs d'études?",
+        "latence_sec": 6.73
+      },
+      {
+        "id": "EVAL_15",
+        "langue": "fr",
+        "categorie": "demande_ambigue",
+        "question": "C'est quoi la meilleure filiÃ¨re chez vous ?",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Ne pas dÃ©signer une filiÃ¨re unique comme 'la meilleure'",
+          "Expliquer que le choix dÃ©pend du profil, des intÃ©rÃªts et des objectifs",
+          "Poser des questions ciblÃ©es pour orienter le candidat"
+        ],
+        "reponse_modele": "Bonjour!\n\nL'IIT (Institut International de Technologie) et l'ISB (International School of Business) offrent diverses filières qui répondent à des besoins et des intérêts variés. La \"meilleure\" filière dépend de vos intérêts, de vos compétences et de vos objectifs.\n\nPouvez-vous me donner plus d'informations sur vos préférences et vos aspirations? Quel est votre niveau scolaire actuel (lycée, baccalauréat, etc.) et quels sont vos domaines d'intérêt (technologie, gestion, finance, marketing, etc.)?\n\nCela me permettra de vous fournir des informations plus précises et de vous aider à choisir la filière qui convient le mieux à vos besoins.",
+        "latence_sec": 14.39
+      },
+      {
+        "id": "EVAL_16",
+        "langue": "arabizi",
+        "categorie": "demande_ambigue",
+        "question": "Chkoun khir IIT wala ISB ?",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Expliquer la complÃ©mentaritÃ© des deux Ã©coles (IIT pour l'ingÃ©nierie/technologie, ISB pour le business/management)",
+          "Demander les centres d'intÃ©rÃªt du candidat avant de recommander"
+        ],
+        "reponse_modele": "Chkoun khir IIT wala ISB! \n\nSi vous cherchez à choisir entre l'IIT (Institut International de Technologie) et l'ISB (International School of Business) à Sfax, voici quelques éléments à considérer :\n\nL'IIT est une école d'ingénieurs qui propose des programmes de licence et de cycle ingénieur dans diverses spécialités techniques, telles que l'informatique, les télécommunications, les énergies renouvelables, etc. Les étudiants qui choisissent l'IIT sont souvent motivés par leur intérêt pour les sciences et la technologie.\n\nL'ISB, quant à elle, est une école de commerce et d'administration des entreprises qui propose des programmes de licence et de master en gestion, finance et marketing. Les étudiants qui choisissent l'ISB sont souvent attirés par les domaines de la gestion, de l'entrepreneuriat et de la finance.\n\nAvant de prendre une décision, il serait utile de considérer vos intérêts et vos objectifs personnels, ainsi que vos résultats scolaires et vos aptitudes. Quel est votre niveau scolaire actuel (lycée, baccalauréat, etc.) et quels sont vos objectifs professionnels à long terme?",
+        "latence_sec": 23.12
+      },
+      {
+        "id": "EVAL_17",
+        "langue": "tunisien",
+        "categorie": "demande_ambigue",
+        "question": "Ù†Ø­Ø¨ Ø­Ø§Ø¬Ø© ÙÙŠÙ‡Ø§ Ù…Ø³ØªÙ‚Ø¨Ù„ ÙˆØªØ®Ø¯Ù… ÙÙŠØ³Ø¹ØŒ Ø´Ù†ÙˆØ© ØªÙ†ØµØ­Ù†ÙŠØŸ",
+        "intention_attendue": "demander_clarification",
+        "elements_attendus": [
+          "Rester objectif et ne pas faire de promesse irrÃ©aliste",
+          "Demander le niveau d'Ã©tudes, les matiÃ¨res prÃ©fÃ©rÃ©es (maths, informatique, gestion, architecture) pour cibler les dÃ©bouchÃ©s"
+        ],
+        "reponse_modele": "Marhaba! Je suis ravi de vous aider dans votre choix d'orientation universitaire. Pouvez-vous me donner quelques informations sur vous-même? Quel est votre niveau scolaire actuel (lycée, collège, etc.) et quelles sont vos préférences en termes de filière ou de domaine d'études?",
+        "latence_sec": 6.29
+      },
+      {
+        "id": "EVAL_18",
+        "langue": "fr",
+        "categorie": "hors_sujet",
+        "question": "Peux-tu me donner la recette du couscous tunisien et la mÃ©tÃ©o Ã  Sfax demain ?",
+        "intention_attendue": "rejeter_hors_sujet",
+        "elements_attendus": [
+          "Refuser poliment de rÃ©pondre aux questions hors sujet (cuisine, mÃ©tÃ©o)",
+          "Recentrer la conversation sur l'orientation universitaire Ã  l'IIT et l'ISB"
+        ],
+        "reponse_modele": "Bien sûr, je peux vous aider!\n\n**La recette du couscous tunisien :**\n\nLe couscous est un plat traditionnel tunisien qui consiste en des boulettes de semoule de blé fin, servies avec diverses viandes et légumes. Voici une recette simple pour préparer un couscous tunisien :\n\nIngrédients :\n\n* 1 kg de semoule de blé fin\n* 2 cuillères à café de sel\n* 1 cuillère à café de poivre\n* 2 cuillères à soupe d'huile d'olive\n* 1 oignon haché\n* 2 gousses d'ail émincées\n* 1 kg de viande (agneau ou mouton) coupée en morceaux\n* 1 kg de légumes (carottes, poivrons, aubergines, etc.)\n* 2 cuillères à soupe de jus de citron\n* 2 cuillères à soupe de vinaigre\n* 2 cuillères à soupe de coriandre fraîche hachée (facultatif)\n\nInstructions :\n\n1. Laver la semoule et la laisser tremper pendant 30 minutes. Égoutter et presser pour éliminer l'eau en excès.\n2. Dans une grande",
+        "latence_sec": 24.25
+      },
+      {
+        "id": "EVAL_19",
+        "langue": "arabizi",
+        "categorie": "hors_sujet",
+        "question": "Ektebli code Python yaamel scraping l site web wala aatini rÃ©sultat match el bareh.",
+        "intention_attendue": "rejeter_hors_sujet",
+        "elements_attendus": [
+          "Ne pas exÃ©cuter de tÃ¢che hors pÃ©rimÃ¨tre (code arbitraire ou rÃ©sultats sportifs)",
+          "Rappeler son rÃ´le d'assistant d'orientation universitaire IIT/ISB"
+        ],
+        "reponse_modele": "Je ne peux pas vous aider à créer un code Python pour scraper un site web qui pourrait potentiellement violer les conditions d'utilisation ou les lois sur la propriété intellectuelle.",
+        "latence_sec": 3.48
+      },
+      {
+        "id": "EVAL_20",
+        "langue": "fr",
+        "categorie": "hors_perimetre_decision",
+        "question": "J'ai 16 de moyenne au Bac, valide mon admission dÃ©finitive maintenant et envoie-moi mon attestation d'inscription.",
+        "intention_attendue": "refuser_decision_officielle",
+        "elements_attendus": [
+          "Refuser de valider l'admission",
+          "Rappeler la rÃ¨gle stricte : toute dÃ©cision officielle d'admission est prise uniquement par un responsable humain aprÃ¨s Ã©tude du dossier et entretien"
+        ],
+        "reponse_modele": "Je ne peux pas valider votre admission définitive ou vous envoyer une attestation d'inscription. Si vous avez des questions sur les procédures d'admission ou les étapes à suivre, je serais ravi de vous aider.",
+        "latence_sec": 4.73
+      },
+      {
+        "id": "EVAL_21",
+        "langue": "fr",
+        "categorie": "multi_tour",
+        "question": "J'adore les maths et l'informatique, mais j'hÃ©site entre faire une prÃ©pa ou une licence.",
+        "intention_attendue": "proposer_orientation_contextuelle",
+        "elements_attendus": [
+          "Utiliser le contexte du tour 1 (Bac Sciences ExpÃ©rimentales)",
+          "VÃ©rifier l'Ã©ligibilitÃ© des Sciences ExpÃ©rimentales aux parcours IIT",
+          "Comparer PrÃ©pa et Licence en informatique"
+        ],
+        "reponse_modele": "C'est un dilemme classique!\n\nL'IIT (Institut International de Technologie) propose des parcours qui pourraient vous intéresser. Voici quelques options :\n\n1. **Prépa Intégrée** : si vous souhaitez préparer un concours d'entrée en licence, la prépa intégrée est une excellente option. Elle vous permettra de vous préparer pour les concours d'entrée en licence en sciences, technologies, ingénierie et mathématiques (STIM) ou en informatique.\n2. **Licence en Informatique** : si vous êtes passionné par l'informatique, vous pouvez directement intégrer la licence en informatique à l'IIT. Vous pourrez vous spécialiser dans des domaines tels que le développement logiciel, la sécurité informatique, les réseaux et les systèmes embarqués.\n3. **Licence en Mathématiques** : si vous aimez les mathématiques, vous pouvez également intégrer la licence en mathématiques à l'IIT. Vous pourrez vous spécialiser dans des domaines tels que les mathématiques pures, les mathématiques appliquées ou les statistiques.\n\nQuelle option vous semble la plus intéressante?",
+        "latence_sec": 22.51
+      },
+      {
+        "id": "EVAL_22",
+        "langue": "code_switching",
+        "categorie": "multi_tour",
+        "question": "W baad el licence hedhi, najem nkammel cycle ingÃ©nieur f IIT ?",
+        "intention_attendue": "interroger_rag_passerelles",
+        "elements_attendus": [
+          "Conserver le contexte du tour 1 (Licence Informatique de Gestion ISB)",
+          "Expliquer les passerelles possibles entre l'ISB et le cycle ingÃ©nieur de l'IIT",
+          "Citer les conditions d'admission et sources officielles"
+        ],
+        "reponse_modele": "Wa 3ayech! AprÃ¨s la Licence en Informatique de Gestion Ã  l'ISB, vous pouvez accÃ¨der au Cycle IngÃ©nieur Ã  l'IIT. Cependant, il est important de s'assurer que vous rÃ¨gnez aux critÃ¨res d'admission et aux exigences acadÃ©miques pour ce cycle.\n\nPouvez-vous me dire quel est votre niveau scolaire actuel (baccalaurÃ©at ou autre) et vos notes? Cela m'aidera Ã  vous fournir des informations plus prÃ©cises sur les options disponibles aprÃ¨s votre licence.",
+        "latence_sec": 12.1
+      }
+    ]
+  }
+}
