@@ -14,7 +14,7 @@ from app.core.errors import register_error_handlers
 from app.core.config import Settings, get_settings
 from app.catalogue_consultation.router import router as catalogue_consultation_router
 from app.conversation_memory.router import router as memory_router
-
+from app.llm.router import router as llm_router
 
 def create_app(settings: Settings | None = None) -> FastAPI:
     """Build the API using explicit settings, including a restrictive CORS policy."""
@@ -35,6 +35,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     application.include_router(etablissements_router, prefix="/api/v1")
     application.include_router(formations_router, prefix="/api/v1")
     application.include_router(criteria_router, prefix="/api/v1")
+    application.include_router(llm_router, prefix="/api/v1")
 
     register_error_handlers(application)
 

@@ -43,6 +43,7 @@ def test_openapi_json_is_available_and_lists_only_implemented_routes() -> None:
         "/api/v1/memory/sessions/{session_id}/messages",
         "/api/v1/memory/sessions/{session_id}",
         "/api/v1/memory/sessions/{session_id}/information",
+        "/api/v1/llm/generate",
     }
 
 

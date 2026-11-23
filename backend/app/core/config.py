@@ -3,7 +3,7 @@
 from functools import lru_cache
 from urllib.parse import urlsplit
 
-from pydantic import field_validator
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from sqlalchemy.engine import make_url
 from sqlalchemy.exc import ArgumentError
@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://smartcampus:change-me-local@127.0.0.1:55432/smartcampus"
     log_level: str = "INFO"
     cors_origins: str = ""
+    llm_timeout_seconds: float = Field(default=30.0, gt=0, le=120)
 
     model_config = SettingsConfigDict(
         env_file=".env",
