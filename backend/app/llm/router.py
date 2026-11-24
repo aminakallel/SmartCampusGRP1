@@ -7,6 +7,7 @@ from app.llm.mock_provider import MockLLMProvider
 from app.llm.schemas import LLMGenerateRequest, LLMGenerateResponse
 from app.llm.service import LLMService
 from app.core.config import get_settings
+from app.llm.agents_provider import AgentsServiceProvider
 
 
 router = APIRouter(
@@ -20,8 +21,17 @@ def get_llm_service() -> LLMService:
     """Fournir une instance partagée du service LLM."""
     settings = get_settings()
 
+    if settings.llm_provider == "agents":
+        provider = AgentsServiceProvider(
+            base_url=settings.agents_base_url
+        )
+    elif settings.llm_provider == "mock":
+        provider = MockLLMProvider()
+    else:
+        raise ValueError("LLM_PROVIDER must be 'mock' or 'agents'")
+
     return LLMService(
-        provider=MockLLMProvider(),
+        provider=provider,
         timeout_seconds=settings.llm_timeout_seconds,
     )
 
