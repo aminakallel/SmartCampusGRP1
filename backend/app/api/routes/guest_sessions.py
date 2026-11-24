@@ -7,6 +7,8 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, Header, HTTPException, Response, status
 from pydantic import BaseModel
 
+from app.conversation_memory.router import get_memory_service
+from app.conversation_memory.service import TemporaryMemoryService
 from app.services.guest_sessions import (
     InMemoryGuestSessionStore,
     GuestSession,
@@ -63,18 +65,32 @@ def _require_v4(session_id: UUID) -> UUID:
 @router.post("", response_model=GuestSessionResponse, status_code=status.HTTP_201_CREATED)
 def create_guest_session(
     store: InMemoryGuestSessionStore = Depends(get_guest_session_store),
+    memory_service: TemporaryMemoryService = Depends(get_memory_service),
 ) -> GuestSessionResponse:
-    return _response(store.create())
+    session = store.create()
+    try:
+        memory_service.create_session(
+            session_id=session.session_id,
+            conversation_id=session.conversation_id,
+            created_at=session.created_at,
+            expires_at=session.expires_at,
+        )
+    except Exception:
+        store.expire(session.session_id)
+        raise
+    return _response(session)
 
 
 @router.get("", response_model=GuestSessionResponse)
 def read_guest_session(
     x_session_id: UUID = Header(..., alias="X-Session-ID"),
     store: InMemoryGuestSessionStore = Depends(get_guest_session_store),
+    memory_service: TemporaryMemoryService = Depends(get_memory_service),
 ) -> GuestSessionResponse:
     session_id = _require_v4(x_session_id)
     session = store.read(session_id)
     if session is None:
+        memory_service.delete_session(session_id)
         raise HTTPException(status_code=404, detail="Guest session not found or expired")
     return _response(session)
 
@@ -83,8 +99,11 @@ def read_guest_session(
 def expire_guest_session(
     x_session_id: UUID = Header(..., alias="X-Session-ID"),
     store: InMemoryGuestSessionStore = Depends(get_guest_session_store),
+    memory_service: TemporaryMemoryService = Depends(get_memory_service),
 ) -> Response:
     session_id = _require_v4(x_session_id)
     if not store.expire(session_id):
+        memory_service.delete_session(session_id)
         raise HTTPException(status_code=404, detail="Guest session not found or expired")
+    memory_service.delete_session(session_id)
     return Response(status_code=status.HTTP_204_NO_CONTENT)

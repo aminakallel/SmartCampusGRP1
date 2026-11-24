@@ -19,12 +19,22 @@ def utc_now() -> datetime:
 
 @dataclass(frozen=True, slots=True)
 class GuestSession:
-    """Session metadata only; conversation messages are outside this service."""
+    """Temporary session metadata; conversation messages live in SA-26."""
 
     session_id: UUID
     conversation_id: str
     created_at: datetime
     expires_at: datetime
+    account_id: UUID | None = None
+    attached_at: datetime | None = None
+
+
+class GuestSessionNotFound(LookupError):
+    """The session is unknown or expired."""
+
+
+class GuestSessionOwnershipConflict(ValueError):
+    """The session is already attached to a different account."""
 
 
 class InMemoryGuestSessionStore:
@@ -72,6 +82,47 @@ class InMemoryGuestSessionStore:
             now = self._now()
             self._purge_expired_locked(now)
             return self._sessions.pop(session_id, None) is not None
+
+    def attach_account(self, session_id: UUID, account_id: UUID) -> GuestSession:
+        """Atomically claim a live session for an account; same-account retries are safe."""
+        if not isinstance(account_id, UUID):
+            raise ValueError("account_id must be a UUID")
+        with self._lock:
+            now = self._now()
+            self._purge_expired_locked(now)
+            session = self._sessions.get(session_id)
+            if session is None:
+                raise GuestSessionNotFound("Guest session not found or expired")
+            if session.account_id is not None:
+                if session.account_id != account_id:
+                    raise GuestSessionOwnershipConflict(
+                        "Guest session belongs to another account"
+                    )
+                return session
+            attached = GuestSession(
+                session_id=session.session_id,
+                conversation_id=session.conversation_id,
+                created_at=session.created_at,
+                expires_at=session.expires_at,
+                account_id=account_id,
+                attached_at=now,
+            )
+            self._sessions[session_id] = attached
+            return attached
+
+    def rollback_account_attachment(self, session_id: UUID, account_id: UUID) -> bool:
+        """Undo a just-written attachment if its paired memory update fails."""
+        with self._lock:
+            session = self._sessions.get(session_id)
+            if session is None or session.account_id != account_id:
+                return False
+            self._sessions[session_id] = GuestSession(
+                session_id=session.session_id,
+                conversation_id=session.conversation_id,
+                created_at=session.created_at,
+                expires_at=session.expires_at,
+            )
+            return True
 
     def purge_expired(self) -> int:
         """Remove expired records and return the number removed."""

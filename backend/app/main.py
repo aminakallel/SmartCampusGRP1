@@ -9,6 +9,9 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.api.routes.guest_sessions import router as guest_sessions_router
+from app.api.routes.conversation_attachment import router as conversation_attachment_router
+from app.auth.router import router as auth_router
+from app.conversation_memory.router import router as memory_router
 
 
 ERROR_CODES = {
@@ -17,8 +20,10 @@ ERROR_CODES = {
     403: "FORBIDDEN",
     404: "NOT_FOUND",
     405: "METHOD_NOT_ALLOWED",
+    409: "CONFLICT",
     422: "VALIDATION_ERROR",
     500: "INTERNAL_SERVER_ERROR",
+    503: "SERVICE_UNAVAILABLE",
 }
 
 
@@ -29,6 +34,9 @@ def create_app() -> FastAPI:
         description="Temporary anonymous visitor sessions.",
     )
     application.include_router(guest_sessions_router)
+    application.include_router(memory_router, prefix="/api/v1")
+    application.include_router(conversation_attachment_router)
+    application.include_router(auth_router)
 
     @application.get("/health", tags=["health"])
     def health() -> dict[str, str]:

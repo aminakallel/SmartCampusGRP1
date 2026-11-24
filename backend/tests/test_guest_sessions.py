@@ -5,6 +5,8 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.api.routes.guest_sessions import get_guest_session_store
+from app.conversation_memory.router import get_memory_service
+from app.conversation_memory.service import TemporaryMemoryService
 from app.main import create_app
 from app.services.guest_sessions import InMemoryGuestSessionStore
 
@@ -24,15 +26,19 @@ class FakeClock:
 def session_context():
     clock = FakeClock()
     store = InMemoryGuestSessionStore(ttl=timedelta(hours=24), clock=clock)
+    memory_service = TemporaryMemoryService(clock=clock)
     application = create_app()
     application.dependency_overrides[get_guest_session_store] = lambda: store
+    application.dependency_overrides[get_memory_service] = lambda: memory_service
+    get_memory_service.cache_clear()
     with TestClient(application) as client:
-        yield client, store, clock
+        yield client, store, clock, memory_service
     application.dependency_overrides.clear()
+    get_memory_service.cache_clear()
 
 
 def test_create_guest_session_issues_uuid_v4_and_expiration(session_context):
-    client, _store, _clock = session_context
+    client, _store, _clock, memory_service = session_context
 
     response = client.post("/api/v1/sessions/visiteur")
 
@@ -47,10 +53,15 @@ def test_create_guest_session_issues_uuid_v4_and_expiration(session_context):
     expires_at = datetime.fromisoformat(payload["expires_at"])
     assert created_at.tzinfo is not None
     assert expires_at - created_at == timedelta(hours=24)
+    memory = memory_service.get_memory(session_id)
+    assert memory is not None
+    assert str(memory.session_id) == payload["session_id"]
+    assert memory.conversation_id == payload["conversation_id"]
+    assert memory.expires_at == expires_at
 
 
 def test_read_guest_session_uses_x_session_id_header(session_context):
-    client, _store, _clock = session_context
+    client, _store, _clock, _memory_service = session_context
     created = client.post("/api/v1/sessions/visiteur").json()
 
     response = client.get(
@@ -63,7 +74,7 @@ def test_read_guest_session_uses_x_session_id_header(session_context):
 
 
 def test_read_requires_session_header_and_uses_error_envelope(session_context):
-    client, _store, _clock = session_context
+    client, _store, _clock, _memory_service = session_context
 
     response = client.get("/api/v1/sessions/visiteur")
 
@@ -72,7 +83,7 @@ def test_read_requires_session_header_and_uses_error_envelope(session_context):
 
 
 def test_non_v4_session_identifier_is_rejected(session_context):
-    client, _store, _clock = session_context
+    client, _store, _clock, _memory_service = session_context
 
     response = client.get(
         "/api/v1/sessions/visiteur",
@@ -84,7 +95,7 @@ def test_non_v4_session_identifier_is_rejected(session_context):
 
 
 def test_expired_session_is_unreadable_and_purged(session_context):
-    client, store, clock = session_context
+    client, store, clock, memory_service = session_context
     created = client.post("/api/v1/sessions/visiteur").json()
     clock.advance(timedelta(hours=24))
 
@@ -96,10 +107,11 @@ def test_expired_session_is_unreadable_and_purged(session_context):
     assert response.status_code == 404
     assert response.json()["error"]["code"] == "NOT_FOUND"
     assert store.read(UUID(created["session_id"])) is None
+    assert memory_service.get_memory(UUID(created["session_id"])) is None
 
 
 def test_delete_expires_session_immediately(session_context):
-    client, store, _clock = session_context
+    client, store, _clock, memory_service = session_context
     created = client.post("/api/v1/sessions/visiteur").json()
     session_id = UUID(created["session_id"])
 
@@ -110,10 +122,11 @@ def test_delete_expires_session_immediately(session_context):
 
     assert response.status_code == 204
     assert store.read(session_id) is None
+    assert memory_service.get_memory(session_id) is None
 
 
 def test_unknown_session_cannot_be_read_or_expired(session_context):
-    client, _store, _clock = session_context
+    client, _store, _clock, _memory_service = session_context
     unknown = str(UUID(int=1, version=4))
 
     read_response = client.get(
