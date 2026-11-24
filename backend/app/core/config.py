@@ -17,7 +17,8 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
     cors_origins: str = ""
     llm_timeout_seconds: float = Field(default=30.0, gt=0, le=120)
-
+    agents_base_url: str = "http://agents:8001"
+    llm_provider: str = "mock"
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

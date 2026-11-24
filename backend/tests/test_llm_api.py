@@ -2,12 +2,14 @@
 import asyncio
 
 import pytest
+import httpx
 from fastapi.testclient import TestClient
 
 from app.main import app
 from app.llm.providers import LLMProvider
 from app.llm.router import get_llm_service
 from app.llm.service import LLMService
+from app.llm.agents_provider import AgentsServiceProvider
 
 
 @pytest.fixture
@@ -21,15 +23,15 @@ def client():
 
 
 class SlowProvider(LLMProvider):
-    """Provider simulé qui prend trop de temps pour répondre."""
+    """Provider simulÃ© qui prend trop de temps pour rÃ©pondre."""
 
     async def generate(self, prompt: str) -> str:
         await asyncio.sleep(0.1)
-        return "Réponse tardive"
+        return "RÃ©ponse tardive"
 
 
 class FailingProvider(LLMProvider):
-    """Provider simulé qui retourne une erreur."""
+    """Provider simulÃ© qui retourne une erreur."""
 
     async def generate(self, prompt: str) -> str:
         raise RuntimeError("Provider connection failed")
@@ -103,3 +105,77 @@ def test_generate_response_provider_error(client):
 
     finally:
         app.dependency_overrides.pop(get_llm_service, None)
+
+
+def test_agents_provider_success():
+    def mock_response(request):
+        assert request.method == "POST"
+        assert request.url.path == "/agent/chat"
+        assert request.read() == b'{"prompt":"Bonjour"}'
+
+        return httpx.Response(
+            200,
+            json={"response": "Bienvenue Ã  SmartCampus"},
+        )
+
+    transport = httpx.MockTransport(mock_response)
+
+    provider = AgentsServiceProvider(
+        base_url="http://agents:8001",
+        transport=transport,
+    )
+
+    result = asyncio.run(provider.generate("Bonjour"))
+
+    assert result == "Bienvenue Ã  SmartCampus"
+
+
+def test_agents_provider_http_error():
+    transport = httpx.MockTransport(
+        lambda request: httpx.Response(500)
+    )
+
+    provider = AgentsServiceProvider(
+        base_url="http://agents:8001",
+        transport=transport,
+    )
+
+    with pytest.raises(httpx.HTTPStatusError):
+        asyncio.run(provider.generate("Bonjour"))
+
+
+def test_agents_provider_invalid_response():
+    transport = httpx.MockTransport(
+        lambda request: httpx.Response(
+            200,
+            json={"message": "Invalid format"},
+        )
+    )
+
+    provider = AgentsServiceProvider(
+        base_url="http://agents:8001",
+        transport=transport,
+    )
+
+    with pytest.raises(ValueError, match="Invalid response"):
+        asyncio.run(provider.generate("Bonjour"))
+def test_agents_provider_error_through_llm_service():
+    transport = httpx.MockTransport(
+        lambda request: httpx.Response(500)
+    )
+
+    provider = AgentsServiceProvider(
+        base_url="http://agents:8001",
+        transport=transport,
+    )
+
+    service = LLMService(
+        provider=provider,
+        timeout_seconds=5,
+    )
+
+    with pytest.raises(Exception) as error:
+        asyncio.run(service.generate_response("Bonjour"))
+
+    assert getattr(error.value, "status_code", None) == 502
+    assert getattr(error.value, "code", None) == "LLM_PROVIDER_ERROR"
