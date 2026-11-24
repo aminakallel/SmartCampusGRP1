@@ -1,26 +1,26 @@
-# SmartCampus AI — Livrable Tâche SA-14 : Conception des Tables de Gestion (Préinscription, QCM & Entretiens)
+﻿# SmartCampus AI â€” Livrable TÃ¢che SA-14 : Conception des Tables de Gestion (PrÃ©inscription, QCM & Entretiens)
 
-* **Tâche Jira :** SA-14 — Concevoir les tables de gestion (préinscription/RDV)[cite: 10, 23]
+* **TÃ¢che Jira :** SA-14 â€” Concevoir les tables de gestion (prÃ©inscription/RDV)[cite: 10, 23]
 * **Responsable :** Amina Kallel[cite: 10, 23]
-* **Alignement inter-équipe :**
-  * **Manar (SA-13) :** Référencement de la table `utilisateur(id UUID)`[cite: 43, 46]
-  * **Tasnime (SA-12) :** Référencement de la table `formations_parcours(id SERIAL / INTEGER)`[cite: 49, 50]
-  * **Yasmine (SA-16/SA-17) :** Script de migration PostgreSQL prêt à exécuter[cite: 7, 10, 23]
+* **Alignement inter-Ã©quipe :**
+  * **Manar (SA-13) :** RÃ©fÃ©rencement de la table `utilisateur(id UUID)`[cite: 43, 46]
+  * **Tasnime (SA-12) :** RÃ©fÃ©rencement de la table `formations_parcours(id SERIAL / INTEGER)`[cite: 49, 50]
+  * **Yasmine (SA-16/SA-17) :** Script de migration PostgreSQL prÃªt Ã  exÃ©cuter[cite: 7, 10, 23]
 
 ---
 
-## 1. Schéma Relationnel (Diagramme ER / MLD)
+## 1. SchÃ©ma Relationnel (Diagramme ER / MLD)
 
 ```mermaid
 erDiagram
-    UTILISATEUR ||--o| DOSSIER_CANDIDATURE : "dépose (candidat 0..1)"
+    UTILISATEUR ||--o| DOSSIER_CANDIDATURE : "dÃ©pose (candidat 0..1)"
     UTILISATEUR ||--o{ DOSSIER_CANDIDATURE : "statue (admin 0..N)"
     UTILISATEUR ||--o{ RENDEZ_VOUS : "confirme (admin 0..N)"
     FORMATIONS_PARCOURS ||--o{ DOSSIER_CANDIDATURE : "est choisi dans (0..N)"
     FORMATIONS_PARCOURS ||--o{ QCM_TENTATIVE : "cible (0..N)"
 
-    DOSSIER_CANDIDATURE ||--o{ DOSSIER_COMPLEMENT : "nécessite (0..N)"
-    DOSSIER_CANDIDATURE ||--o{ QCM_TENTATIVE : "déclenche (0..N)"
+    DOSSIER_CANDIDATURE ||--o{ DOSSIER_COMPLEMENT : "nÃ©cessite (0..N)"
+    DOSSIER_CANDIDATURE ||--o{ QCM_TENTATIVE : "dÃ©clenche (0..N)"
     DOSSIER_CANDIDATURE ||--o{ RENDEZ_VOUS : "planifie (0..N)"
     QCM_TENTATIVE ||--|{ QCM_QUESTION : "contient (1..N)"
 
@@ -107,41 +107,41 @@ erDiagram
 
 ---
 
-## 2. Décisions de Compatibilité & Règles de Gestion
+## 2. DÃ©cisions de CompatibilitÃ© & RÃ¨gles de Gestion
 
 ### Alignement technique avec SA-12 et SA-13
-1. **Types des clés étrangères harmonisés :**
-   * Les références vers `utilisateur(id)` (SA-13) utilisent le type **`UUID`**[cite: 43, 46].
-   * Les références vers `formations_parcours(id)` (SA-12) utilisent le type **`INTEGER`** (correspondant au `SERIAL` de Tasnime)[cite: 49, 50].
-2. **Conventions de nommage uniformes :** Utilisation des colonnes d'audit `cree_le` et `modifie_le` avec réutilisation du trigger `mettre_a_jour_modifie_le()` défini dans SA-13[cite: 44, 48].
-3. **Contrôle des rôles par triggers PostgreSQL :** À l'image de SA-13, des triggers garantissent qu'un `dossier_candidature` ne peut être créé que pour un utilisateur de rôle `'candidat'`, et que `decision_par_admin_id` / `admin_id` référencent obligatoirement un utilisateur de rôle `'admin'`[cite: 18, 26, 47].
+1. **Types des clÃ©s Ã©trangÃ¨res harmonisÃ©s :**
+   * Les rÃ©fÃ©rences vers `utilisateur(id)` (SA-13) utilisent le type **`UUID`**[cite: 43, 46].
+   * Les rÃ©fÃ©rences vers `formations_parcours(id)` (SA-12) utilisent le type **`INTEGER`** (correspondant au `SERIAL` de Tasnime)[cite: 49, 50].
+2. **Conventions de nommage uniformes :** Utilisation des colonnes d'audit `cree_le` et `modifie_le` avec rÃ©utilisation du trigger `mettre_a_jour_modifie_le()` dÃ©fini dans SA-13[cite: 44, 48].
+3. **ContrÃ´le des rÃ´les par triggers PostgreSQL :** Ã€ l'image de SA-13, des triggers garantissent qu'un `dossier_candidature` ne peut Ãªtre crÃ©Ã© que pour un utilisateur de rÃ´le `'candidat'`, et que `decision_par_admin_id` / `admin_id` rÃ©fÃ©rencent obligatoirement un utilisateur de rÃ´le `'admin'`[cite: 18, 26, 47].
 
-### Règles métiers (Architecture SA-4)
-* **Création via Webhook (Règle n°4) :** La réception du formulaire externe crée automatiquement le dossier au statut `soumis` et déclenche l'organisation de l'entretien (Règle n°7)[cite: 18, 19, 26, 27].
-* **Séparation Dossier / Historique (Règle n°6) :** `dossier_candidature.resume_ia` stocke le résumé structuré généré par l'agent IA ; l'historique brut reste isolé dans la table des conversations[cite: 18, 26].
-* **Décision 100 % humaine (Règle n°2) :** Seul un `admin` peut faire passer un dossier à `accepte` ou `refuse`[cite: 18, 19, 26, 27].
-* **Reprise du QCM (Règle n°9) :** La progression (`derniere_question_idx` et les réponses dans `qcm_question`) est sauvegardée après chaque question[cite: 13, 18, 32, 37].
-* **Verrou administrateur sur les entretiens (Règle n°10) :** L'agent `Entretien` insère un créneau avec `valide_par_admin = FALSE`. Le candidat ne reçoit la proposition qu'après confirmation par l'administrateur (`TRUE`)[cite: 13, 18, 26, 37].
+### RÃ¨gles mÃ©tiers (Architecture SA-4)
+* **CrÃ©ation via Webhook (RÃ¨gle nÂ°4) :** La rÃ©ception du formulaire externe crÃ©e automatiquement le dossier au statut `soumis` et dÃ©clenche l'organisation de l'entretien (RÃ¨gle nÂ°7)[cite: 18, 19, 26, 27].
+* **SÃ©paration Dossier / Historique (RÃ¨gle nÂ°6) :** `dossier_candidature.resume_ia` stocke le rÃ©sumÃ© structurÃ© gÃ©nÃ©rÃ© par l'agent IA ; l'historique brut reste isolÃ© dans la table des conversations[cite: 18, 26].
+* **DÃ©cision 100 % humaine (RÃ¨gle nÂ°2) :** Seul un `admin` peut faire passer un dossier Ã  `accepte` ou `refuse`[cite: 18, 19, 26, 27].
+* **Reprise du QCM (RÃ¨gle nÂ°9) :** La progression (`derniere_question_idx` et les rÃ©ponses dans `qcm_question`) est sauvegardÃ©e aprÃ¨s chaque question[cite: 13, 18, 32, 37].
+* **Verrou administrateur sur les entretiens (RÃ¨gle nÂ°10) :** L'agent `Entretien` insÃ¨re un crÃ©neau avec `valide_par_admin = FALSE`. Le candidat ne reÃ§oit la proposition qu'aprÃ¨s confirmation par l'administrateur (`TRUE`)[cite: 13, 18, 26, 37].
 
 ---
 
-## 3. Dictionnaire Détaillé des Tables
+## 3. Dictionnaire DÃ©taillÃ© des Tables
 
 ### 3.1 Table `dossier_candidature`
 
 | Champ | Type PostgreSQL | Contraintes | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `UUID` | `PK, DEFAULT gen_random_uuid()` | Identifiant unique du dossier. |
-| `utilisateur_id` | `UUID` | `FK -> utilisateur(id), UNIQUE, NOT NULL` | Compte candidat propriétaire (rôle `candidat` vérifié)[cite: 12, 31, 46]. |
-| `parcours_id` | `INTEGER` | `FK -> formations_parcours(id), NOT NULL` | Parcours IIT/ISB choisi lors de la préinscription[cite: 1, 12, 50]. |
+| `utilisateur_id` | `UUID` | `FK -> utilisateur(id), UNIQUE, NOT NULL` | Compte candidat propriÃ©taire (rÃ´le `candidat` vÃ©rifiÃ©)[cite: 12, 31, 46]. |
+| `parcours_id` | `INTEGER` | `FK -> formations_parcours(id), NOT NULL` | Parcours IIT/ISB choisi lors de la prÃ©inscription[cite: 1, 12, 50]. |
 | `source_webhook_id` | `VARCHAR(100)` | `UNIQUE, NULL` | Identifiant externe du formulaire (idempotence du webhook)[cite: 18, 19]. |
-| `donnees_admin_json` | `JSONB` | `NOT NULL, DEFAULT '{}'` | Données administratives soumises (CIN, lycée, pièces)[cite: 13, 32]. |
-| `resume_ia` | `JSONB` | `NULL` | Résumé structuré généré par l'agent Dossier (distinct du chat)[cite: 18, 25, 26]. |
+| `donnees_admin_json` | `JSONB` | `NOT NULL, DEFAULT '{}'` | DonnÃ©es administratives soumises (CIN, lycÃ©e, piÃ¨ces)[cite: 13, 32]. |
+| `resume_ia` | `JSONB` | `NULL` | RÃ©sumÃ© structurÃ© gÃ©nÃ©rÃ© par l'agent Dossier (distinct du chat)[cite: 18, 25, 26]. |
 | `statut` | `statut_dossier` | `NOT NULL, DEFAULT 'soumis'` | Enum : `'soumis'`, `'complement_demande'`, `'accepte'`, `'refuse'`[cite: 19, 27]. |
-| `decision_par_admin_id` | `UUID` | `FK -> utilisateur(id), NULL` | Administrateur ayant pris la décision humaine finale[cite: 18, 26, 46]. |
-| `commentaire_admin` | `TEXT` | `NULL` | Motif du refus ou détail du complément demandé[cite: 13, 17]. |
+| `decision_par_admin_id` | `UUID` | `FK -> utilisateur(id), NULL` | Administrateur ayant pris la dÃ©cision humaine finale[cite: 18, 26, 46]. |
+| `commentaire_admin` | `TEXT` | `NULL` | Motif du refus ou dÃ©tail du complÃ©ment demandÃ©[cite: 13, 17]. |
 | `soumis_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de soumission via le webhook[cite: 19, 27]. |
-| `modifie_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de dernière mise à jour[cite: 44]. |
+| `modifie_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de derniÃ¨re mise Ã  jour[cite: 44]. |
 
 ---
 
@@ -149,14 +149,14 @@ erDiagram
 
 | Champ | Type PostgreSQL | Contraintes | Description |
 | :--- | :--- | :--- | :--- |
-| `id` | `UUID` | `PK, DEFAULT gen_random_uuid()` | Identifiant unique de la demande de complément. |
-| `dossier_id` | `UUID` | `FK -> dossier_candidature(id) ON DELETE CASCADE` | Dossier concerné[cite: 13, 32]. |
-| `demande_admin` | `TEXT` | `NOT NULL` | Information ou document demandé par l'administrateur[cite: 13, 32]. |
-| `reponse_candidat` | `TEXT` | `NULL` | Réponse fournie par le candidat[cite: 13, 32]. |
-| `piece_jointe_url` | `VARCHAR(500)` | `NULL` | Lien vers le document complémentaire déposé. |
-| `est_resolu` | `BOOLEAN` | `NOT NULL, DEFAULT FALSE` | Passe à `TRUE` dès la réponse du candidat[cite: 13]. |
+| `id` | `UUID` | `PK, DEFAULT gen_random_uuid()` | Identifiant unique de la demande de complÃ©ment. |
+| `dossier_id` | `UUID` | `FK -> dossier_candidature(id) ON DELETE CASCADE` | Dossier concernÃ©[cite: 13, 32]. |
+| `demande_admin` | `TEXT` | `NOT NULL` | Information ou document demandÃ© par l'administrateur[cite: 13, 32]. |
+| `reponse_candidat` | `TEXT` | `NULL` | RÃ©ponse fournie par le candidat[cite: 13, 32]. |
+| `piece_jointe_url` | `VARCHAR(500)` | `NULL` | Lien vers le document complÃ©mentaire dÃ©posÃ©. |
+| `est_resolu` | `BOOLEAN` | `NOT NULL, DEFAULT FALSE` | Passe Ã  `TRUE` dÃ¨s la rÃ©ponse du candidat[cite: 13]. |
 | `cree_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de la demande de l'administrateur[cite: 44]. |
-| `repondu_le` | `TIMESTAMPTZ` | `NULL` | Date de réponse du candidat. |
+| `repondu_le` | `TIMESTAMPTZ` | `NULL` | Date de rÃ©ponse du candidat. |
 
 ---
 
@@ -165,15 +165,15 @@ erDiagram
 | Champ | Type PostgreSQL | Contraintes | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `UUID` | `PK, DEFAULT gen_random_uuid()` | Identifiant unique de la tentative de QCM. |
-| `dossier_id` | `UUID` | `FK -> dossier_candidature(id) ON DELETE CASCADE` | Dossier associé[cite: 12, 31]. |
-| `parcours_cible_id` | `INTEGER` | `FK -> formations_parcours(id), NOT NULL` | Formation/parcours évalué par le QCM adaptatif[cite: 1, 3, 4, 50]. |
+| `dossier_id` | `UUID` | `FK -> dossier_candidature(id) ON DELETE CASCADE` | Dossier associÃ©[cite: 12, 31]. |
+| `parcours_cible_id` | `INTEGER` | `FK -> formations_parcours(id), NOT NULL` | Formation/parcours Ã©valuÃ© par le QCM adaptatif[cite: 1, 3, 4, 50]. |
 | `statut` | `statut_qcm` | `NOT NULL, DEFAULT 'en_cours'` | Enum : `'en_cours'`, `'termine'`[cite: 12, 14]. |
-| `derniere_question_idx` | `INTEGER` | `NOT NULL, DEFAULT 0, CHECK (>= 0)` | Index de reprise après interruption[cite: 12, 18, 26]. |
+| `derniere_question_idx` | `INTEGER` | `NOT NULL, DEFAULT 0, CHECK (>= 0)` | Index de reprise aprÃ¨s interruption[cite: 12, 18, 26]. |
 | `nb_total_questions` | `INTEGER` | `NOT NULL, CHECK (> 0)` | Nombre total de questions du QCM. |
-| `score_pourcentage` | `NUMERIC(5,2)` | `NULL, CHECK (BETWEEN 0 AND 100)` | Score final calculé à la soumission[cite: 4]. |
-| `synthese_acquis_ia` | `TEXT` | `NULL` | Synthèse des acquis et points à approfondir pour l'entretien[cite: 2, 4]. |
-| `cree_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de démarrage du QCM[cite: 44]. |
-| `modifie_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de dernière sauvegarde de progression[cite: 12, 18, 44]. |
+| `score_pourcentage` | `NUMERIC(5,2)` | `NULL, CHECK (BETWEEN 0 AND 100)` | Score final calculÃ© Ã  la soumission[cite: 4]. |
+| `synthese_acquis_ia` | `TEXT` | `NULL` | SynthÃ¨se des acquis et points Ã  approfondir pour l'entretien[cite: 2, 4]. |
+| `cree_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de dÃ©marrage du QCM[cite: 44]. |
+| `modifie_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de derniÃ¨re sauvegarde de progression[cite: 12, 18, 44]. |
 | `termine_le` | `TIMESTAMPTZ` | `NULL` | Date de soumission finale. |
 
 ---
@@ -184,12 +184,12 @@ erDiagram
 | :--- | :--- | :--- | :--- |
 | `id` | `UUID` | `PK, DEFAULT gen_random_uuid()` | Identifiant unique de la question. |
 | `tentative_id` | `UUID` | `FK -> qcm_tentative(id) ON DELETE CASCADE` | Tentative parente. |
-| `ordre` | `INTEGER` | `NOT NULL, CHECK (>= 1), UNIQUE(tentative_id, ordre)` | Numéro d'ordre de la question (`1..N`). |
-| `enonce` | `TEXT` | `NOT NULL` | Intitulé de la question générée[cite: 2]. |
+| `ordre` | `INTEGER` | `NOT NULL, CHECK (>= 1), UNIQUE(tentative_id, ordre)` | NumÃ©ro d'ordre de la question (`1..N`). |
+| `enonce` | `TEXT` | `NOT NULL` | IntitulÃ© de la question gÃ©nÃ©rÃ©e[cite: 2]. |
 | `options_json` | `JSONB` | `NOT NULL` | Liste des choix (`[{"id": "a", "texte": "..."}, ...]`). |
-| `bonne_option_id` | `VARCHAR(10)` | `NOT NULL` | Identifiant de la bonne réponse attendue. |
-| `reponse_candidat_id` | `VARCHAR(10)` | `NULL` | Choix sélectionné par le candidat (`NULL` si non répondu)[cite: 2, 17]. |
-| `est_correcte` | `BOOLEAN` | `NULL` | Indique si la réponse du candidat est correcte. |
+| `bonne_option_id` | `VARCHAR(10)` | `NOT NULL` | Identifiant de la bonne rÃ©ponse attendue. |
+| `reponse_candidat_id` | `VARCHAR(10)` | `NULL` | Choix sÃ©lectionnÃ© par le candidat (`NULL` si non rÃ©pondu)[cite: 2, 17]. |
+| `est_correcte` | `BOOLEAN` | `NULL` | Indique si la rÃ©ponse du candidat est correcte. |
 
 ---
 
@@ -198,31 +198,31 @@ erDiagram
 | Champ | Type PostgreSQL | Contraintes | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `UUID` | `PK, DEFAULT gen_random_uuid()` | Identifiant unique du rendez-vous. |
-| `dossier_id` | `UUID` | `FK -> dossier_candidature(id) ON DELETE CASCADE` | Dossier déclencheur de l'entretien[cite: 13, 18, 26]. |
-| `admin_id` | `UUID` | `FK -> utilisateur(id), NULL` | Administrateur ayant confirmé le créneau (rôle `admin` vérifié)[cite: 13, 18, 26, 46]. |
-| `date_heure_debut` | `TIMESTAMPTZ` | `NOT NULL` | Date et heure de début du créneau. |
-| `date_heure_fin` | `TIMESTAMPTZ` | `NOT NULL, CHECK (date_heure_fin > date_heure_debut)` | Date et heure de fin du créneau. |
+| `dossier_id` | `UUID` | `FK -> dossier_candidature(id) ON DELETE CASCADE` | Dossier dÃ©clencheur de l'entretien[cite: 13, 18, 26]. |
+| `admin_id` | `UUID` | `FK -> utilisateur(id), NULL` | Administrateur ayant confirmÃ© le crÃ©neau (rÃ´le `admin` vÃ©rifiÃ©)[cite: 13, 18, 26, 46]. |
+| `date_heure_debut` | `TIMESTAMPTZ` | `NOT NULL` | Date et heure de dÃ©but du crÃ©neau. |
+| `date_heure_fin` | `TIMESTAMPTZ` | `NOT NULL, CHECK (date_heure_fin > date_heure_debut)` | Date et heure de fin du crÃ©neau. |
 | `modalite` | `modalite_rdv` | `NOT NULL, DEFAULT 'presentiel'` | Enum : `'presentiel'`, `'en_ligne'`. |
-| `lien_ou_salle` | `VARCHAR(255)` | `NULL` | Salle IIT/ISB ou lien de visioconférence. |
-| `valide_par_admin` | `BOOLEAN` | `NOT NULL, DEFAULT FALSE` | **Verrou métier :** doit être `TRUE` avant proposition au candidat[cite: 13, 18, 26]. |
+| `lien_ou_salle` | `VARCHAR(255)` | `NULL` | Salle IIT/ISB ou lien de visioconfÃ©rence. |
+| `valide_par_admin` | `BOOLEAN` | `NOT NULL, DEFAULT FALSE` | **Verrou mÃ©tier :** doit Ãªtre `TRUE` avant proposition au candidat[cite: 13, 18, 26]. |
 | `statut` | `statut_rdv` | `NOT NULL, DEFAULT 'propose'` | Enum : `'propose'`, `'confirme'`, `'indisponible'`[cite: 19, 27]. |
 | `motif_indisponibilite` | `TEXT` | `NULL` | Contraintes horaires saisies si `statut = 'indisponible'`[cite: 13, 32]. |
-| `cree_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de proposition du créneau[cite: 44]. |
-| `modifie_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de dernière mise à jour[cite: 44]. |
+| `cree_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de proposition du crÃ©neau[cite: 44]. |
+| `modifie_le` | `TIMESTAMPTZ` | `NOT NULL, DEFAULT now()` | Date de derniÃ¨re mise Ã  jour[cite: 44]. |
 
 ---
 
-## 4. Script SQL PostgreSQL de Référence (`migration_SA14_gestion.sql`)
+## 4. Script SQL PostgreSQL de RÃ©fÃ©rence (`migration_SA14_gestion.sql`)
 
-*Prérequis : exécuter après les migrations de `utilisateur` (SA-13)[cite: 46] et `formations_parcours` (SA-12)[cite: 50].*
+*PrÃ©requis : exÃ©cuter aprÃ¨s les migrations de `utilisateur` (SA-13)[cite: 46] et `formations_parcours` (SA-12)[cite: 50].*
 
 ```sql
 -- ============================================================================
--- SmartCampus AI - Script SQL SA-14 : Gestion Préinscription, QCM & Entretiens
+-- SmartCampus AI - Script SQL SA-14 : Gestion PrÃ©inscription, QCM & Entretiens
 -- Compatible avec SA-13 (utilisateur : UUID) et SA-12 (formations_parcours : INT)
 -- ============================================================================
 
--- Types énumérés applicatifs (alignés avec SA-4 et SA-13)
+-- Types Ã©numÃ©rÃ©s applicatifs (alignÃ©s avec SA-4 et SA-13)
 CREATE TYPE statut_dossier AS ENUM ('soumis', 'complement_demande', 'accepte', 'refuse');
 CREATE TYPE statut_qcm AS ENUM ('en_cours', 'termine');
 CREATE TYPE modalite_rdv AS ENUM ('presentiel', 'en_ligne');
@@ -246,7 +246,7 @@ CREATE TABLE dossier_candidature (
     modifie_le TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- 2. Table des demandes de compléments d'information
+-- 2. Table des demandes de complÃ©ments d'information
 CREATE TABLE dossier_complement (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     dossier_id UUID NOT NULL
@@ -259,7 +259,7 @@ CREATE TABLE dossier_complement (
     repondu_le TIMESTAMPTZ
 );
 
--- 3. Table des tentatives de QCM personnalisé
+-- 3. Table des tentatives de QCM personnalisÃ©
 CREATE TABLE qcm_tentative (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     dossier_id UUID NOT NULL
@@ -279,7 +279,7 @@ CREATE TABLE qcm_tentative (
     termine_le TIMESTAMPTZ
 );
 
--- 4. Table des questions et réponses sauvegardées du QCM
+-- 4. Table des questions et rÃ©ponses sauvegardÃ©es du QCM
 CREATE TABLE qcm_question (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     tentative_id UUID NOT NULL
@@ -318,7 +318,7 @@ CREATE TABLE rendez_vous (
 );
 
 -- ============================================================================
--- Triggers de contrôle des rôles (cohérence avec SA-13)
+-- Triggers de contrÃ´le des rÃ´les (cohÃ©rence avec SA-13)
 -- ============================================================================
 
 CREATE OR REPLACE FUNCTION verifier_roles_dossier()
@@ -373,7 +373,7 @@ CREATE TRIGGER trg_verifier_admin_rdv
     EXECUTE FUNCTION verifier_admin_rdv();
 
 -- ============================================================================
--- Index et Triggers d'audit (réutilisation de mettre_a_jour_modifie_le de SA-13)
+-- Index et Triggers d'audit (rÃ©utilisation de mettre_a_jour_modifie_le de SA-13)
 -- ============================================================================
 
 CREATE INDEX ix_dossier_statut ON dossier_candidature (statut);

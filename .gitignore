@@ -1,1 +1,9 @@
-desktop.ini 
+__pycache__/
+*.py[cod]
+*$py.class
+desktop.ini
+.DS_Store
+
+__pycache__/
+*.py[cod]
+desktop.ini
