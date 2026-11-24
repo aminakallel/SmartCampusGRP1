@@ -1,0 +1,616 @@
+[
+  {
+    "id": "iit-cycle-preparatoire-mp",
+    "slug": "iit-cycle-preparatoire-mp",
+    "nom": "Cycle Préparatoire MP",
+    "etablissement": "IIT",
+    "niveau": "Préparatoire",
+    "duree": "À renseigner",
+    "description": "Cycle préparatoire MP de l’IIT.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "préparatoire",
+      "prépa",
+      "MP",
+      "mathématiques",
+      "physique"
+    ],
+    "lien": null,
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-licence-en-systemes-electriques-intelligents-energies-renouvelables",
+    "slug": "iit-licence-en-systemes-electriques-intelligents-energies-renouvelables",
+    "nom": "Licence en Systèmes Électriques Intelligents & Énergies Renouvelables",
+    "etablissement": "IIT",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence technologique en systèmes électriques intelligents et énergies renouvelables.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "licence technologique",
+      "électrique",
+      "énergies renouvelables",
+      "systèmes intelligents"
+    ],
+    "lien": "https://iit.tn/licence-en-systemes-electriques-intelligents-energies-renouvelables/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-licence-en-mecatronique-systemes-intelligents",
+    "slug": "iit-licence-en-mecatronique-systemes-intelligents",
+    "nom": "Licence en Mécatronique & Systèmes Intelligents",
+    "etablissement": "IIT",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence technologique en mécatronique et systèmes intelligents.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "licence technologique",
+      "mécatronique",
+      "systèmes intelligents"
+    ],
+    "lien": "https://iit.tn/licence-en-mecatronique-systemes-intelligents/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-licence-en-informatique-reseaux-et-cybersecurite",
+    "slug": "iit-licence-en-informatique-reseaux-et-cybersecurite",
+    "nom": "Licence en Informatique : Réseaux et Cybersécurité",
+    "etablissement": "IIT",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence en informatique, parcours Réseaux et Cybersécurité.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "informatique",
+      "réseaux",
+      "cybersécurité",
+      "sécurité"
+    ],
+    "lien": "https://iit.tn/reseaux-et-cybersecurite/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-licence-en-informatique-systemes-embarques-iot",
+    "slug": "iit-licence-en-informatique-systemes-embarques-iot",
+    "nom": "Licence en Informatique : Systèmes Embarqués & IoT",
+    "etablissement": "IIT",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence en informatique, parcours Systèmes Embarqués et Internet des Objets (IoT).",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "informatique",
+      "systèmes embarqués",
+      "IoT",
+      "internet des objets"
+    ],
+    "lien": "https://iit.tn/systemes-embarques-internet-des-objets-iot/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-licence-en-informatique-big-data-et-analyse-de-donnees",
+    "slug": "iit-licence-en-informatique-big-data-et-analyse-de-donnees",
+    "nom": "Licence en Informatique : Big Data et Analyse de Données",
+    "etablissement": "IIT",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence en informatique, parcours Big Data et Analyse de Données.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "informatique",
+      "big data",
+      "analyse de données",
+      "data"
+    ],
+    "lien": "https://iit.tn/big-data-et-analyse-de-donnees/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-licence-en-informatique-genie-logiciel-et-systemes-intelligents",
+    "slug": "iit-licence-en-informatique-genie-logiciel-et-systemes-intelligents",
+    "nom": "Licence en Informatique : Génie Logiciel et Systèmes Intelligents",
+    "etablissement": "IIT",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence en informatique, parcours Génie Logiciel et Systèmes Intelligents.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "informatique",
+      "génie logiciel",
+      "développement",
+      "systèmes intelligents"
+    ],
+    "lien": "https://iit.tn/genie-logiciel-systemes-intelligents/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-cycle-ingenieur-en-genie-civil",
+    "slug": "iit-cycle-ingenieur-en-genie-civil",
+    "nom": "Cycle Ingénieur en Génie Civil",
+    "etablissement": "IIT",
+    "niveau": "Ingénierie",
+    "duree": "À renseigner",
+    "description": "Filière ingénieur en génie civil.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "ingénieur",
+      "génie civil"
+    ],
+    "lien": "https://iit.tn/filieres-ingenieur/genie-civil/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-cycle-ingenieur-en-genie-mecanique",
+    "slug": "iit-cycle-ingenieur-en-genie-mecanique",
+    "nom": "Cycle Ingénieur en Génie Mécanique",
+    "etablissement": "IIT",
+    "niveau": "Ingénierie",
+    "duree": "À renseigner",
+    "description": "Filière ingénieur en génie mécanique.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "ingénieur",
+      "génie mécanique",
+      "mécanique"
+    ],
+    "lien": "https://iit.tn/filieres-ingenieur/genie-mecanique-2/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-cycle-ingenieur-en-genie-informatique",
+    "slug": "iit-cycle-ingenieur-en-genie-informatique",
+    "nom": "Cycle Ingénieur en Génie Informatique",
+    "etablissement": "IIT",
+    "niveau": "Ingénierie",
+    "duree": "À renseigner",
+    "description": "Filière ingénieur en génie informatique.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "ingénieur",
+      "génie informatique",
+      "informatique"
+    ],
+    "lien": "https://iit.tn/filieres-ingenieur/genie-informatique-2/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-cycle-ingenieur-en-genie-industriel",
+    "slug": "iit-cycle-ingenieur-en-genie-industriel",
+    "nom": "Cycle Ingénieur en Génie Industriel",
+    "etablissement": "IIT",
+    "niveau": "Ingénierie",
+    "duree": "À renseigner",
+    "description": "Filière ingénieur en génie industriel.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "ingénieur",
+      "génie industriel",
+      "industrie"
+    ],
+    "lien": "https://iit.tn/filieres-ingenieur/genie-industriel-2/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-cycle-ingenieur-en-genie-des-procedes",
+    "slug": "iit-cycle-ingenieur-en-genie-des-procedes",
+    "nom": "Cycle Ingénieur en Génie des Procédés",
+    "etablissement": "IIT",
+    "niveau": "Ingénierie",
+    "duree": "À renseigner",
+    "description": "Filière ingénieur en génie des procédés.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "ingénieur",
+      "génie des procédés",
+      "procédés"
+    ],
+    "lien": "https://iit.tn/genie-des-procedes/",
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-architecture",
+    "slug": "iit-architecture",
+    "nom": "Architecture",
+    "etablissement": "IIT",
+    "niveau": "Architecture",
+    "duree": "À renseigner",
+    "description": "Formation en architecture de l’IIT.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "architecture"
+    ],
+    "lien": null,
+    "statut": "publiee"
+  },
+  {
+    "id": "iit-mastere-industries-4-0",
+    "slug": "iit-mastere-industries-4-0",
+    "nom": "Mastère Industries 4.0",
+    "etablissement": "IIT",
+    "niveau": "Master",
+    "duree": "À renseigner",
+    "description": "Mastère Industries 4.0 de l’IIT.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "mastère",
+      "master",
+      "industrie 4.0",
+      "industries 4.0"
+    ],
+    "lien": null,
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-in-business-administration-eng",
+    "slug": "isb-licence-in-business-administration-eng",
+    "nom": "Licence in Business Administration (ENG)",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence en administration des affaires couvrant la comptabilité, la finance, le marketing et d’autres disciplines. Formation enseignée en anglais.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "administration des affaires",
+      "business",
+      "comptabilité",
+      "finance",
+      "marketing",
+      "anglais"
+    ],
+    "lien": "https://isb.tn/program-lba/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-in-business-intelligence-bilingue",
+    "slug": "isb-licence-in-business-intelligence-bilingue",
+    "nom": "Licence in Business Intelligence (Bilingue)",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence en Business Intelligence, proposée en formation bilingue.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "business intelligence",
+      "bilingue"
+    ],
+    "lien": "https://isb.tn/business-intelligence/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-nationale-en-gestion-management",
+    "slug": "isb-licence-nationale-en-gestion-management",
+    "nom": "Licence nationale en Gestion : Management",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence nationale en gestion, avec une formation spécialisée dans le domaine du management. Enseignée en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "gestion",
+      "management",
+      "français"
+    ],
+    "lien": "https://isb.tn/management/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-nationale-en-gestion-comptabilite",
+    "slug": "isb-licence-nationale-en-gestion-comptabilite",
+    "nom": "Licence nationale en Gestion : Comptabilité",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence nationale en comptabilité : formation d’étudiants spécialisés dans les domaines de la comptabilité. Enseignée en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "gestion",
+      "comptabilité",
+      "français"
+    ],
+    "lien": "https://isb.tn/comptabilite/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-nationale-en-gestion-finance",
+    "slug": "isb-licence-nationale-en-gestion-finance",
+    "nom": "Licence nationale en Gestion : Finance",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence nationale en finance : formation de cadres spécialisés dans les domaines de la finance. Enseignée en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "gestion",
+      "finance",
+      "français"
+    ],
+    "lien": "https://isb.tn/finance/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-nationale-en-gestion-logistique-et-production",
+    "slug": "isb-licence-nationale-en-gestion-logistique-et-production",
+    "nom": "Licence nationale en Gestion : Logistique et production",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence nationale en logistique et production : formation d’étudiants spécialisés dans la logistique et la production. Enseignée en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "gestion",
+      "logistique",
+      "production",
+      "français"
+    ],
+    "lien": "https://isb.tn/logistique-et-production/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-nationale-en-gestion-marketing",
+    "slug": "isb-licence-nationale-en-gestion-marketing",
+    "nom": "Licence nationale en Gestion : Marketing",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence en marketing, qui prépare l’étudiant à une carrière de cadre intermédiaire en marketing opérationnel. Enseignée en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "gestion",
+      "marketing",
+      "français"
+    ],
+    "lien": "https://isb.tn/marketing/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-nationale-en-gestion-ressources-humaines",
+    "slug": "isb-licence-nationale-en-gestion-ressources-humaines",
+    "nom": "Licence nationale en Gestion : Ressources humaines",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Formation visant à doter les étudiants de connaissances théoriques et pratiques en gestion des ressources humaines. Enseignée en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "gestion",
+      "ressources humaines",
+      "RH",
+      "français"
+    ],
+    "lien": "https://isb.tn/ressources-humaines/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-en-sciences-economiques-business-economics-fr",
+    "slug": "isb-licence-en-sciences-economiques-business-economics-fr",
+    "nom": "Licence en Sciences Économiques : Business Economics (FR)",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence nationale en Business Economics, qui forme des économistes. Enseignée en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "sciences économiques",
+      "économie",
+      "business economics",
+      "français"
+    ],
+    "lien": "https://isb.tn/business-economics-2/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-en-sciences-economiques-transport-et-logistique-fr",
+    "slug": "isb-licence-en-sciences-economiques-transport-et-logistique-fr",
+    "nom": "Licence en Sciences Économiques : Transport et Logistique (FR)",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence en sciences économiques, parcours Transport et Logistique. Enseignée en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "sciences économiques",
+      "transport",
+      "logistique",
+      "français"
+    ],
+    "lien": null,
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-nationale-en-droit-droit-des-affaires",
+    "slug": "isb-licence-nationale-en-droit-droit-des-affaires",
+    "nom": "Licence nationale en Droit : Droit des affaires",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence nationale en droit des affaires : former des étudiants capables de maîtriser les principes du droit en général.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "droit",
+      "droit des affaires",
+      "juridique"
+    ],
+    "lien": "https://isb.tn/droit-des-affaires-2/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-licence-nationale-en-droit-droit-prive",
+    "slug": "isb-licence-nationale-en-droit-droit-prive",
+    "nom": "Licence nationale en Droit : Droit privé",
+    "etablissement": "ISB",
+    "niveau": "Licence",
+    "duree": "À renseigner",
+    "description": "Licence nationale en droit, parcours Droit privé.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "droit",
+      "droit privé",
+      "juridique"
+    ],
+    "lien": "https://isb.tn/droit-prive-2/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-mastere-en-marketing-digital-fr",
+    "slug": "isb-mastere-en-marketing-digital-fr",
+    "nom": "Mastère en Marketing Digital (FR)",
+    "etablissement": "ISB",
+    "niveau": "Master",
+    "duree": "À renseigner",
+    "description": "Mastère en marketing digital, enseigné en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "mastère",
+      "master",
+      "marketing digital",
+      "français"
+    ],
+    "lien": "https://isb.tn/mmd/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-master-in-business-administration-mba-eng",
+    "slug": "isb-master-in-business-administration-mba-eng",
+    "nom": "Master in Business Administration (MBA) (ENG)",
+    "etablissement": "ISB",
+    "niveau": "Master",
+    "duree": "À renseigner",
+    "description": "Master en administration des affaires (MBA), enseigné en anglais.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "MBA",
+      "master",
+      "business administration",
+      "anglais"
+    ],
+    "lien": "https://isb.tn/program-mba/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-mastere-en-comptabilite-fr",
+    "slug": "isb-mastere-en-comptabilite-fr",
+    "nom": "Mastère en Comptabilité (FR)",
+    "etablissement": "ISB",
+    "niveau": "Master",
+    "duree": "À renseigner",
+    "description": "Mastère en comptabilité, enseigné en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "mastère",
+      "master",
+      "comptabilité",
+      "français"
+    ],
+    "lien": "https://isb.tn/program-mpc/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-mastere-finance-d-entreprise-et-ingenierie-financiere-fr",
+    "slug": "isb-mastere-finance-d-entreprise-et-ingenierie-financiere-fr",
+    "nom": "Mastère Finance d’Entreprise et Ingénierie Financière (FR)",
+    "etablissement": "ISB",
+    "niveau": "Master",
+    "duree": "À renseigner",
+    "description": "Mastère en finance d’entreprise et ingénierie financière, enseigné en français.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "mastère",
+      "master",
+      "finance d’entreprise",
+      "ingénierie financière",
+      "français"
+    ],
+    "lien": "https://isb.tn/program-minf/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-master-of-science-msc-in-digital-marketing-eng",
+    "slug": "isb-master-of-science-msc-in-digital-marketing-eng",
+    "nom": "Master of Science (MSc) in Digital Marketing (ENG)",
+    "etablissement": "ISB",
+    "niveau": "Master",
+    "duree": "À renseigner",
+    "description": "Master of Science en marketing digital, enseigné en anglais.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "MSc",
+      "master",
+      "digital marketing",
+      "marketing digital",
+      "anglais"
+    ],
+    "lien": "https://isb.tn/mmd-en/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-master-of-science-msc-in-finance-eng",
+    "slug": "isb-master-of-science-msc-in-finance-eng",
+    "nom": "Master of Science (MSc) in Finance (ENG)",
+    "etablissement": "ISB",
+    "niveau": "Master",
+    "duree": "À renseigner",
+    "description": "Master of Science en finance, enseigné en anglais.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "MSc",
+      "master",
+      "finance",
+      "anglais"
+    ],
+    "lien": "https://isb.tn/program-msf/",
+    "statut": "publiee"
+  },
+  {
+    "id": "isb-master-in-business-law-eng",
+    "slug": "isb-master-in-business-law-eng",
+    "nom": "Master in Business Law (ENG)",
+    "etablissement": "ISB",
+    "niveau": "Master",
+    "duree": "À renseigner",
+    "description": "Master en droit des affaires, enseigné en anglais.",
+    "prerequis": [],
+    "debouches": [],
+    "motsCles": [
+      "master",
+      "business law",
+      "droit des affaires",
+      "anglais"
+    ],
+    "lien": null,
+    "statut": "publiee"
+  }
+]
